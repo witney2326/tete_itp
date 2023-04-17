@@ -1,0 +1,563 @@
+<?php
+$language['Mega_Menu']="Mega Menu";
+$language['UI_Components']="UI Components";
+$language['Lightbox']="Lightbox";
+$language['Range_Slider']="Range Slider";
+$language['Sweet_Alert']="Sweet Alert";
+$language['Rating']="Rating";
+$language['Forms']="Forms";
+$language['Tables']="Tables";
+$language['Charts']="Charts";
+$language['Applications']="Applications";
+$language['Ecommerce']="Ecommerce";
+$language['Calendar']="Calendar";
+$language['Email']="Email";
+$language['Projects']="Projects";
+$language['Tasks']="Tasks";
+$language['Contacts']="Contacts";
+$language['Extra_Pages']="Extra Pages";
+$language['Light_Sidebar']="Light Sidebar";
+$language['Compact_Sidebar']="Compact Sidebar";
+$language['Horizontal_layout']="Horizontal layout";
+$language['Maintenance']="Maintenance";
+$language['Coming_Soon']="Coming Soon";
+$language['Timeline']="Timeline";
+$language['FAQs']="FAQs";
+$language['Search']="Search...";
+$language['Notifications']="Notifications";
+$language['View_All']="View All";
+$language['Your_order_is_placed']="Your order is placed";
+$language['languages_grammar']="If several languages coalesce the grammar";
+$language['3_min_ago']="3 min ago";
+$language['simplified_English']="It will seem like simplified English.";
+$language['1_hours_ago']="1 hours ago";
+$language['Your_item_is_shipped']="Your item is shipped";
+$language['several_grammar']="If several languages coalesce the grammar";
+$language['Salena_Layfield']="Salena Layfield";
+$language['Cambridge_occidental']="As a skeptical Cambridge friend of mine occidental.";
+$language['View_More']="View More..";
+$language['Profile']="Profile";
+$language['My_Wallet']="My Wallet";
+$language['Settings']="Settings";
+$language['Lock_screen']="Lock screen";
+$language['Logout']="Logout";
+$language['Menu']="Menu";
+$language['Dashboard']="Dashboard";
+$language['Default']="Default";
+$language['Saas']="Saas";
+$language['Crypto']="Crypto";
+$language['Layouts']="Layouts";
+$language['Horizontal']="Horizontal";
+$language['Icon_Sidebar']="Icon Sidebar";
+$language['Boxed_Width']="Boxed Width";
+$language['Preloader']="Preloader";
+$language['Colored_Sidebar']="Colored Sidebar";
+$language['Apps']="Apps";
+$language['New']="New";
+$language['Chat']="Chat";
+$language['Products']="Products";
+$language['Product_Detail']="Product Detail";
+$language['Orders']="Orders";
+$language['Customers']="Customers";
+$language['Cart']="Cart";
+$language['Checkout']="Checkout";
+$language['Shops']="Shops";
+$language['Add_Product']="Add Product";
+$language['Wallet']="Wallet";
+$language['Buy_Sell']="Buy/Sell";
+$language['Exchange']="Exchange";
+$language['Lending']="Lending";
+$language['KYC_Application']="KYC Application";
+$language['ICO_Landing']="ICO Landing";
+$language['Inbox']="Inbox";
+$language['Read_Email']="Read Email";
+$language['Invoices']="Invoices";
+$language['Invoice_List']="Invoice List";
+$language['Invoice_Detail']="Invoice Detail";
+$language['Projects_Grid']="Projects Grid";
+$language['Projects_List']="Projects List";
+$language['Project_Overview']="Project Overview";
+$language['Create_New']="Create New";
+$language['Task_List']="Task List";
+$language['Kanban_Board']="Kanban Board";
+$language['Create_Task']="Create Task";
+$language['User_Grid']="User Grid";
+$language['User_List']="User List";
+$language['Pages']="Pages";
+$language['Authentication']="Authentication";
+$language['Login']="Login";
+$language['Register']="Register";
+$language['Recover_Password']="Recover Password";
+$language['Utility']="Utility";
+$language['Starter_Page']="Starter Page";
+$language['Pricing']="Pricing";
+$language['Error_404']="Error 404";
+$language['Error_500']="Error 500";
+$language['Components']="Components";
+$language['UI_Elements']="UI Elements";
+$language['Alerts']="Alerts";
+$language['Buttons']="Buttons";
+$language['Cards']="Cards";
+$language['Carousel']="Carousel";
+$language['Dropdowns']="Dropdowns";
+$language['Grid']="Grid";
+$language['Images']="Images";
+$language['Modals']="Modals";
+$language['Off_canvas']="Off Canvas";
+$language['Session_Timeout']="Session Timeout";
+$language['Progress_Bars']="Progress Bars";
+$language['Sweet_Alert']="Sweet-Alert";
+$language['Tabs_&_Accordions']="Tabs & Accordions";
+$language['Typography']="Typography";
+$language['Video']="Video";
+$language['General']="General";
+$language['Colors']="Colors";
+$language['Rating']="Rating";
+$language['Image_Cropper']="Image Cropper";
+$language['Forms']="Forms";
+$language['Form_Elements']="Form Elements";
+$language['Form_Layouts']="Form Layouts";
+$language['Form_Validation']="Form Validation";
+$language['Form_Advanced']="Form Advanced";
+$language['Form_Editors']="Form Editors";
+$language['Form_File_Upload']="Form File Upload";
+$language['Form_Xeditable']="Form Xeditable";
+$language['Form_Repeater']="Form Repeater";
+$language['Form_Wizard']="Form Wizard";
+$language['Form_Mask']="Form Mask";
+$language['Tables']="Tables";
+$language['Basic_Tables']="Basic Tables";
+$language['Data_Tables']="Data Tables";
+$language['Responsive_Table']="Responsive Table";
+$language['Editable_Table']="Editable Table";
+$language['Charts']="Charts";
+$language['Apex_Charts']="Apex Charts";
+$language['E_Charts']="E Charts";
+$language['Chartjs_Charts']="Chartjs Charts";
+$language['Flot_Charts']="Flot Charts";
+$language['Toast_UI_Charts']="Toast UI Charts";
+$language['Jquery_Knob_Charts']="Jquery Knob Charts";
+$language['Sparkline_Charts']="Sparkline Charts";
+$language['Icons']="Icons";
+$language['Maps']="Maps";
+$language['Google_Maps']="Google Maps";
+$language['Vector_Maps']="Vector Maps";
+$language['Leaflet_Maps']="Leaflet Maps";
+$language['Multi_Level']="Multi Level";
+$language['Level_1.1']="Level 1.1";
+$language['Level_1.2']="Level 1.2";
+$language['Level_2.1']="Level 2.1";
+$language['Level_2.2']="Level 2.2";
+$language['Vertical']="Vertical";
+$language['Colored_Header']="Colored Header";
+$language['Topbar_Light']="Topbar Light";
+$language['Boxed_Layout']="Boxed Layout";
+$language['Scrollable']="Scrollable";
+$language['Blog']="Blog";
+$language['File_Manager']="File Manager";
+$language['Templates']="Templates";
+$language['Basic_Action']="Basic Action";
+$language['Alert_Email']="Alert Email";
+$language['Billing_Email']="Billing Email";
+$language['Blog_List']="Blog List";
+$language['Blog_Grid']="Blog Grid";
+$language['Blog_Details']="Blog Details";
+$language['Confirm_Mail']="Confirm Mail";
+$language['Email_verification']="Email verification";
+$language['Two_step_verification']="Two step verification";
+
+$language['System_Admin']="System Admin";
+$language['Register_and_Target']="Register and Target";
+$language['Request_for_Service']="Request for Service";
+$language['Contribute_for_Service']="Contribute for Service";
+$language['OSS_Works']="OSS Works";
+$language['Project_Reports']="Project Reports";
+
+
+$language['Select_Language']="Choose Language";
+$language['The_Sanitation_Project']="The Sanitation Project";
+$language['Registered_HouseHolds']="Registered HouseHolds";
+$language['Verified_and_Accepted_Households']="Verified and Accepted Households";
+$language['Households_with_Full_Payments']="Households with Full Payments";
+$language['Households_Requesting_Technical_Guidance_on_Selection']="Households Requesting Technical Guidance on Selection";
+$language['Total_OSS_Sites_Handed_Over_to_Contractors']="Total OSS Sites Handed Over to Contractors";
+$language['OSS_Works_on_Schedule']="OSS Works on Schedule";
+$language['OSS_Works_OUT_of_Schedule']="OSS Works OUT of Schedule";
+$language['OSS_Products_Handed_over_to_Households']="OSS Products Handed over to Households";
+
+
+$language['Register_Household']="Register Household";
+$language['Add_New_Beneficiary_Household']="Add New Beneficiary Household";
+
+$language['Registered_Households']="Registered Households"; 
+$language['Target_Households']="Target Households";
+$language['Verified_Households']="Verified Households";
+$language['Verified_Households_Need_Technical_Guidance']="Verified Households Need Technical Guidance";
+$language['Back']="Back";
+
+$language['Household_Code']="Household Code";
+$language['Household_Name']="Household Name";
+$language['Identification']="Identification";
+$language['Verified']="Verified";
+$language['Action']="Action";
+
+$language['Need_Technical_Guide']="Need Technical Guide";
+$language['Agree_TC']="Agree TC";
+$language['Ready_To_Select']="Ready To Select";
+
+$language['Phone']="Phone";
+$language['Address']="Address";
+$language['Plot_Address']="Plot Address"; 
+$language['View_OSS_Products']="View OSS Products";
+$language['Submit']="Submit";
+
+$language['Filter']="Filter";
+
+$language['Payments']="Payments";
+$language['Payments_Approvals']="Payments Approvals";
+$language['Approved_Payments']="Approved Payments";
+$language['Approved_Full_Payments']="Approved Full Payments";
+$language['Contribute_For_Service']="Contribute For Service";
+$language['Payment_Option']="Payment Option";
+$language['Option']="Option";
+$language['Reference']="Reference";
+$language['Amount_Paid']="Amount Paid";
+$language['Approved']="Approved";
+$language['ID']="ID";
+$language["Product_Cost"]="Toilet Cost"; 
+$language["Total_Paid"]="Total Paid";
+$language["OSS_Product"] = "OSS Product";
+
+$language["Works_Tracking"] = "Works Tracking";
+$language["Progress_Updates"] = "Progress Updates";
+$language["Current_Works"] = "Current Works";
+$language["Completed_Works"] = "Completed Works";
+$language["Verified_Works"] = "Verified Works";
+
+$language["Works_Code"]= "Works Code";
+$language["Start_Date"]= "Start Date";
+$language["End_Date"]= "End Date";
+$language["Contractor"]= "Contractor";
+$language["Status"]= "Status"; 
+$language["Completion_Date"]= "Completion Date";
+
+$language["Reports"]= "Reports";
+$language["Category"]= "Category";
+$language["Detail"]= "Detail";
+$language["Main_Statistic"]= "Main Statistic";
+
+$language["Technology_Choice"]= "Technology Choice";
+$language["Selection_and_Approvals"] = "Selection and Approvals";
+$language["Tech_Option"] = "Technology Option";
+$language["Households_Ready_For_Selection"] = "Households Ready For Selection";
+$language["Households_with_Selected_Options"] = "Households with Selected Options";
+$language["Households_With_Approved_Products"] = "Households With Approved Products";
+$language["Agree_Terms"]="Agree Terms";
+$language["Selected_Option"]= "Selected Option";
+
+$language["View_Products"] = "View Toilet Products";
+$language["Request_Tech_Guide"] = "Request Technical Guide";
+$language["Select_Product"]= "Select OSS Product";
+$language["Record_Payment"]= "Record Payment";
+$language["Message_Supervisor"]="Message Supervisor";
+$language["Household_Current_Status"] = "Household Current OSS Works Status";
+
+$language["Contractor_Dashboard"] = "Contractor Dashboard";
+$language["Allocated_Works"] = "Allocated Works";
+$language["Sites_Handed_Over"] = "Sites Handed Over";
+$language["Self_Registration"] = "Self Registration";
+
+$language["OSS_Products"] = "OSS Products";
+$language["OSS_Toilets"] ="OSS Toilets";
+$language["Pour_Flash_Toilet"] ="Pour Flash Toilet";
+$language["Single_VIP_Toilet"] ="Single VIP Toilet";
+$language["Twin_VIP_Toilet"] = "Twin VIP Toilet";
+$language["Product_Code"] = "Product Code";
+
+$language["Indicator"] = "Indicator";
+$language["Target"] = "Target";
+$language["Achieved"] ="Achieved";
+$language["Current_OSS_Works"] = "Current OSS Works";
+$language["Completed_OSS_Works"]="Completed OSS Works";
+$language["Verified_Accepted_Households"]="Verified and Accepted Households";
+$language["No_Of_HHs"]="No Of HHs";
+$language["No_OSS_Works"] ="No OSS Works";
+$language["Progress"]= "Progress";
+$language["Technical_Guide"] = "OSS Technical Guide";
+$language["Household_Technical_Guide_Request"] ="Household Technical Guide Request";
+
+$language["Household_Ready_To_Make_OSS_Selection"] ="Household Ready To Make OSS Selection, ";
+$language["Check_Household_Status"] = "Check Household Status!";
+$language["Household_NOT_YET_Enrolled"] = "Household NOT YET Enrolled,";
+
+$language["Household_NOT_Ready_For_OSS_Product_Selection"] ="Household NOT Ready For OSS Product Selection, ";
+$language["Household_OSS_Product_Already_Selected"] ="Household OSS Product Already Selected! ";
+$language["Select_Technology"] ="Select Technology";
+$language["Application_For_Household_Toilet"] ="Application For Household Toilet";
+$language["Register_Applicant"] ="Register Applicant";
+$language["Registered_Applicants"]="Registered Applicants";
+$language["Verified_Applicants"]="Verified Applicants";
+
+$language["Verified_Applicants_Need_Technical_Guidance"]="Verified Applicants Need Technical Guidance";
+
+$language["Applicant_Code"]="Applicant's Code";
+$language["Applicant_Name"]="Applicant Name";
+$language["BL_No"]="BL No.";
+$language["Locality"]="Locality";
+$language["Plot_No"]="Plot No.";
+$language["Landmark"]="Landmark";
+$language["Applicant_Gender"]="Applicant's Gender";
+$language["Contact_Phones"]="Contact Phones";
+$language["No_People_at_Premises"]="No. People at Premises";
+$language["Home_Status"]="Home Status";
+$language["Rooms_Rented"]="Rooms Rented";
+$language["Current_Toilet"]="Current Toilet";
+$language["Verified_Accepted"]="Verified and Accepted";
+$language["Contractor_Allocated"]="Contractor Allocated";
+$language["Current_Status"]="Current Status";
+
+$language["Applicant_Details"]="Applicant Details";
+$language["Applicant_Payments"]="Applicant's Payments";
+$language["Selected_Toilet"]="Selected Toilet";
+$language["Works_Progress"]="Works Progress";
+$language["View_Applicant"]="View Applicant";
+$language["Toilet_Type"]="Toilet Type";
+
+$language["Technical_Guidance_Record"]="Technical Guidance Record";
+$language["Record_Guidance_Rendered"]="Record Guidance Rendered"; 
+$language["Technical_Guidance_Rendered"]="Technical Guidance Rendered";
+$language["Rendered_By"]="Rendered By";
+$language["Date"]="Date"; 
+$language["Toilet_Option_Not_Selected"]="Toilet Option Not Selected"; 
+$language["Approve_Tech_Selection"]="Approve Tech Selection";
+$language["Yes"]="Yes";
+$language["No"]="No";
+
+$language["Record_Household_Payment"]="Record Applicant Payment";
+$language["None"]="None";
+$language["Approve_Payment_Amount"]="Approve Payment Amount";
+
+$language["Schedule_Toilet_Works"]="Schedule Toilet Works For Applicant";
+$language["Update_Works_Progress"]="Update Works Progress";
+$language["Notify_Contractor"]="Notify Contractor On Works Schedule";
+$language["Handover_Certificate"]="Print Site Handover Certificate";
+$language["Verify_Toilet_Works"]="Verify Toilet Works";
+$language["Completion_Certificate"]="Print Works Completion Certificate";
+$language["Toilet_Selected"] = "Toilet Selected";
+
+$language["Delete_Applicant"] = "Delete Applicant";
+$language["Enrol_Applicant"]="Enrol Applicant";
+$language["Edit_Applicant"]="Edit Applicant";
+
+$language["Toilet_Cost"]="Toilet Cost";
+$language["Balance"]="Balance";
+
+$language["Sir"]="Sir";
+$language["The_Works_have_been_scheduled_to_start_on"]="The Works have been scheduled to start on";
+$language["and_completed_by"]="and completed by";
+$language["The_detailed_architectural_drawings_and_architectural_specifications_are_all_attached"]="The detailed architectural drawings and architectural specifications are all attached";
+$language["Supervisor_Signature"] ="Supervisor's Signature";
+$language["Certificate_Date"]="Certificate Date";
+
+$language["Site_Handover_Certificate"]="Site Handover Certificate";
+$language["Toilet_Works_Site_Handover_Certificate"]="Toilet Works Site Handover Certificate";
+
+$language["Certificate_No"]="Certificate Number";
+$language["Works_No"]="Works Number";
+$language["Bairro"]="Bairro";
+$language["Admin_Post"]="Admin Post";
+$language["Verified_and_Accepted_Applicants"]="Verified and Accepted Applicants";
+$language["Applicants_with_Full_Payments"]="Applicants with Full Payments";
+$language["Applicants_Requesting_Technical_Guidance_on_Selection"]="Applicants Requesting Technical Guidance on Selection";
+$language["Total_Sites_Handed_Over_to_Contractors"]="Total Sites Handed Over to Contractors";
+
+$language["Works_on_Schedule"]="Works on Schedule";
+$language["Works_OUT_of_Schedule"]="Works OUT of Schedule";
+$language["Toilets_Handed_Over_to_Applicants"]="Toilets Handed Over to Applicants";
+$language["Quelimane_Municipal_Council"]="Quelimane Municipal Council";
+$language["Admin_Post"]="Admin Post";
+$language["Accept_Applicant"]="Accept Applicant";
+
+$language["Toilet_Products"]="Toilet Products";
+$language["roles"]="User Roles";
+$language["contractors"]="Contractors";
+$language["users"]="Users";
+$language["User_Management"]="User Management"; 
+
+$language["Role"]="User Role";
+$language["uName"]="User Name";
+$language["Email"]="Email";
+$language["Code"]="Code";
+$language["Active"]="Active";
+$language["Not_Actived"] ="Not Actived";
+$language["View_User"]="View User";
+$language["User_Already_Activated"]="User Already Activated";
+$language["Activate_User"]="Activate User"; 
+$language["Delete_User"]="Delete User";
+$language["Sure_Delete_User"]="Are You Sure You want To Delete This User?";
+$language["Sure_Delete_Role"]="Are You Sure You want To Delete This Role?"; 
+$language["Sure_Delete_Admin_Post"]="Are You Sure You want To Delete This Admin Post?"; 
+$language["Deactivate_User"]="Deactivate User";
+$language["Sure_Activate_User"]="Are You Sure You want To Activate This User?";
+$language["User_Not_Activated"]="User Not Activated";
+$language["User_View"] ="User View";
+$language["User_Details"]="User Details";
+$language["New_Toilet"]="Add New Toilet";
+$language["Contractor_Management"]="Contractor Management";
+$language["Delete_Contractor"]="Delete Contractor";
+$language["Role_Record_Deleted_Successfully"]="User Role Deleted Successfully";
+$language["Delete_Role"]="Delete user role";
+$language["Toilet_Product_Management"]="Toilet Product Management";
+$language["Description"] ="Description";
+$language["Toilet_Type"]="Toilet Type";
+$language["Edit_Toilet_Product"]="Edit Toilet Product"; 
+$language["Delete_Toilet_Product"]="Are You Sure You want To Delete This Toilet Product"; 
+$language["Delete_Toilet"]="Delete Toilet Type";
+$language["Delete_Bairros"]="Delete Bairros";
+$language["Toilet_Code"]="Toilet Code";
+$language["Toilet_Name"]="Toilet Name";
+$language["Add_Toilet"]="Add Toilet Type";
+$language["Edit_Toilet"]="Edit Toilet Type";
+$language["Edit_Bairros"]="Edit Bairros";
+$language["Admin_Post_Management"]="Admin Post Management";
+$language["Admin_Posts"]="Admin Posts";
+$language["Bairros"]="Bairros";
+$language["Bairros_ID"]="Bairros ID";
+$language["Bairros_Management"]="Bairros Management";
+$language["Project_Settings"]="Project Settings";
+$language["New_Admin_Post"]="New Admin Post";
+$language["Delete_Admin_Post"] ="Delete Admin Post";
+$language["Edit_Admin_Post"]="Edit Admin Post";
+$language["Admin_Post_ID"]="Admin Post ID";
+$language["Add_Admin_Post"]="Add Admin Post";
+$language["Add_Bairros"]="Add Bairros"; 
+$language["Sure_Delete_Bairros"]="Are You Sure You want To Delete This Bairros?";
+
+$language["Sure_Delete_Parameter"]="Are You Sure You want To Delete This Parameter?";
+$language["Add_Parameter"]="Add Parameter Value"; 
+$language["Edit_Parameter"]="Edit Parameter Value"; 
+$language["Delete_Parameter"]="Delete Parameter";
+$language["Parameter"]="Parameter Name"; 
+$language["Parameter_Value"]="Parameter Value";
+$language["Parameter_ID"]="Parameter ID";
+$language["Application_Settings"]="Application Settings";
+$language["Toilet_Works"]="Toilet Works";
+$language["Toilet_Works_Progress"]="Toilet Works Progress";
+$language["View_Report"]="View Report";
+
+$language["Applicant_Registration"]= "Applicant Registration";
+$language["Filtered_Registered_Applicants"]="Filtered Registered Applicants";
+$language["Summerised_Registered_Applicants"]="Summerised Registered Applicants";
+
+$language["Filtered_Verified_Applicants"]="Filtered Verified Applicants";
+$language["Summarised_Verified_Applicants"]="Summarised Verified Applicants";
+$language["Filtered_Selected_Toilet"]="Filtered Selected Toilet";
+$language["Number_Applicants"]="Number Of Applicants";
+
+$language["Applicants_With_Approved_Payments"]="Applicants With Approved Payments";
+$language["Filtered_Applicants_With_Approved_Payments"]="Filtered Applicants With Approved Payments";
+
+$language["Welcome_To_Toilet_Delivery"]="Welcome To Toilet Delivery IT Platform - Self Registration";
+$language["use_menu"]="Please Use the Menu on the left pane for your option";
+$language["Client_Registration"]="Municipal Staff";
+$language["Supervisor_Registration"]="Supervisor";
+$language["Contractor_Registration"]="Contractor ";
+
+$language["Applicant_Details"]= "Applicant Details";
+$language["Male"]="Male";
+$language["Female"]="Female"; 
+$language["Nearest_School_Or_Well_Known_Landmark"]="Nearest School Or Well Known Landmark";
+$language["Household_Details"]="Household Details"; 
+$language["Select_ONE_of_THREE"]="Select ONE of the THREE"; 
+
+$language["Home_Owner"]="Home Owner (No Tenant)";
+$language["Resident_Landlord"]="Resident Landlord";
+$language["Absent_Landlord"]="Absent Landlord";
+
+$language["Unlined_Pit_Latrine"]="Unlined Pit Latrine";
+$language["Semi_lined_Pit_Latrine"]="Semi-lined Pit Latrine";
+$language["Fully_Lined_Pit_Latrine"]="Fully Lined Pit Latrine";
+$language["Requested_Toilet_Type"]="Requested Toilet Type";
+$language["VIP"]="VIP (Lined with vent pipe)";
+$language["Pour_Flash_Septic_Tank"]="Pour Flash plus Septic Tank";
+$language["Flush_Flush_Septic_Tank"]="Flush Flush plus Septic Tank";
+$language["Dont_Know"]="Dont Know Type";
+
+$language["Adult_Males"]="Adult Males";
+$language["Adult_Females"]="Adult Females";
+$language["Children_Under_5"]="Children Under 5 Years"; 
+
+$language["Toilet_Order"]="Toilet Order"; 
+$language["Toilet_No"]="No. of toilets to buy"; 
+$language["Type_Super_structure"]="Type Of Super structure";
+$language["Blocks"]="Blocks";
+$language["Bricks"]="Bricks";
+$language["Prefab"]="Prefab"; 
+
+$language["Accesories_Requested"]="Accesories Requested";
+$language["Accesory"]="Accesory";
+$language["Wall_Tiles"]="Wall Tiles";
+$language["Mirror"]="Mirror";
+$language["Solar_Light"]="Solar Light";
+
+$language["First_Toilet"]="Toilet 1";
+$language["Second_Toilet"]="Toilet 2";
+$language["Third_Toilet"]="Toilet 3";
+$language["Fourth_Toilet"]="Toilet 4";
+$language["Fifth_Toilet"]="Toilet 5";
+
+$language["Sure_Want_Approve_Toilet_Selection"]="Are You Sure You want To Approve This Toilet Selection For The Applicant?"; 
+$language["Toilet_Works_Schedule"]="Toilet Works Schedule"; 
+$language["Select_Contractor"]="Select Contractor"; 
+$language["Allocate_Schedule_Contractor"]="Allocate and Schedule Contractor To Toilet Works"; 
+$language["Schedule_Toilet_Works"]="Schedule Toilet Works";
+$language["Toilet_Works_Progress_Track"]="Toilet Works Progress Track";
+$language["Pictorial_View"]="Status Pictorial View";
+$language["Visual_Progress"]="Visual Progress"; 
+$language["Upload_Visual_Progress"]="Upload Visual Progress";
+$language["Status_Approved"]="Status Approved"; 
+$language["Approve_Current_Works_Status"]="Approve Current Works Status"; 
+$language["Sure_Approve_Current_Works_Status"]="Are You Sure You want To Approve Current Works Progress Status";
+$language["Toilet_Site_Set"]="Toilet Site Set";
+$language["Latitude"]="Latitude";
+$language["Longitude"]="Longitude";
+$language["Geopoints_NOT_Captured"] ="Geopoints NOT Captured, Please Capture GeoPoints"; 
+$language["Toilet_Works_GPS_Point"]="Toilet Works GPS Point";
+$language["Update_Applicant_Site"]="Update Applicant Site"; 
+$language["Point_Applicant_Site"]="Click The Button Below To Capture Geopoint for Applicant Toilet Works"; 
+$language["Geo_Coordinates"]="GPS Coordinates For Appplicant Toilet Works"; 
+
+$language["Completed_Toilet_Works"]="Completed Toilet Works";
+$language["Filtered_Completed_Toilet_Works"]="Filtered Completed Toilet Works"; 
+
+$language["Applicant_Toilet_Works"]="Applicant Toilet Works";
+$language["Filtered_Applicant_Toilet_Works"]="Filtered Applicant Toilet Works"; 
+$language["Record_TG_Rendered"]="Want To Record TG Rendered";
+
+$language["Upload_Toilet_Image"]="Upload Toilet Image";
+$language["View_Toilet"]="View Toilet"; 
+$language["Image_Uploaded"]="Image Uploaded";
+
+$language["View_Toilet_Products"] = "View Toilet Products";
+$language["email"] = "Email Address";
+$language["Toilet_Order"] = "Toilet Order"; 
+
+$language["Toilet_Prompt"] = "What Prompted Applicant To Buy a Toilet";
+$language["Confirm_Detail"]="Confirm Detail";
+$language["Saw_New_Toilet"] ="Saw New Toilet";
+$language["Toilet_Promotor"]="Toilet Promotor";
+$language["Toilet_Builder"]="Toilet_Builder";
+$language["Demo_Site"]="Demo_Site";
+$language["TV_Radio"]="TV or Radio";
+$language["Printed_Media"]="Printed_Media";
+$language["Bill_board"]="Bill Board";
+$language["Paper_Flier"]= "Paper or Flier";
+$language["Neighbor_Relative"]="Neighbor or Relative";
+$language["Water_Kiosk_attendant"]="Water Kiosk attendant";
+$language["Church_School"]="Church or School";
+$language["Water_Office"]="Water Office";
+$language["SMS"]="SMS";
+$language["Legal_Enforce"]="Legal Enforce";
+$language["Other"]="Other";
+$language["Specify"]="Specify"; 
+?>
