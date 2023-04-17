@@ -115,7 +115,7 @@
 
                                         <table id="datatable-buttons" class="table table-bordered dt-responsive  nowrap w-100" style="font-size: 10;">
                                             
-                                            <img src="assets/images/logo_q.jpg" alt="" height="64" class="center">
+                                            <img src="assets/images/logo_t.jpg" alt="" height="64" class="center">
                                             
                                             <thead>
                                                 <tr>

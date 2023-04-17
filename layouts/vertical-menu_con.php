@@ -13,10 +13,10 @@
             <div class="navbar-brand-box">
                 <a href="index.php" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="assets/images/logo_q.jpg" alt="" height="20">
+                        <img src="assets/images/logo_t.jpg" alt="" height="20">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo_q.jpg" alt="" height="20">
+                        <img src="assets/images/logo_t.jpg" alt="" height="20">
                     </span>
                 </a>
 
@@ -25,10 +25,10 @@
 
                 <a href="javascript:void(0);" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/logo_q.jpg" alt="" height="2">
+                        <img src="assets/images/logo_t.jpg" alt="" height="2">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo_q.jpg" alt="" height="100">
+                        <img src="assets/images/logo_t.jpg" alt="" height="100">
                     </span>
                 </a>
             </div>

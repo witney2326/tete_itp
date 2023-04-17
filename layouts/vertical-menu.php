@@ -1,6 +1,6 @@
 <style>
     .navbar-header {
-        background-color: greenyellow !important;
+        background-color: #61e3f5 !important;
         border: none !important;
         border-width:0!important;
     }
@@ -14,10 +14,10 @@
             <div class="navbar-brand-box">
                 <a href="index.php" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="assets/images/logo_q.jpg" alt="" height="20">
+                        <img src="assets/images/logo_t.jpg" alt="" height="20">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo_q.jpg" alt="" height="20">
+                        <img src="assets/images/logo_t.jpg" alt="" height="20">
                     </span>
                 </a>
 
@@ -26,10 +26,10 @@
 
                 <a href="javascript:void(0);" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/logo_q.jpg" alt="" height="2">
+                        <img src="assets/images/logo_t.jpg" alt="" height="2">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo_q.jpg" alt="" height="100">
+                        <img src="assets/images/logo_t.jpg" alt="" height="100">
                     </span>
                 </a>
             </div>
@@ -105,7 +105,7 @@
 
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="assets/images/logo_q.jpg" alt="Header Avatar">
+                    <img class="rounded-circle header-profile-user" src="assets/images/logo_t.jpg" alt="Header Avatar">
                     <span class="d-none d-xl-inline-block ms-1" key="t-henry"><?php echo lcfirst($_SESSION["username"]); ?></span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>

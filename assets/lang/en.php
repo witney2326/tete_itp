@@ -450,7 +450,7 @@ $language["Filtered_Registered_Applicants"]="Filtered Registered Applicants";
 $language["Summerised_Registered_Applicants"]="Summerised Registered Applicants";
 
 $language["Filtered_Verified_Applicants"]="Filtered Verified Applicants";
-$language["Summarised_Verified_Applicants"]="Summarised Verified Applicants";
+$language["Summarised_Verified_Applicants"]="Summerised Verified Applicants";
 $language["Filtered_Selected_Toilet"]="Filtered Selected Toilet";
 $language["Number_Applicants"]="Number Of Applicants";
 
@@ -560,4 +560,5 @@ $language["SMS"]="SMS";
 $language["Legal_Enforce"]="Legal Enforce";
 $language["Other"]="Other";
 $language["Specify"]="Specify"; 
+$language["Unidade"]="Unidade";
 ?>

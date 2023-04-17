@@ -160,7 +160,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                 <div class="card-body">
                                     <form class="row row-cols-lg-auto g-3 align-items-center" novalidate action="enrolled_ben_tg_filter2.php" method ="POST" >
                                         <div class="col-12">
-                                            <label for="admin_post" class="form-label"><?php echo $language["Admin_Post"]?></label>
+                                            <label for="admin_post" class="form-label"><?php echo $language["Bairro"]?></label>
                                                 
                                                 <select class="form-select" name="admin_post" id="admin_post" onChange="getbairro(this.value);"  required>
                                                     <option ></option>
@@ -186,7 +186,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                             </div>
                                             
                                             <div class="col-12">
-                                                <label for="bairro" class="form-label"><?php echo $language["Bairro"]?> </label>
+                                                <label for="bairro" class="form-label"><?php echo $language["Unidade"]?> </label>
                                                 <select class="form-select" name="bairro" id="bairro" placeholder="Select Bairro" required>
                                                     <option ></option>
                                                     

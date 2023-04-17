@@ -2,7 +2,7 @@
 <?php include 'layouts/head-main.php'; ?>
 
 <head>
-    <title><?php echo $language["Bairros_Management"];?></title>
+    <title><?php echo $language["Unidade"];?></title>
     <?php include 'layouts/head.php'; ?>
     <?php include 'layouts/head-style.php'; ?>
     <?php include 'layouts/config.php'; ?>
@@ -64,7 +64,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18"><?php echo $language["Bairros_Management"];?></h4>
+                            <h4 class="mb-sm-0 font-size-18"><?php echo $language["Unidade"];?></h4>
 
                         </div>
                     </div>
@@ -100,13 +100,13 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                         <li class="nav-item waves-effect waves-light">
                                             <a class="link"  href="sysadmin1_regions.php" role="link">
                                                 <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
-                                                <span class="d-none d-sm-block"><?php echo $language["Admin_Posts"];?></span>
+                                                <span class="d-none d-sm-block"><?php echo $language["Bairros"];?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item waves-effect waves-light">
                                             <a class="nav-link active" data-bs-toggle="tab" href="javascript: void(0);" role="tab">
                                                 <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
-                                                <span class="d-none d-sm-block"><?php echo $language["Bairros"];?></span>
+                                                <span class="d-none d-sm-block"><?php echo $language["Unidade"];?></span>
                                             </a>
                                         </li>
                                         <li class="nav-item waves-effect waves-light">

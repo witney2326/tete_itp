@@ -73,7 +73,7 @@
                                 <div class="invoice-title">
                                     
                                     <div class="mb-4">
-                                        <h1><img src="assets/images/logo_q.jpg" alt="logo" height="50" /></h1>
+                                        <h1><img src="assets/images/logo_t.jpg" alt="logo" height="50" /></h1>
                                     </div>
                                     <h4><div class="my-words">
                                         <?php echo $language["Toilet_Works_Site_Handover_Certificate"]?>

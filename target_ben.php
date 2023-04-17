@@ -166,7 +166,7 @@
                                         <h5 class="card-title mt-0"></h5>
                                         <form class="row row-cols-lg-auto g-3 align-items-center" novalidate action="target_ben_filter2.php" method ="POST" >
                                             <div class="col-12">
-                                                <label for="admin_post" class="form-label"><?php echo $language["Admin_Post"]?></label>
+                                                <label for="admin_post" class="form-label"><?php echo $language["Bairro"]?></label>
                                                 
                                                 <select class="form-select" name="admin_post" id="admin_post" onChange="getbairro(this.value);" style="background-color: #f2f2f2;" required>
                                                     <option ></option>
@@ -192,8 +192,8 @@
                                             </div>
                                             
                                             <div class="col-12">
-                                                <label for="bairro" class="form-label"><?php echo $language["Bairro"]?> </label>
-                                                <select class="form-select" name="bairro" id="bairro" placeholder="Select Bairro" style="background-color: #f2f2f2;" required>
+                                                <label for="bairro" class="form-label"><?php echo $language["Unidade"]?> </label>
+                                                <select class="form-select" name="bairro" id="bairro" placeholder="Select Unidade" style="background-color: #f2f2f2;" required>
                                                     <option ></option>
                                                     
                                                 </select>

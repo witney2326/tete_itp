@@ -104,11 +104,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .card-border 
         {
             border-style: solid;
-            border-color: yellowgreen;
+            border-color: #61e3f5;
         }
         .my-body 
         {
-            background-color: yellowgreen;
+            background-color: #61e3f5;
         }
     </style>
 </head>
@@ -138,7 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="auth-logo-light">
                                         <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
-                                                <img src="assets/images/logo_q.jpg" alt="" class="rounded-circle" height="64">
+                                                <img src="assets/images/logo_t.jpg" alt="" class="rounded-circle" height="94">
                                             </span>
                                         </div>
                                     </div>
@@ -146,7 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="auth-logo-dark">
                                         <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-dark">
-                                                <img src="assets/images/logo_q.jpg" alt="" class="rounded-circle" height="64">
+                                                <img src="assets/images/logo_t.jpg" alt="" class="rounded-circle" height="94">
                                             </span>
                                         </div>
                                     </div>

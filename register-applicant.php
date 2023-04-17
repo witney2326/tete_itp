@@ -252,7 +252,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                         <div class="col-lg-4">
                                                             <div class="mb-1">
                                                                 
-                                                                <label for="adminpost" class="form-label" style="color:blue"><?php echo $language["Admin_Post"]?></label>
+                                                                <label for="adminpost" class="form-label" style="color:blue"><?php echo $language["Bairro"]?></label>
                                                 
                                                                 <select class="form-select" name="adminpost" id="adminpost" style="max-width:30%;background-color: #f2f2f2;" onChange="getbairro(this.value);" required>
                                                                     <option ></option>
@@ -278,8 +278,8 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                         </div>
                                                         <div class="col-lg-4">
                                                             <div class="mb-1">
-                                                                <label for="bairro" class="form-label" style="color:blue"><?php echo $language["Bairro"];?> </label>
-                                                                <select class="form-select" name="bairro" id="bairro" placeholder="Select Bairro" style="max-width:50%;background-color: #f2f2f2;" required>
+                                                                <label for="bairro" class="form-label" style="color:blue"><?php echo $language["Unidade"];?> </label>
+                                                                <select class="form-select" name="bairro" id="bairro" placeholder="Select Unidade" style="max-width:50%;background-color: #f2f2f2;" required>
                                                                     <option ></option>
                                                                     
                                                                 </select>

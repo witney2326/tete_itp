@@ -134,7 +134,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                             <div class="card-body">
                                                 <form class="row row-cols-lg-auto g-3 align-items-center" novalidate action="works_tracking_completed_projects_filter3.php" method ="POST" >
                                                     <div class="col-12">
-                                                        <label for="admin_post" class="form-label"><?php echo $language["Amin_Post"];?></label>
+                                                        <label for="admin_post" class="form-label"><?php echo $language["Bairro"];?></label>
                                                 
                                                         <select class="form-select" name="admin_post" id="admin_post"  required>
                                                             <option selected value="<?php echo $admin_post;?>"><?php echo ap_name($link,$admin_post);?></option>  
@@ -142,7 +142,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                     </div>
                                                     
                                                     <div class="col-12">
-                                                        <label for="bairro" class="form-label"><?php echo $language["Bairro"];?></label>
+                                                        <label for="bairro" class="form-label"><?php echo $language["Unidade"];?></label>
                                                         <select class="form-select" name="bairro" id="bairro"  required >
                                                             <option selected value="<?php echo $bairro; ?>" ><?php echo locality_name($link,$bairro); ?></option>
                                                                 
