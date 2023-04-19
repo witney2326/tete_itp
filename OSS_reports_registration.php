@@ -131,8 +131,8 @@
                                                 <tr>
                                                     <th><?php echo $language["Applicant_Code"];?></th>
                                                     <th><?php echo $language["Applicant_Name"];?></th>
-                                                    <th><?php echo $language["Admin_Post"];?></th>
                                                     <th><?php echo $language["Bairros"];?></th>
+                                                    <th><?php echo $language["Unidade"];?></th>
                                                     <th><?php echo $language["Phone"];?></th>
                                                 </tr>
                                             </thead>
@@ -150,7 +150,7 @@
                                                         echo "<td>".$row["hhcode"]."</td>\n";
                                                         echo "<td>".$row["hhname"]."</td>\n";
                                                         echo "<td>".ap_name($link,$row["pa"])."</td>\n";
-                                                        echo "<td>".bairro_name($link,$row["locality"])."</td>\n";
+                                                        echo "<td>".locality_name($link,$row["locality"])."</td>\n";
                                                         echo "<td>".$row["phone1"]."</td>\n";
                                                         
                                                         

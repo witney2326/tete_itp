@@ -18,8 +18,8 @@
                 
         if ($sql) {
             echo '<script type="text/javascript">'; 
-            echo 'alert("Household Enrolled successfully and Agrees to Terms and Conditions of the Programme !");'; 
-            echo 'window.location.href = "target_ben.php";';
+            echo 'alert("Applicant Verified and Accepted Successfully!  Requerente verificado e aceito com sucesso!");'; 
+            echo 'history.go(-1)';
             echo '</script>';
         } else {
             echo "Error: " . $sql . ":-" . mysqli_error($link);
@@ -28,8 +28,8 @@
     else
     {
         echo '<script type="text/javascript">'; 
-        echo 'alert("Household Already Enrolled !");'; 
-        echo 'window.location.href = "target_ben.php";';
+        echo 'alert("Applicant Already Aceepted and Verified! Requerente já aceito e verificado!");'; 
+        echo 'history.go(-1)';
         echo '</script>';
     }
     mysqli_close($link);

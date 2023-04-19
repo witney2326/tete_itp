@@ -523,7 +523,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                             </section>
                                             
                                             <!-- Confirm Details -->
-                                            <h3><?php echo $language["Toilet_Prompt"];?></h3>
+                                            <h3><?php echo $language["Confirm_Details"];?></h3>
                                             <section>
                                                 <div class="row justify-content-center">
                                                     <div class="col-lg-6">
@@ -532,7 +532,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                                 <i class="mdi mdi-check-circle-outline text-success display-4"></i>
                                                             </div>
                                                             <div>
-                                                                <h5><?php echo $language["Toilet_Prompt"];?></h5>
+                                                                <h5><?php echo $language["Confirm_Details"];?></h5>
                                                                 
                                                                 <button type="submit" id="Submit" class="btn btn-btn btn-outline-primary w-md" value ="Submit"><?php echo $language["Submit"];?></button>
                                                                 

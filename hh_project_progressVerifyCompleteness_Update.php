@@ -15,8 +15,8 @@
         
         if (($sql) and mysqli_query($link,$sql2) and ($sql3) ){
             echo '<script type="text/javascript">'; 
-            echo 'alert("OSS Works Verified successfully !");'; 
-            echo 'window.location.href = "works_tracking_verified_completed_projects.php";';
+            echo 'alert("Toilet Works Verified successfully !");'; 
+            echo 'history.go(-1)';
             echo '</script>';
         } else {
             echo "Error: " . $sql . ":-" . mysqli_error($link);

@@ -251,7 +251,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                                         echo "<td>\t\t$pApproved</td>\n";
                                                                         echo "<td>                                               
                                                                             <a href=\"hh_view.php?id=".$row['hhcode']."\"><i class='fas fa-eye' title='$language[View_Applicant]' style='font-size:18px;color:purple'></i></a> 
-                                                                            <a onClick=\"javascript: return confirm('Are You Sure You want To Approve This HOUSEHOLD Payment?');\" href=\"hh_payment_approval.php?id=".$row['pID']."\"><i class='fas fa-check-square' title='$language[Approve_Payment_Amount]' style='font-size:18px;color:green'></i></a> 
+                                                                            <a onClick=\"javascript: return confirm('Are You Sure You want To Approve This Payment? Tem certeza de que deseja aprovar este pagamento?');\" href=\"hh_payment_approval.php?id=".$row['pID']."\"><i class='fas fa-check-square' title='$language[Approve_Payment_Amount]' style='font-size:18px;color:green'></i></a> 
                                                                         </td>\n";
 
                                                                     echo "</tr>\n";

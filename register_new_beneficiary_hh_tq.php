@@ -84,7 +84,7 @@ session_start();
       
     $dbcount= sprintf("%06d", get_hh_count($link)+1);
     $x=date("Y");		
-    $x.="/QMC/";				
+    $x.="/TMC/";				
     $x.=$dbcount;
     $hhcode = $x;
     $pstatus = 0;

@@ -60,14 +60,14 @@
     {
     $dis_query = mysqli_query($link,"select pa_ from adminposts where id='$apID'"); // select query
     $dis = mysqli_fetch_array($dis_query); 
-    if (isset($rg['pa_'])){return $rg['pa_'];}else{$Other ="Not Available";return $Other;}
+    if (isset($dis['pa_'])){return $dis['pa_'];}else{$Other ="Not Available";return $Other;}
     }
 
     function locality_name($link, $localityID)
     {
     $bairo_query = mysqli_query($link,"select bairro from bairros where id='$localityID'"); // select query
     $bair = mysqli_fetch_array($bairo_query); 
-    if (isset($rg['bairro'])){return $rg['bairro'];}else{$Other ="Not Available";return $Other;}
+    if (isset($bair['bairro'])){return $bair['bairro'];}else{$Other ="Not Available";return $Other;}
     }
 
     function current_toilet($link, $toiletID)
@@ -197,6 +197,13 @@
     $rg_query = mysqli_query($link,"select id from users where usercon='$code'"); // select query
     $rg = mysqli_fetch_array($rg_query); 
     if (isset($rg['id'])){return $rg['id'];}else{$Other ="Not Available";return $Other;}
+    }
+
+    function bname($link, $apID)
+    {
+    $dis_query = mysqli_query($link,"select pa_ from adminposts where id='$apID'"); // select query
+    $dis = mysqli_fetch_array($dis_query); 
+    if (isset($rg['pa_'])){return $rg['pa_'];}else{$Other ="Not Available";return $Other;}
     }
     
 ?>

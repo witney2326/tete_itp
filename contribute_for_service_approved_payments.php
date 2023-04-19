@@ -255,7 +255,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                                         
                                                                                 echo "<td>                              
                                                                                     <a href=\"hh_view.php?id=".$row['hhCode']."\"><i class='far fa-eye' title='$language[View_Applicant]' style='font-size:18px;color:purple'></i></a> 
-                                                                                    <a onClick=\"javascript: return confirm('Are You Sure You want To Schedule Works For This HOUSEHOLD?');\" href=\"hh_works_schedule1.php?id=".$row['hhCode']."\"><i class='far fa-calendar' title='$language[Schedule_Toilet_Works]' style='font-size:18px;color:green'></i></a>
+                                                                                    <a onClick=\"javascript: return confirm('Are You Sure You want To Schedule Works For This Applicant? Tem certeza de que deseja agendar trabalhos para este candidato?');\" href=\"hh_works_schedule1.php?id=".$row['hhCode']."\"><i class='far fa-calendar' title='$language[Schedule_Toilet_Works]' style='font-size:18px;color:green'></i></a>
                                                                                     
                                                                                 </td>\n";
                                                                             echo "</tr>\n";

@@ -561,4 +561,17 @@ $language["Legal_Enforce"]="Legal Enforce";
 $language["Other"]="Other";
 $language["Specify"]="Specify"; 
 $language["Unidade"]="Unidade";
+$language["Confirm_Details"]="Confirm Details";
+$language["Verify_Completeness"]="Verify Completeness";
+$language["Verification_Date"]="Verification Date";
+$language["Toilet_Works_Completion_Certificate_By_Contractor_on_Record"]="Toilet Works Completion Certificate By Contractor on Record";
+$language["Works_Constructed_According"]="The works have been constructed according to the sanctioned plans";
+$language["Works_Constructed_Per"]="The works have been constructed as per"; 
+$language["detailed_structural_drawings"]="The detailed structural drawings and structural specifications";
+$language["detailed_architectural_drawings"]="The detailed architectural drawings and architectural specifications prepared by the architect";
+$language["Detailed_drawings_and_specifications"]="Detailed drawings and specifications of all services"; 
+$language["All_materials_used"]="All materials used in the constructions have been tested as provided in the specifications and a record of test reports has been kept";
+$language["Applicant_Signature"] ="Applicant's Signature";
+$language["Contractor_Signature"] ="Contractor's Signature";
+$language["Toilet_Works_Completion_Certificate"] ="Toilet Works Completion Certificate";
 ?>

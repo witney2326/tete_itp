@@ -56,6 +56,27 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                 background-repeat: no-repeat;
                 }
         .ico-view { background-position: 0 0; }
+        #mytable {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+            #mytable td, #mytable th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            }
+
+            #mytable tr:nth-child(even){background-color: #f2f2f2;}
+
+            #mytable tr:hover {background-color: #ddd;}
+
+            #mytable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: gray;
+            color: white;}
     </style>
 </head>
 
@@ -209,7 +230,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                             <div class="card-border">
                                 <div class="card-body">
                                     
-                                    <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                    <table id="mytable" class="table table-bordered dt-responsive  nowrap w-100">
                                         
                                     <thead>
                                         <tr>

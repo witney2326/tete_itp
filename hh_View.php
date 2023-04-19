@@ -179,10 +179,10 @@
                                                                 </div>
                                                                                                         
                                                                 <div class="row mb-1">
-                                                                    <label for="blno" class="col-sm-2 col-form-label" style="color:blue"><?php echo $language["BL_No"]?></label>              
-                                                                    <input type="text" class="form-control" id="blno" name="blno" value ="<?php if (isset($blno)) {echo $blno ;}else{echo "Not Set";} ?>" style="max-width:30%;" disabled ="True">
+                                                                    <label for="adminpost" class="col-sm-2 col-form-label" style="color:blue"><?php echo $language["Bairros"];?></label>
+                                                                    <input type="text" class="form-control" id="adminpost" name="adminpost" value ="<?php echo ap_name($link,$pa); ?>" style="max-width:30%;" disabled ="True">
                                                                     
-                                                                    <label for="locality" class="col-sm-2 col-form-label" style="color:blue"><?php echo $language["Locality"]?></label>
+                                                                    <label for="locality" class="col-sm-2 col-form-label" style="color:blue"><?php echo $language["Unidade"]?></label>
                                                                     <input type="text" class="form-control" id="locality" name="locality" value ="<?php if (isset($locality)) {echo locality_name($link,$locality) ;}else{echo "";}?>" style="max-width:30%;" disabled ="True">
                                                                 </div>
                                                                 <div class="row mb-1">
@@ -204,8 +204,8 @@
                                                                     <label for="no_people" class="col-sm-2 col-form-label" style="color:blue"><?php echo $language["No_People_at_Premises"];?></label>              
                                                                     <input type="text" class="form-control" id="no_people" name="no_people" value ="<?php if (isset($no_pple_premises)){echo $no_pple_premises;}else{echo "Not Set";} ?>" style="max-width:30%;" disabled ="True">
                                                                     
-                                                                    <label for="adminpost" class="col-sm-2 col-form-label" style="color:blue"><?php echo $language["Admin_Post"];?></label>
-                                                                    <input type="text" class="form-control" id="adminpost" name="adminpost" value ="<?php echo $pa; ?>" style="max-width:30%;" disabled ="True">
+                                                                    <label for="blno" class="col-sm-2 col-form-label" style="color:blue"><?php echo $language["BL_No"]?></label>              
+                                                                    <input type="text" class="form-control" id="blno" name="blno" value ="<?php if (isset($blno)) {echo $blno ;}else{echo "Not Set";} ?>" style="max-width:30%;" disabled ="True">
                                                                 </div>
                                                                 <div class="row mb-1">
                                                                     <label for="Homestatus" class="col-sm-2 col-form-label" style="color:blue"><?php echo $language["Home_Status"];?></label>              

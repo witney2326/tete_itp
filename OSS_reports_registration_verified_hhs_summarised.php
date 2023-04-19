@@ -2,7 +2,7 @@
 <?php include 'layouts/head-main.php'; ?>
 
 <head>
-    <title>Household Registration Reports</title>
+    <title><?php echo $language["Verified_Applicants"];?></title>
     <?php include 'layouts/head.php'; ?>
     <?php include 'layouts/head-style.php'; ?>
     <?php include 'layouts/config.php'; ?>
@@ -65,11 +65,11 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Household Registration Reports</h4>
+                            <h4 class="mb-sm-0 font-size-18"><?php echo $language["Verified_Applicants"];?></h4>
 
                             <div class="page-title-right">
                                 <p align="right">
-                                    <INPUT TYPE="button" class="btn btn-outline-secondary w-md" style="width:170px" VALUE="Back" onClick="history.go(-1);">  
+                                    <INPUT TYPE="button" class="btn btn-outline-secondary w-md" style="width:170px" VALUE="<?php echo $language["Back"];?>" onClick="history.go(-1);">  
                                 </p>
                             </div>
 
@@ -129,15 +129,15 @@
                                             
                                             <thead>
                                                 <tr>
-                                                    <th><?php echo $language["Admin_Post"];?></th>
                                                     <th><?php echo $language["Bairros"];?></th>
+                                                    <th><?php echo $language["Unidade"];?></th>
                                                     <th><?php echo $language["Verified_Applicants"];?></th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
                                                 <?Php
-                                                    $query="SELECT pa,locality,count(hhcode) as No_applicants FROM households where enrolled ='1' group by pa,locality;";
+                                                    $query="SELECT pa,locality,count(hhcode) as No_applicants FROM households where ((enrolled ='1') and (deleted ='0')) group by pa,locality;";
                                                     
                                                     if ($result_set = $link->query($query)) {
                                                     while($row = $result_set->fetch_array(MYSQLI_ASSOC))
@@ -145,7 +145,7 @@
                                                         
                                                     echo "<tr>\n";
                                                         echo "<td>".ap_name($link,$row["pa"])."</td>\n";
-                                                        echo "<td>".bairro_name($link,$row["locality"])."</td>\n";
+                                                        echo "<td>".locality_name($link,$row["locality"])."</td>\n";
                                                         echo "<td>".$row["No_applicants"]."</td>\n";
                                                     echo "</tr>\n";
                                                     }

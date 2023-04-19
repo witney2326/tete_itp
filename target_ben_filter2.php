@@ -132,16 +132,16 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                     <div class="card-body">
                                         <form class="row row-cols-lg-auto g-3 align-items-center" novalidate action="target_ben_filter3.php" method ="POST" >
                                             <div class="col-12">
-                                                <label for="admin_post" class="form-label"><?php echo $language["Bairro"]?></label>
+                                                <label for="admin_post" class="form-label" ><?php echo $language["Bairro"]?></label>
                                                 
-                                                <select class="form-select" name="admin_post" id="admin_post" style="background-color: #f2f2f2;" required>
+                                                <select class="form-select" name="admin_post" id="admin_post" style="background-color: #f2f2f2;"  required>
                                                     <option selected value="<?php echo $admin_post;?>"><?php echo ap_name($link,$admin_post);?></option>  
                                                 </select>
                                             </div>
                                             
                                             <div class="col-12">
-                                                <label for="bairro" class="form-label"><?php echo $language["Unidade"]?></label>
-                                                <select class="form-select" name="bairro" id="bairro" style="background-color: #f2f2f2;" required >
+                                                <label for="bairro" class="form-label" ><?php echo $language["Unidade"]?></label>
+                                                <select class="form-select" name="bairro" id="bairro" style="background-color: #f2f2f2;"  required >
                                                     <option selected value="<?php echo $bairro; ?>" ><?php echo locality_name($link,$bairro); ?></option>
                                                         
                                                 </select>

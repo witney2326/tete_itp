@@ -55,7 +55,7 @@
     // Optional; add a title and set the width and height of the chart
     var options = {'title':'Verified Applicants Distribution', 'width':490, 'height':250};
     var options = {
-            title: 'Verified & Accepted Applicants Per Admin Post',
+            title: 'Verified & Accepted Applicants Per Bairros',
             hAxis: {title: ''},
             vAxis: {title: 'No Of Applicants'},
             legend: 'none',
@@ -139,7 +139,7 @@
         var options = {
             title: 'Current Toilet Works',
             hAxis: {title: ''},
-            vAxis: {title: 'No OSS Works'},
+            vAxis: {title: 'No Toilet Works'},
             legend: 'none',
             series: {
             0: { color: 'd421e0' },

@@ -123,9 +123,9 @@
                                         
                                         <thead>
                                             <tr>
-                                                <th><?php echo $language["Admin_Post"];?></th>
-                                                <th><?php echo $language["Bairros"];?></th>
-                                                <th><?php echo $language["Registered_Applicants"];?></th>
+                                                <th style="color:black"><?php echo $language["Bairros"];?></th>
+                                                <th style="color:black"><?php echo $language["Unidade"];?></th>
+                                                <th style="color:black"><?php echo $language["Registered_Applicants"];?></th>
                                             </tr>
                                         </thead>
 
@@ -139,7 +139,7 @@
                                                     
                                                 echo "<tr>\n";
                                                     echo "<td>".ap_name($link,$row["pa"])."</td>\n";
-                                                    echo "<td>".bairro_name($link,$row["locality"])."</td>\n";
+                                                    echo "<td>".locality_name($link,$row["locality"])."</td>\n";
                                                     echo "<td>".$row["No_HHs"]."</td>\n";
                                                 echo "</tr>\n";
                                                 }

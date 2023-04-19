@@ -557,4 +557,17 @@ $language["Legal_Enforce"]="Execução Legal";
 $language["Other"]="Outro";
 $language["Specify"]="Especificamos";
 $language["Unidade"]="Unidade";
+$language["Confirm_Details"]="Confirmar detalhes";
+$language["Verify_Completeness"]="Verificar integridade";
+$language["Verification_Date"]="Data de verificação";
+$language["Toilet_Works_Completion_Certificate_By_Contractor_on_Record"]="Certificado de conclusão de obras de banheiro pelo empreiteiro registrado";
+$language["Works_Constructed_According"]="As obras foram construídas de acordo com os planos sancionados";
+$language["Works_Constructed_Per"]="As obras foram construídas conforme";
+$language["detailed_structural_drawings"]="Os desenhos estruturais detalhados e especificações estruturais";
+$language["detailed_architectural_drawings"]="Os desenhos arquitetônicos detalhados e as especificações arquitetônicas preparadas pelo arquiteto";
+$language["Detailed_drawings_and_specifications"]="Desenhos detalhados e especificações de todos os serviços";
+$language["All_materials_used"]="Todos os materiais utilizados nas construções foram testados conforme previsto nas especificações e um registro dos relatórios de teste foi mantido";
+$language["Applicant_Signature"] ="Assinatura do requerente";
+$language["Contractor_Signature"] ="Assinatura da Contratada";
+$language["Toilet_Works_Completion_Certificate"] ="Certificado de Conclusão de Obras Sanitárias";
 ?>

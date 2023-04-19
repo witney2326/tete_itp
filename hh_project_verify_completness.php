@@ -2,7 +2,7 @@
 <?php include 'layouts/head-main.php'; ?>
 
 <head>
-    <title>OSS HH Project| Track Progress</title>
+    <title><?php echo $language["Verify_Completeness"];?></title>
     <?php include 'layouts/head.php'; ?>
     <?php include 'layouts/head-style.php'; ?>
 
@@ -24,6 +24,23 @@
   <script type="text/javascript" 
 src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
   </script>
+    <style> 
+        .card-border 
+            {
+                border-style: solid;
+                border-color: gray;
+            }
+    .card-border1 
+            {
+                border-style: groove;
+                border-color: gray;
+                border-width: 9px;
+            }
+    .card1
+            {
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+    </style>
 </head>
 
 <?php include 'layouts/body.php'; ?>
@@ -69,11 +86,11 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                 <div class="row">
                     <div class="col-9">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">OSS HH Works Completness Verification</h4>
+                            <h4 class="mb-sm-0 font-size-18"><?php echo $language["Verify_Completeness"];?></h4>
                             <div class="page-title-right">
                                     <div>
                                         <p align="right">
-                                            <INPUT TYPE="button" class="btn btn-btn btn-outline-secondary w-md" VALUE="Back" onClick="history.go(-1);">
+                                            <INPUT TYPE="button" class="btn btn-btn btn-outline-secondary w-md" VALUE="<?php echo $language["Back"];?>" onClick="history.go(-1);">
                                         </p>
                                     </div>
                             </div>
@@ -87,54 +104,48 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
 
                         <?php include 'layouts/body.php'; ?>
                         <div class="col-lg-9">
-                            <div class="card border border-success">
-                                <div class="card-header bg-transparent border-success">
-                                    
-                                </div>
+                            <div class="card-border1">
                                 <div class="card-body">
                                     
                                     <form action ="hh_project_progressVerifyCompleteness_Update.php" method="POST"> 
                                         <div class="row mb-1">
-                                            <label for="proj_id" class="col-sm-2 col-form-label">Project ID</label>
+                                            <label for="proj_id" class="col-sm-2 col-form-label"><?php echo $language["ID"];?></label>
                                             <input type="text" class="form-control" id="proj_id" name = "proj_id" value="<?php echo $id ; ?>" style="max-width:30%;" readonly>
 
-                                            <label for="hhcode" class="col-sm-2 col-form-label">Household</label>
+                                            <label for="hhcode" class="col-sm-2 col-form-label"><?php echo $language["Applicant_Code"];?></label>
                                             <input type="text" class="form-control" id="hhcode" name="hhcode" value ="<?php echo $phhcode; ?>" style="max-width:30%;"readonly>
                                         </div>
 
                                         
                                         <div class="row mb-1">
-                                            <label for="contractor" class="col-sm-2 col-form-label">Contractor</label>
+                                            <label for="contractor" class="col-sm-2 col-form-label"><?php echo $language["Contractor"];?></label>
                                             <input type="text" class="form-control" id="contractor" name="contractor" value ="<?php echo $pcontractorID; ?>" style="max-width:30%;"readonly>
 
-                                            <label for="pcost" class="col-sm-2 col-form-label">Proj Cost</label>
+                                            <label for="pcost" class="col-sm-2 col-form-label"><?php echo $language["Toilet_Cost"];?></label>
                                             <input type="text" class="form-control" id="pcost" name ="pcost" value = "<?php echo $pCost; ?>" style="max-width:30%;"readonly>
                                         </div>
 
                                                                                                                         
                                         <div class="row mb-1">
-                                            <label for="pstartdate" class="col-sm-2 col-form-label">Actual Start Date</label>
+                                            <label for="pstartdate" class="col-sm-2 col-form-label"><?php echo $language["Start_Date"];?>Actual Start Date</label>
                                             <input type="text" class="form-control" id="pstartdate" name="pstartdate" value ="<?php echo $pstartdate; ?>" style="max-width:30%;"readonly>
 
-                                            <label for="pfinishdate" class="col-sm-2 col-form-label">Actual Status Date</label>
+                                            <label for="pfinishdate" class="col-sm-2 col-form-label"><?php echo $language["Completion_Date"];?></label>
                                             <input type="text" class="form-control" id="pfinishdate" name="pfinishdate" value =" <?php echo $pfinishdate; ?>" style="max-width:30%;"readonly>
                                         </div>
                                         
                                                                                
                                         <div class="row mb-1">
-                                            <label for="pstatus" class="col-sm-2 col-form-label">Status</label>
+                                            <label for="pstatus" class="col-sm-2 col-form-label"><?php echo $language["Status"];?></label>
                                             <input type="text" class="form-control" id="pstatus" name="pstatus" value =" <?php echo pstatus($link,$pstatus); ?>" style="max-width:30%;"readonly>
 
-                                            <label for="achieved_date" class="col-sm-2 col-form-label">Verification Date</label>
+                                            <label for="achieved_date" class="col-sm-2 col-form-label"><?php echo $language["Verification_Date"];?></label>
                                             <input type="date" class="form-control" id="achieved_date" name="achieved_date"  style="max-width:30%;">
                                         </div>
 
-                                        
-                                        
-
                                         <div class="row justify-content-end">
                                             <div>
-                                                <button type="submit" class="btn btn-outline-primary w-md" name="Update" value="Update" >Verify OSS Works Complete</button>
+                                                <button type="submit" class="btn btn-outline-primary w-md" name="Update" value="Update" ><?php echo $language["Verify_Completeness"];?></button>
                                             </div>
                                         </div>
                                     </form>

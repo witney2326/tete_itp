@@ -25,6 +25,24 @@
   <script type="text/javascript" 
 src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
   </script>
+
+<style> 
+        .card-border 
+            {
+                border-style: solid;
+                border-color: gray;
+            }
+        .card-border1 
+            {
+                border-style: groove;
+                border-color: gray;
+                border-width: 9px;
+            }
+        .card1
+            {
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+    </style>
 </head>
 
 <?php include 'layouts/body.php'; ?>
@@ -45,7 +63,6 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
               $hhname = $row["hhname"];
               $selected_product = $row["selected_product"];
               
-                
             }
             
         }
@@ -87,10 +104,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
 
                         <?php include 'layouts/body.php'; ?>
                         <div class="col-lg-9">
-                            <div class="card border border-success">
-                                <div class="card-header bg-transparent border-success">
-                                    
-                                </div>
+                            <div class="card-border1">
                                 <div class="card-body">
                                     
                                     <form method="POST" action="hh_project_schedule.php">
@@ -128,7 +142,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                         </div>
                                         
                                         <div class="row mb-4">
-                                            <label for="contractor" class="col-sm-3 col-form-label"> <?php echo $language["Select_Contractor"];?></label>
+                                            <label for="contractor" class="col-sm-3 col-form-label" style="color:blue"> <?php echo $language["Select_Contractor"];?></label>
                                             
                                             
                                                 <select class="form-select" name="contractor" id="contractor" style="max-width:22%;background-color:LightGray;"  required>
@@ -147,12 +161,12 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                 </select>
                                         </div>
 
-                                        <div class="row mb-4"><h6 class="my-0 text-primary"><?php echo $language["Allocate_Schedule_Contractor"];?></h6></div>
+                                        <div class="row mb-4"><h6 style="color:black"><?php echo $language["Allocate_Schedule_Contractor"];?></h6></div>
                                         <div class="row mb-4">
-                                            <label for="startdate" class="col-sm-2 col-form-label"><?php echo $language["Start_Date"];?></label>
+                                            <label for="startdate" class="col-sm-2 col-form-label" style="color:blue"><?php echo $language["Start_Date"];?></label>
                                             <input type="date" class="form-control" id="startdate" name="startdate" value ="" style="max-width:30%;background-color:LightGray;">
 
-                                            <label for="finishdate" class="col-sm-2 col-form-label"><?php echo $language["End_Date"];?></label>
+                                            <label for="finishdate" class="col-sm-2 col-form-label" style="color:blue"><?php echo $language["End_Date"];?></label>
                                             <input type="date" class="form-control" id="finishdate" name="finishdate" value ="" style="max-width:30%;background-color:LightGray;">
                                         </div>
 

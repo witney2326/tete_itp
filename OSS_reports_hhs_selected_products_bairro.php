@@ -106,15 +106,15 @@
                                 <div class="card-body">
                                     <form class="row row-cols-lg-auto g-3 align-items-center" novalidate>
                                         <div class="col-12">
-                                            <label for="admin_post" class="form-label"><?php echo $language["Admin_Post"]?></label>
+                                            <label for="admin_post" class="form-label"><?php echo $language["Bairros"]?></label>
                                             <select class="form-select" name="admin_post" id="admin_post"  required>
                                                 <option selected value="<?php echo $admin_post;?>"><?php echo ap_name($link,$admin_post);?></option>     
                                             </select>
                                         </div>
                                         <div class="col-12">
-                                            <label for="bairro" class="form-label"><?php echo $language["Bairros"]?></label>
+                                            <label for="bairro" class="form-label"><?php echo $language["Unidade"]?></label>
                                             <select class="form-select" name="bairro" id="bairro" required>
-                                                <option selected value="<?php echo $bairro;?>"><?php echo bairro_name($link,$bairro);?></option>    
+                                                <option selected value="<?php echo $bairro;?>"><?php echo locality_name($link,$bairro);?></option>    
                                             </select>
                                         </div>
 
@@ -136,7 +136,7 @@
 
                                 <div class="card-header bg-transparent border-primary">
                                     <p><center><h5 class="my-0 text-primary"><?php echo $language["Selected_Toilet"]?></h5></p></center>
-                                    <p><center><h6 class="my-0 text-default"><?php echo bairro_name($link,$bairro);?>: <?php echo $language["Bairros"]?></h6></p></center>
+                                    <p><center><h6 class="my-0 text-default"><?php echo locality_name($link,$bairro);?>: <?php echo $language["Unidade"]?></h6></p></center>
                                 </div>
 
                             <div class="card-body">

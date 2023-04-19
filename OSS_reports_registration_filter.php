@@ -118,7 +118,7 @@
                         <div class="card-body">
                             <form class="row row-cols-lg-auto g-3 align-items-center" novalidate action="OSS_reports_registration_pa.php" method ="GET" >
                                 <div class="col-12">
-                                    <label for="admin_post" class="form-label"><?php echo $language["Admin_Post"]?></label>
+                                    <label for="admin_post" class="form-label"><?php echo $language["Bairros"]?></label>
                                                     
                                     <select class="form-select" name="admin_post" id="admin_post" required>
                                         <option ></option>
@@ -143,7 +143,7 @@
                                     
                                 </div>
                                 <div class="col-12">
-                                    <label for="bairro" class="form-label">Bairros</label>
+                                    <label for="bairro" class="form-label"><?php echo $language["Unidade"]?></label>
                                     <select class="form-select" name="bairro" id="bairro" disabled required>
                                         <option></option>
                                             <?php                                                           

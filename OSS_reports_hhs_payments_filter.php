@@ -40,7 +40,7 @@
     function Validate() {
         var pa1 = document.getElementById("admin_post");
         if (pa1.value == "") {
-            alert("Please Select Admin Post option! (Por favor, selecione a opção Admin Post!) ");
+            alert("Please Select Bairros option! (Por favor, selecione a opção Bairros!) ");
             return false;
         }
         return true;
@@ -108,7 +108,7 @@
                         <div class="card-body">
                             <form class="row row-cols-lg-auto g-3 align-items-center" novalidate action="OSS_reports_hhs_payments_pa.php" method ="GET" >
                                 <div class="col-12">
-                                <label for="admin_post" class="form-label"><?php echo $language["Admin_Post"]?></label>
+                                <label for="admin_post" class="form-label"><?php echo $language["Bairros"]?></label>
                                                         
                                     <select class="form-select" name="admin_post" id="admin_post" required>
                                         <option ></option>
@@ -133,9 +133,9 @@
                                     
                                 </div>
                                 <div class="col-12">
-                                    <label for="bairro" class="form-label"><?php echo $language["Bairros"]?></label>
+                                    <label for="bairro" class="form-label"><?php echo $language["Unidade"]?></label>
                                     <select class="form-select" name="bairro" id="bairro" disabled required>
-                                        <option>Select Bairro</option>
+                                        <option></option>
                                             <?php                                                           
                                                 $dis_fetch_query = "SELECT id,bairro FROM bairros";                                                  
                                                 $result_dis_fetch = mysqli_query($link, $dis_fetch_query);                                                                       

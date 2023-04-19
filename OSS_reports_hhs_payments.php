@@ -123,14 +123,14 @@
                                             
                                             <thead>
                                                 <tr>
-                                                    <th><?php echo $language["Applicant_Code"]?></th>
-                                                    <th><?php echo $language["Applicant_Name"]?></th>
-                                                    <th><?php echo $language["Bairros"]?></th>
-                                                    <th><?php echo $language["Plot_No"]?></th>
-                                                    <th><?php echo $language["Selected_Toilet"]?></th>
-                                                    <th><?php echo $language["Toilet_Cost"]?></th>
-                                                    <th><?php echo $language["Total_Paid"]?></th>
-                                                    <th><?php echo $language["Balance"]?></th>
+                                                    <th style="color:blue"><?php echo $language["Applicant_Code"]?></th>
+                                                    <th style="color:blue"><?php echo $language["Applicant_Name"]?></th>
+                                                    <th style="color:blue"><?php echo $language["Unidade"]?></th>
+                                                    <th style="color:blue"><?php echo $language["Plot_No"]?></th>
+                                                    <th style="color:blue"><?php echo $language["Selected_Toilet"]?></th>
+                                                    <th style="color:blue"><?php echo $language["Toilet_Cost"]?></th>
+                                                    <th style="color:blue"><?php echo $language["Total_Paid"]?></th>
+                                                    <th style="color:blue"><?php echo $language["Balance"]?></th>
 
                                                 </tr>
                                             </thead>
@@ -149,7 +149,7 @@
                                                         echo "<tr>\n";
                                                             echo "<td>".$row["code"]."</td>\n";
                                                             echo "<td>".$row["hhname"]."</td>\n";
-                                                            echo "<td>".bairro_name($link,$row["locality"])."</td>\n";
+                                                            echo "<td>".locality_name($link,$row["locality"])."</td>\n";
                                                             echo "<td>".$row["plot"]."</td>\n";
                                                             echo "<td>".$row["pname"]."</td>\n";
                                                             echo "<td>".number_format($row["pCost"],2)."</td>\n";

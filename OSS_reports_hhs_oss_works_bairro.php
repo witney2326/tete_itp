@@ -99,7 +99,7 @@
                                         <li class="nav-item waves-effect waves-light">
                                             <a class="nav-link" data-bs-toggle="link" href="OSS_reports_completed_oss_works.php" role="link">
                                                 <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
-                                                <span class="d-none d-sm-block"><?php echo $language["Completed_Applicant_Toilet_Works"];?></span>
+                                                <span class="d-none d-sm-block"><?php echo $language["Completed_Toilet_Works"];?></span>
                                             </a>
                                         </li>
     
@@ -111,15 +111,15 @@
                                 <div class="card-body">
                                     <form class="row row-cols-lg-auto g-3 align-items-center" novalidate action="OSS_reports_hhs_oss_works_area.php" method ="GET" >
                                         <div class="col-12">
-                                            <label for="admin_post" class="form-label"><?php echo $language["Admin_Post"];?></label>
+                                            <label for="admin_post" class="form-label"><?php echo $language["Bairros"];?></label>
                                             <select class="form-select" name="admin_post" id="admin_post"  required>
                                                 <option selected value="<?php echo $admin_post;?>"><?php echo ap_name($link,$admin_post);?></option>     
                                             </select>
                                         </div>
                                         <div class="col-12">
-                                            <label for="bairro" class="form-label"><?php echo $language["Bairros"];?></label>
+                                            <label for="bairro" class="form-label"><?php echo $language["Unidade"];?></label>
                                             <select class="form-select" name="bairro" id="bairro" required>
-                                                <option selected value="<?php echo $bairro;?>"><?php echo bairro_name($link,$bairro);?></option>    
+                                                <option selected value="<?php echo $bairro;?>"><?php echo locality_name($link,$bairro);?></option>    
                                             </select>
                                         </div>
 
@@ -140,8 +140,8 @@
                                 </div>
 
                                 <div class="card-header bg-transparent border-primary">
-                                    <p><center><h5 class="my-0 text-primary"><?php echo $language["Toilet_Works"];?></h5></p></center>
-                                    <p><center><h6 class="my-0 text-default"><?php echo bairro_name($link,$bairro);?>: <?php echo $language["Bairros"];?></h6></p></center>
+                                    <p><center><h5 class="my-0 text-primary"><?php echo $language["Applicant_Toilet_Works"];?></h5></p></center>
+                                    
                                 </div>
 
                             <div class="card-body">
@@ -150,7 +150,7 @@
                                     <table id="datatable-buttons" class="table table-bordered dt-responsive  nowrap w-100">
                                         
                                             <img src="assets/images/logo_t.jpg" alt="" height="64" class="center">
-                                            
+                                            <p><center><h6 class="my-0 text-default"><?php echo locality_name($link,$bairro);?>: <?php echo $language["Unidade"];?></h6></p></center>
                                         <thead>
                                             <tr>
                                                 <th><?php echo $language["Works_Code"];?></th>                                         
@@ -158,7 +158,7 @@
                                                 <th><?php echo $language["Applicant_Code"];?></th>
                                                 <th><?php echo $language["Plot_No"];?></th>
                                                 <th><?php echo $language["Start_Date"];?></th>
-                                                <th><?php echo $language["End_Code"];?></th>
+                                                <th><?php echo $language["End_Date"];?></th>
                                                 <th><?php echo $language["Contractor"];?></th>
                                                 <th><?php echo $language["Status"];?></th>
                                             </tr>

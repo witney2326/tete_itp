@@ -231,7 +231,7 @@
 
                                                     <tbody>
                                                         <?Php
-                                                            $query="select * from households";
+                                                            $query="select * from households where (deleted='0')";
 
                                                             //Variable $link is declared inside config.php file & used here
                                                             

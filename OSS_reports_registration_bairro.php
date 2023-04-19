@@ -110,15 +110,15 @@
                                 <div class="card-body">
                                     <form class="row row-cols-lg-auto g-3 align-items-center">
                                         <div class="col-12">
-                                            <label for="admin_post" class="form-label"><?php echo $language["Admin_Post"];?></label>
+                                            <label for="admin_post" class="form-label"><?php echo $language["Bairro"];?></label>
                                             <select class="form-select" name="admin_post" id="admin_post"  required>
                                                 <option selected value="<?php echo $admin_post;?>"><?php echo ap_name($link,$admin_post);?></option>     
                                             </select>
                                         </div>
                                         <div class="col-12">
-                                            <label for="bairro" class="form-label"><?php echo $language["Bairro"];?></label>
+                                            <label for="bairro" class="form-label"><?php echo $language["Unidade"];?></label>
                                             <select class="form-select" name="bairro" id="bairro" required>
-                                                <option selected value="<?php echo $bairro;?>"><?php echo bairro_name($link,$bairro);?></option>    
+                                                <option selected value="<?php echo $bairro;?>"><?php echo locality_name($link,$bairro);?></option>    
                                             </select>
                                         </div>
 
@@ -141,7 +141,7 @@
 
                                 <div class="card-header bg-transparent border-primary">
                                     <p><center><h5 class="my-0 text-primary"><?php echo $language["Filtered_Registered_Applicants"];?></h5></p></center>
-                                    <p><center><h6 class="my-0 text-default"><?php echo bairro_name($link,$bairro);?>: Bairro</h6></p></center>
+                                    <p><center><h6 class="my-0 text-default"><?php echo locality_name($link,$bairro);?>: <?php echo $language["Unidade"];?></h6></p></center>
                                 </div>
 
                             
@@ -166,7 +166,7 @@
 
                                         <tbody>
                                             <?Php
-                                                $query="SELECT * FROM households where ((locality = '$bairro') and (deleted = '0'))";
+                                                $query="SELECT * FROM households where ((locality = '$bairro') and (pa = '$admin_post')and (deleted = '0'))";
                                                 
                                                 if ($result_set = $link->query($query)) {
                                                 while($row = $result_set->fetch_array(MYSQLI_ASSOC))

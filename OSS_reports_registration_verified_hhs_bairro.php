@@ -111,15 +111,15 @@
                                 <div class="card-body">
                                     <form class="row row-cols-lg-auto g-3 align-items-center" novalidate >
                                         <div class="col-12">
-                                            <label for="admin_post" class="form-label"><?php echo $language["Admin_Post"]?></label>
+                                            <label for="admin_post" class="form-label"><?php echo $language["Bairros"];?></label>
                                             <select class="form-select" name="admin_post" id="admin_post"  required>
                                                 <option selected value="<?php echo $admin_post;?>"><?php echo ap_name($link,$admin_post);?></option>     
                                             </select>
                                         </div>
                                         <div class="col-12">
-                                            <label for="bairro" class="form-label"><?php echo $language["Bairro"]?></label>
+                                            <label for="bairro" class="form-label"><?php echo $language["Unidade"];?></label>
                                             <select class="form-select" name="bairro" id="bairro" required>
-                                                <option selected value="<?php echo $bairro;?>"><?php echo bairro_name($link,$bairro);?></option>    
+                                                <option selected value="<?php echo $bairro;?>"><?php echo locality_name($link,$bairro);?></option>    
                                             </select>
                                         </div>
 
@@ -143,7 +143,7 @@
 
                                 <div class="card-header bg-transparent border-primary">
                                     <p><center><h5 class="my-0 text-primary"><?php echo $language["Verified_Applicants"]?></h5></p></center>
-                                    <p><center><h6 class="my-0 text-default"><?php echo bairro_name($link,$bairro);?>: Bairro</h6></p></center>
+                                    <p><center><h6 class="my-0 text-default"><?php echo locality_name($link,$bairro);?>: <?php echo $language["Unidade"];?></h6></p></center>
                                 </div>
 
                             
@@ -159,8 +159,8 @@
                                             <tr>
                                                 <th><?php echo $language["Applicant_Code"];?></th>
                                                 <th><?php echo $language["Applicant_Name"];?></th>
-                                                <th><?php echo $language["Admin_Posts"];?></th>
-                                                <th><?php echo $language["Locality"];?></th>
+                                                <th><?php echo $language["Bairros"];?></th>
+                                                <th><?php echo $language["Unidade"];?></th>
                                                 <th><?php echo $language["Plot_No"];?></th>
                                                 <th><?php echo $language["Phone"];?></th>
                                             </tr>
@@ -169,7 +169,7 @@
 
                                         <tbody>
                                             <?Php
-                                                $query="SELECT * FROM households where ((ward = '$bairro') and (enrolled = '1'))";
+                                                $query="SELECT * FROM households where ((locality = '$bairro') and (enrolled = '1') and (deleted = '0'))";
                                                 
                                                 if ($result_set = $link->query($query)) {
                                                 while($row = $result_set->fetch_array(MYSQLI_ASSOC))
@@ -179,8 +179,8 @@
                                                     
                                                     echo "<td>".$row["hhcode"]."</td>\n";
                                                     echo "<td>".$row["hhname"]."</td>\n";
-                                                    echo "<td>".$row["pa"]."</td>\n";
-                                                    echo "<td>".$row["locality"]."</td>\n";
+                                                    echo "<td>".ap_name($link,$row["pa"])."</td>\n";
+                                                    echo "<td>".locality_name($link,$row["locality"])."</td>\n";
                                                     echo "<td>".$row["plot"]."</td>\n";
                                                     echo "<td>".$row["phone1"]."</td>\n";
                                                     

@@ -130,8 +130,8 @@
                                                 <tr>
                                                     <th><?php echo $language["Applicant_Code"];?></th>
                                                     <th><?php echo $language["Applicant_Name"];?></th>
-                                                    <th><?php echo $language["Admin_Posts"];?></th>
                                                     <th><?php echo $language["Bairros"];?></th>
+                                                    <th><?php echo $language["Unidade"];?></th>
                                                     <th><?php echo $language["Plot_No"];?></th>
                                                     <th><?php echo $language["Phone"];?></th>
                                                 </tr>
@@ -139,7 +139,7 @@
 
                                             <tbody>
                                                 <?Php
-                                                    $query="SELECT * FROM households where enrolled ='1'";
+                                                    $query="SELECT * FROM households where ((enrolled ='1')and (deleted='0'))" ;
                                                     
                                                     if ($result_set = $link->query($query)) {
                                                     while($row = $result_set->fetch_array(MYSQLI_ASSOC))
@@ -150,7 +150,7 @@
                                                         echo "<td>".$row["hhcode"]."</td>\n";
                                                         echo "<td>".$row["hhname"]."</td>\n";
                                                         echo "<td>".ap_name($link,$row["pa"])."</td>\n";
-                                                        echo "<td>".bairro_name($link,$row["locality"])."</td>\n";
+                                                        echo "<td>".locality_name($link,$row["locality"])."</td>\n";
                                                         echo "<td>".$row["plot"]."</td>\n";
                                                         echo "<td>".$row["phone1"]."</td>\n";
                                                         

@@ -46,7 +46,7 @@
     function Validate() {
         var bairro1 = document.getElementById("bairro");
         if (bairro1.value == "") {
-            alert("Please Select Bairro option! (Selecione a opção Bairro!) ");
+            alert("Please Select Unidade option! (Selecione a opção Unidade!) ");
             return false;
         }
         return true;
@@ -119,13 +119,13 @@
                                 <div class="card-body">
                                     <form class="row row-cols-lg-auto g-3 align-items-center" novalidate action="OSS_reports_hhs_payments_bairro.php" method ="GET" >
                                         <div class="col-12">
-                                        <label for="admin_post" class="form-label"><?php echo $language["Admin_Post"]?></label>
+                                        <label for="admin_post" class="form-label"><?php echo $language["Bairros"]?></label>
                                         <select class="form-select" name="admin_post" id="admin_post"  required>
-                                        <option selected value="<?php echo $admin_post;?>"><?php echo $admin_post;?></option>     
+                                            <option selected value="<?php echo $admin_post;?>"><?php echo ap_name($link,$admin_post);?></option>     
                                         </select>
                                     </div>
                                     <div class="col-12">
-                                        <label for="bairro" class="form-label"><?php echo $language["Bairros"]?></label>
+                                        <label for="bairro" class="form-label"><?php echo $language["Unidade"]?></label>
                                         <select class="form-select" name="bairro" id="bairro" required>
                                             <option></option>
                                                 <?php                                                           
@@ -163,7 +163,7 @@
 
                                 <div class="card-header bg-transparent border-primary">
                                     <p><center><h5 class="my-0 text-primary"><?php echo $language["Filtered_Applicants_With_Approved_Payments"]?></h5></p></center>
-                                    <p><center><h6 class="my-0 text-default"><?php echo ap_name($link,$admin_post);?>: <?php echo $language["Admin_Post"]?></h6></p></center>
+                                    <p><center><h6 class="my-0 text-default"><?php echo ap_name($link,$admin_post);?>: <?php echo $language["Bairros"]?></h6></p></center>
                                 </div>
 
                             
@@ -176,14 +176,14 @@
                                     
                                     <thead>
                                         <tr>
-                                            <th><?php echo $language["Applicant_Code"]?></th>
-                                            <th><?php echo $language["Applicant_Name"]?></th>
-                                            <th><?php echo $language["Bairros"]?></th>
-                                            <th><?php echo $language["Plot_No"]?></th>
-                                            <th><?php echo $language["Selected_Toilet"]?></th>
-                                            <th><?php echo $language["Toilet_Cost"]?></th>
-                                            <th><?php echo $language["Total_Paid"]?></th>
-                                            <th><?php echo $language["Balance"]?></th>
+                                            <th style="color:blue"><?php echo $language["Applicant_Code"]?></th>
+                                            <th style="color:blue"><?php echo $language["Applicant_Name"]?></th>
+                                            <th style="color:blue"><?php echo $language["Unidade"]?></th>
+                                            <th style="color:blue"><?php echo $language["Plot_No"]?></th>
+                                            <th style="color:blue"><?php echo $language["Selected_Toilet"]?></th>
+                                            <th style="color:blue"><?php echo $language["Toilet_Cost"]?></th>
+                                            <th style="color:blue"><?php echo $language["Total_Paid"]?></th>
+                                            <th style="color:blue"><?php echo $language["Balance"]?></th>
 
                                         </tr>
                                     </thead>
@@ -201,7 +201,7 @@
                                                 echo "<tr>\n";
                                                     echo "<td>".$row["code"]."</td>\n";
                                                     echo "<td>".$row["hhname"]."</td>\n";
-                                                    echo "<td>".bairro_name($link,$row["locality"])."</td>\n";
+                                                    echo "<td>".locality_name($link,$row["locality"])."</td>\n";
                                                     echo "<td>".$row["plot"]."</td>\n";
                                                     echo "<td>".$row["pname"]."</td>\n";
                                                     echo "<td>".number_format($row["pCost"],2)."</td>\n";
