@@ -181,6 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 
                                             </div>                                     
                                         </div>
+                                        <a href="auth-recoverpw.php" class="text-muted"style="width:60%"><h6 class="text-default">Forgot password? (Esqueceu-se da palavra-passe?)</h6></a>
                                     </form>
                                 </div>
                             </div>

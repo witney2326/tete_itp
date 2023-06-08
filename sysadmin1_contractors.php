@@ -160,11 +160,11 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                             echo "<td>".$row['cname']."</td>";
                                                             echo "<td>".$row['cemail']."</td>";                                                       
                                                             echo "<td>".$row['caddress']."</td>";
-                                                            echo "<td>".$row['phone']."</td>";
+                                                            echo "<td>".$row['phone']."</td>";     
                                                             
                                                             echo "<td>
-                                                                <a href=\"user_View.php?id=".userid($link,$row['id'])."\"><i class='fas fa-eye' title='$language[View_User]' style='font-size:18px;color:purple'></i></a>
-                                                                <a onClick=\"javascript: return confirm('$language[Sure_Delete_User]');\" href=\"del_contractor.php?id=".$row['id']."\"><i class='fas fa-trash-alt' title='$language[Delete_Contractor]' style='font-size:18px;color:Red'></i></a>
+                                                                <a href=\"user_View.php?id=".userid($link,$row['id'])."\"><button class='btn btn-sm btn-outline-info' title='$language[View_User]' style='font-size:18px;color:purple'><i class='fas fa-eye'></i></button></a>
+                                                                <a onClick=\"javascript: return confirm('$language[Sure_Delete_User]');\" href=\"del_contractor.php?id=".$row['id']."\"><button class='btn btn-sm btn-outline-secondary' title='$language[Delete_Contractor]' style='font-size:18px;color:Red'><i class='fas fa-trash-alt'></i></button></a>
                                                             </td>\n";
                                                         
                                                             echo "</tr>";

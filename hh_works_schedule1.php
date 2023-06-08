@@ -117,10 +117,10 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                         </div>
                                         
                                         <div class="row mb-1">
-                                            <label for="ap" class="col-sm-2 col-form-label"><?php echo $language["Admin_Post"];?></label>
+                                            <label for="ap" class="col-sm-2 col-form-label"><?php echo $language["Bairro"];?></label>
                                             <input type="text" class="form-control" id="ap" name="ap" value ="<?php echo ap_name($link,$pa);?>" style="max-width:30%;" readonly>
                                         
-                                            <label for="locality" class="col-sm-2 col-form-label"><?php echo $language["Bairro"];?> </label>
+                                            <label for="locality" class="col-sm-2 col-form-label"><?php echo $language["Unidade"];?> </label>
                                             <input type="text" class="form-control" id="locality" name="locality" value ="<?php echo locality_name($link,$locality);?>" style="max-width:30%;" readonly>
                                         </div>
 

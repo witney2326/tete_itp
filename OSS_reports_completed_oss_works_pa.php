@@ -42,7 +42,7 @@
     function Validate() {
         var bairro1 = document.getElementById("bairro");
         if (bairro1.value == "") {
-            alert("Please Select Bairro option! (Selecione a opção Bairro!) ");
+            alert("Please Select Unidade option! (Selecione a opção Unidade!) ");
             return false;
         }
         return true;
@@ -116,13 +116,13 @@
                                 <div class="card-body">
                                     <form class="row row-cols-lg-auto g-3 align-items-center" novalidate action="OSS_reports_completed_oss_works_bairro.php" method ="GET" >
                                         <div class="col-12">
-                                            <label for="admin_post" class="form-label"><?php echo $language["Admin_Post"];?></label>
+                                            <label for="admin_post" class="form-label"><?php echo $language["Bairros"];?></label>
                                             <select class="form-select" name="admin_post" id="admin_post"  required>
                                             <option selected value="<?php echo $admin_post;?>"><?php echo ap_name($link,$admin_post);?></option>     
                                             </select>
                                         </div>
                                         <div class="col-12">
-                                            <label for="bairro" class="form-label"><?php echo $language["Bairros"];?></label>
+                                            <label for="bairro" class="form-label"><?php echo $language["Unidade"];?></label>
                                             <select class="form-select" name="bairro" id="bairro" required>
                                                 <option></option>
                                                     <?php                                                           
@@ -159,7 +159,7 @@
 
                                 <div class="card-header bg-transparent border-primary">
                                     <p><center><h5 class="my-0 text-primary"><?php echo $language["Completed_Toilet_Works"];?></h5></p></center>
-                                    <p><center><h6 class="my-0 text-default"><?php echo ap_name($link,$admin_post);?>: <?php echo $language["Admin_Post"];?></h6></p></center>
+                                    
                                 </div>
 
                             
@@ -169,7 +169,7 @@
                                 <table id="datatable-buttons" class="table table-bordered dt-responsive  nowrap w-100">
                                     
                                     <img src="assets/images/logo_t.jpg" alt="" height="64" class="center">
-                                    
+                                    <p><center><h6 class="my-0 text-default"><?php echo ap_name($link,$admin_post);?>: <?php echo $language["Bairros"];?></h6></p></center>
                                     <thead>
                                         <tr>
                                             <th><?php echo $language["Works_Code"];?></th>                                           

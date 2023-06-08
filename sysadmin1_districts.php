@@ -125,54 +125,53 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                 </div>
                             </div>
                             <div class="card-border">
-                                <form action="OSS_add_CityWard.php">
-                                    <p align="right">
-                                        <input type="submit" value="<?php echo $language["Add_Bairros"];?>" class="btn btn-outline-primary w-md" style="width:170px"/> 
-                                    </p>
-                                </form>
                                 <div class="card-body">
-                                <h7 class="card-title mt-0"></h7>
-                                    
-                                        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                                        
-                                            <thead>
-                                                <tr>
-                                                    <th><?php echo $language["ID"];?></th>
-                                                    <th><?php echo $language["Admin_Posts"];?></th>
-                                                    <th><?php echo $language["Bairros"];?></th>
-                                                    <th><?php echo $language["Action"];?></th>                                                              
-                                                </tr>
-                                            </thead>
-
-
-                                            <tbody>
-                                                <?Php
-                                                    $query = "SELECT * FROM bairros";
-
-                                                    if ($result_set = $link->query($query)) {
-                                                    while($row = $result_set->fetch_array(MYSQLI_ASSOC))
-                                                    { 
-                                                        echo "<tr>";
-                                                        echo "<td>".$row['id']."</td>";
-                                                        echo "<td>".$row['admin_post']."</td>";
-                                                        echo "<td>".$row['bairro']."</td>";                                                       
-                                                        
-
-                                                        echo "<td>
-                                                            <a href=\"OSS_edit_CityWard.php?id=".$row['id']."\"><i class='fas fa-edit' title='$language[Edit_Bairros]' style='font-size:18px;color:green'></i></a>
-                                                            <a onClick=\"javascript: return confirm('$language[Sure_Delete_Bairros]');\" href=\"OSS_ward_delete.php?id=".$row['id']."\"><i class='fas fa-trash-alt' title='$language[Delete_Bairros]' style='font-size:18px;color:Red'></i></a>
-                                                            </td>\n";
-                                                        echo "</tr>";
-                                                    }
-                                                    $result_set->close();
-                                                    }  
-                                                                        
-                                                ?>
-                                            </tbody>
-                                        </table>
+                                    <form action="OSS_add_CityWard.php">
+                                        <p align="right">
+                                            <input type="submit" value="<?php echo $language["New_Unidade"];?>" class="btn btn-outline-primary w-md" style="width:170px;background-color:plum;color:black"/> 
                                         </p>
-                                    </div>
-                                </div>     
+                                    </form>
+                                    
+                                    <h7 class="card-title mt-0"></h7>
+                                        
+                                    <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                    
+                                        <thead>
+                                            <tr>
+                                                <th><?php echo $language["ID"];?></th>
+                                                <th><?php echo $language["Bairros"];?></th>
+                                                <th><?php echo $language["Unidade"];?></th>
+                                                <th><?php echo $language["Action"];?></th>                                                              
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                            <?Php
+                                                $query = "SELECT * FROM bairros";
+
+                                                if ($result_set = $link->query($query)) {
+                                                while($row = $result_set->fetch_array(MYSQLI_ASSOC))
+                                                { 
+                                                    echo "<tr>";
+                                                    echo "<td>".$row['id']."</td>";
+                                                    echo "<td>".$row['admin_post']."</td>";  
+                                                    echo "<td>".$row['bairro']."</td>";                                                       
+                                                    
+
+                                                    echo "<td>
+                                                        <a href=\"OSS_edit_CityWard.php?id=".$row['id']."\"><button class='btn btn-sm btn-outline-info' title='$language[Edit_Bairros]' style='font-size:18px;color:green'><i class='fas fa-edit'></i></button></a>
+                                                        <a onClick=\"javascript: return confirm('$language[Sure_Delete_Bairros]');\" href=\"OSS_ward_delete.php?id=".$row['id']."\"><button class='btn btn-sm btn-outline-secondary' title='$language[Delete_Bairros]' style='font-size:18px;color:Red'><i class='fas fa-trash-alt'></i></button></a>
+                                                        </td>\n";
+                                                    echo "</tr>";
+                                                }
+                                                $result_set->close();
+                                                }  
+                                                                    
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div> 
                             </div>            
                         </div>
                     </div>

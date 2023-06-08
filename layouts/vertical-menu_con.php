@@ -1,11 +1,12 @@
 <style>
     .navbar-header {
-        background-color: yellowgreen !important;
+        background-color: #61e3f5 !important;
         border: none !important;
         border-width:0!important;
     }
 </style>
 <header id="page-topbar">
+
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->
@@ -48,6 +49,8 @@
                 </div>
                 <span><h2><b><?php echo" "; echo $pvalue;?></h2></span>
             </div>
+
+
         </div>
 
 
@@ -125,7 +128,6 @@
                         <i class="bx bx-home-circle"></i><span class="badge rounded-pill bg-info float-end"></span>
                         <span key="t-dashboards"><?php echo $language["Contractor_Dashboard"]; ?></span>
                     </a>
-                    
                 </li>
 
                 <li>
@@ -133,13 +135,13 @@
                         <i class="bx bx-bar-chart"></i><span class="badge rounded-pill bg-info float-end"></span>
                         <span key="t-dashboards"><?php echo $language["Allocated_Works"]; ?></span>
                     </a>
-                    
                 </li>
-
-                
-
-                
-
+                <li>
+                   <a href="comments_con.php" class="waves-effect"> 
+                   <i class="fas fa-envelope" style="color:blue"></i>
+                       <span key="t-dashboards"> <?php echo $language["Message_Supervisor"];?></span>
+                   </a>
+               </li>
             </ul>
         </div>
         <!-- Sidebar -->

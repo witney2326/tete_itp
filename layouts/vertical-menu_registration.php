@@ -1,11 +1,12 @@
 <style>
     .navbar-header {
-        background-color: yellowgreen !important;
+        background-color: #61e3f5 !important;
         border: none !important;
         border-width:0!important;
     }
 </style>
 <header id="page-topbar">
+
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->

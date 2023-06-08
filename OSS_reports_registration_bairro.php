@@ -157,7 +157,7 @@
                                             <tr>
                                                 <th><?php echo $language["Applicant_Code"];?></th>
                                                 <th><?php echo $language["Applicant_Name"];?></th>
-                                                <th><?php echo $language["Bairros"];?></th>
+                                                <th><?php echo $language["Unidade"];?></th>
                                                 <th><?php echo $language["Plot_No"];?></th>
                                                 <th><?php echo $language["Phone"];?></th
                                             </tr>
@@ -176,7 +176,7 @@
                                                     
                                                     echo "<td>".$row["hhcode"]."</td>\n";
                                                     echo "<td>".$row["hhname"]."</td>\n";
-                                                    echo "<td>".bairro_name($link,$row["locality"])."</td>\n";
+                                                    echo "<td>".locality_name($link,$row["locality"])."</td>\n";
                                                     echo "<td>".$row["plot"]."</td>\n";
                                                     echo "<td>".$row["phone1"]."</td>\n";
                                                     

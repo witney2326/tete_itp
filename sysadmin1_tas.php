@@ -41,6 +41,28 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
             {
                 background-color: rgba(0, 0, 0, 0.2);
             }
+
+            #mytable {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+            #mytable td, #mytable th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            }
+
+            #mytable tr:nth-child(even){background-color: #f2f2f2;}
+
+            #mytable tr:hover {background-color: #ddd;}
+
+            #mytable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: plum;
+            color: white;}
     </style>
 </head>
 
@@ -129,11 +151,11 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                             </div>
                             
 
-                            <div class="card-border">
+                            <div class="card-border1">
                                 <div class="card-body">
                                 <h7 class="card-title mt-0"></h7>
                                     
-                                        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                        <table id="mytable" class="table table-bordered dt-responsive  nowrap w-100">
                                         
                                             <thead>
                                                 <tr>
@@ -158,9 +180,9 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                         echo "<td>".$row['pvalue']."</td>";                                                       
                                                         
                                                         echo "<td>
-                                                                <a href=\"add_parameter.php?id=".$row['id']."\"><i class='fas fa-plus' title='$language[Add_Parameter]' style='font-size:18px;color:black'></i></a>
-                                                                <a href=\"OSS_edit_CityArea.php?id=".$row['id']."\"><i class='fas fa-edit' title='$language[Edit_Parameter]' style='font-size:18px;color:green'></i></a>
-                                                                <a onClick=\"javascript: return confirm('$language[Sure_Delete_Parameter]');\" href=\"OSS_CityArea_delete.php?id=".$row['id']."\"><i class='fas fa-trash-alt' title='$language[Delete_Parameter]' style='font-size:18px;color:Red'></i></a>
+                                                                <a href=\"add_parameter.php?id=".$row['id']."\"><button class='btn btn-sm btn-outline-success' title='$language[Add_Parameter]' style='font-size:18px;color:black'><i class='fas fa-plus'></i></button></a>
+                                                                <a href=\"OSS_edit_CityArea.php?id=".$row['id']."\"><button class='btn btn-sm btn-outline-info' title='$language[Edit_Parameter]' style='font-size:18px;color:green'><i class='fas fa-edit'></i></button></a>
+                                                                <a onClick=\"javascript: return confirm('$language[Sure_Delete_Parameter]');\" href=\"OSS_CityArea_delete.php?id=".$row['id']."\"><button class='btn btn-sm btn-outline-secondary' title='$language[Delete_Parameter]' style='font-size:18px;color:Red'><i class='fas fa-trash-alt'></i></button></a>
                                                             </td>\n";
                                                         echo "</tr>";
                                                     }
@@ -172,7 +194,55 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                         </table>
                                     </div>
                                 </div>     
-                            </div>            
+                            </div>
+                            
+                            <div class="col-xl-6">
+                                <div class="card-border1">
+                                    <div class="card-body">
+                                            
+                                            <p><h7 class="card-title mt-0"> <?php echo $language["Application_Email_Settings"];?></h7></p>
+                                            
+                                            <table id="mytable" class="table table-bordered dt-responsive  nowrap w-100">
+                                            
+                                                <thead>
+                                                    <tr>
+                                                        <th><?php echo $language["ID"];?></th>
+                                                        <th><?php echo $language["email"];?></th>
+                                                        <th><?php echo $language["Host"];?></th>
+                                                        <th><?php echo $language["Password"];?></th>
+                                                        <th><?php echo $language["Action"];?></th>                                                               
+                                                    </tr>
+                                                </thead>
+
+
+                                                <tbody>
+                                                    <?Php
+                                                        $query = "SELECT * FROM tconfig";
+
+                                                        if ($result_set = $link->query($query)) {
+                                                        while($row = $result_set->fetch_array(MYSQLI_ASSOC))
+                                                        { 
+                                                            echo "<tr>";
+                                                            echo "<td>".$row['id']."</td>";
+                                                            echo "<td>".$row['cmail']."</td>";
+                                                            echo "<td>".$row['chost']."</td>";    
+                                                            echo "<td>"."</td>";                                                    
+                                                            
+                                                            echo "<td>  
+                                                                    <a href=\"edit_app_settings.php?id=".$row['id']."\"><button class='btn btn-sm btn-outline-info' title='$language[Edit_Parameter]' style='font-size:18px;color:green'><i class='fas fa-edit'></i></button></a>
+                                                                </td>\n";
+                                                            echo "</tr>";
+                                                        }
+                                                        $result_set->close();
+                                                        }  
+                                                                            
+                                                    ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>     
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

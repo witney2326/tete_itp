@@ -36,6 +36,8 @@
     include 'layouts/body.php';
     include 'layouts/Config.php';
 
+    $UserRole = $_SESSION["userrole"];
+
     $statusMsg = '';
 
     $ID = $_GET["id"];
@@ -90,7 +92,9 @@
     <!-- Begin page -->
 <div id="layout-wrapper">
 
-    <?php include 'layouts/menu.php'; ?>
+    <?php 
+        if ($UserRole == "04"){include 'layouts/menu_con.php';}else{include 'layouts/menu.php';}
+    ?>
     <?php include 'lib.php'; ?>
 
     <!-- ============================================================== -->

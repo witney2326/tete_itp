@@ -2,7 +2,7 @@
 <?php include 'layouts/head-main.php'; ?>
 
 <head>
-    <title><?php echo $language["OSS_Products"];?></title>
+    <title><?php echo $language["View_Toilet_Products"];?></title>
     <?php include 'layouts/head.php'; ?>
     <!-- ION Slider -->
     <link href="assets/libs/ion-rangeslider/css/ion.rangeSlider.min.css" rel="stylesheet" type="text/css" />
@@ -13,7 +13,7 @@
         {
             border-style: groove;
             border-color: greenyellow;
-            border-width: 7px;
+            border-width: 8px;
         }
     </style>
 </head>
@@ -22,7 +22,8 @@
 
 <!-- Begin page -->
 <div id="layout-wrapper">
-<?php include 'layouts/menu_hh.php'; ?>
+
+    <?php include 'layouts/menu_hh.php'; ?>
 
     <!-- ============================================================== -->
     <!-- Start right Content here -->
@@ -34,121 +35,49 @@
 
                 <!-- start page title -->
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18"><?php echo $language["OSS_Products"];?></h4>
+                            <h4 class="mb-sm-0 font-size-18"><?php echo $language["View_Toilet_Products"]?></h4>
+
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <INPUT TYPE="button" class="btn btn-btn btn-outline-secondary w-md" style="width:170px" VALUE="<?php echo $language["Back"];?>" onClick="history.go(-1);">  
+                                </ol>
+                            </div>
+
                         </div>
-                        
-                    </div>
-                    <div class="col-5">
-                        <p align="right">
-                                <INPUT TYPE="button" class="btn btn-btn btn-outline-secondary w-md" VALUE="<?php echo $language["Back"];?>" onClick="history.go(-1);">
-                            </p>
                     </div>
                 </div>
-                
                 <!-- end page title -->
 
                 <div class="row">
                     
-                    <div class="col-lg-9">
+                    <div class="col-lg-12">
+                        <?php
+                            //get current directory
+                            $working_dir = getcwd();
+                            
+                            //get image directory
+                            $img_dir = $working_dir . "/uploads_products/";
+                            
+                            //change current directory to image directory
+                            chdir($img_dir);
+                            
+                            //using glob() function get images 
+                            $files = glob("*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}", GLOB_BRACE );
+                            
+                            //again change the directory to working directory
+                            chdir($working_dir);
+
+                            //iterate over image files
+                            foreach ($files as $file) {
+                            ?>
+                            
+                                <img src="<?php echo "uploads_products/" . $file ?>" style="height: 400px; width: 440px; border-style: groove;border-color: gray;border-width: 8px;"/>
+                            
+                            <?php }
+                        ?>
                         
-                        
-                        <div class="row">
-                            <div class="col-xl-4 col-sm-6">
-                                <div class="card-border">
-                                    <div class="card-body">
-                                        <div class="product-img position-relative">
-                                            
-                                            <img src="assets/images/product/PourFlash1.jpg" alt="" height="200" width="200" alt="Image resize">
-                                        </div>
-                                        <div class="mt-4 text-center">
-                                            <h7 class="mb-3 text-truncate"><a href="#" class="text-dark"><?php echo $language["Pour_Flash_Toilet"];?> </a></h7>
-                                            <h7 class="my-0"><span class="text-muted me-2"><?php echo $language["Product_Code"];?>:</span> <b>PFT/01</b></h7>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6">
-                                <div class="card-border">
-                                    <div class="card-body">
-                                        <div class="product-img position-relative">
-                                            <img src="assets/images/product/PourFlash2.jpg" alt="" height="200" width="200" alt="Image resize">
-                                        </div>
-                                        <div class="mt-4 text-center">
-                                            <h7 class="mb-3 text-truncate"><a href="#" class="text-dark"><?php echo $language["Pour_Flash_Toilet"];?> </a></h7>
-                                            <h7 class="my-0"><span class="text-muted me-2"><?php echo $language["Product_Code"];?>:</span> <b>PFT/01</b></h7>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6">
-                                <div class="card-border">
-                                    <div class="card-body">
-                                        <div class="product-img position-relative">
-                                            
-                                            <img src="assets/images/product/singleVIP1.jpg" alt="" height="200" width="200" alt="Image resize">
-                                        </div>
-                                        <div class="mt-4 text-center">
-                                            <h7 class="mb-3 text-truncate"><a href="#" class="text-dark"><?php echo $language["Single_VIP_Toilet"];?></a></h7>
-
-                                            
-                                            <h7 class="my-0"><span class="text-muted me-2"><?php echo $language["Product_Code"];?>:</span> <b>SVT/01</b></h7>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6">
-                                <div class="card-border">
-                                    <div class="card-body">
-                                        <div class="product-img position-relative">
-                                            <img src="assets/images/product/singleVIP2.jpg" alt="" height="200" width="200" alt="Image resize">
-                                        </div>
-                                        <div class="mt-4 text-center">
-                                            <h7 class="mb-3 text-truncate"><a href="#" class="text-dark"><?php echo $language["Single_VIP_Toilet"];?></a></h7> 
-                                            <h7 class="my-0"><span class="text-muted me-2"><?php echo $language["Product_Code"];?>:</span> <b>SVT/01</b></h7>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6">
-                                <div class="card-border">
-                                    <div class="card-body">
-
-                                        <div class="product-img position-relative">
-                                            
-                                            <img src="assets/images/product/TwinVIP1.jpg" alt="" class="img-fluid mx-auto d-block">
-                                        </div>
-                                        <div class="mt-4 text-center">
-                                            <h7 class="mb-3 text-truncate"><a href="#" class="text-dark"><?php echo $language["Twin_VIP_Toilet"];?></a></h7>
-
-                                            
-                                            <h7 class="my-0"><span class="text-muted me-2"><?php echo $language["Product_Code"];?>:</span> <b>TVT/01</b></h7>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-sm-6">
-                                <div class="card-border">
-                                    <div class="card-body">
-                                        <div class="product-img position-relative">
-                                            
-                                            <img src="assets/images/product/TwinVIP2.jpg" alt="" height="200" width="200" alt="Image resize">
-                                        </div>
-                                        <div class="mt-4 text-center">
-                                            <h7 class="mb-3 text-truncate"><a href="#" class="text-dark"><?php echo $language["Twin_VIP_Toilet"];?></a></h7>
-                                            <h7 class="my-0"><span class="text-muted me-2"><?php echo $language["Product_Code"];?>:</span> <b>TVT/01</b></h7>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <!-- end row -->
 
                         

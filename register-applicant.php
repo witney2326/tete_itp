@@ -101,6 +101,13 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                 });
             }
 
+        function calc()
+        {
+            var elm = document.forms["appform"];
+
+            if (elm["no_pple_adult_males"].value != "" && elm["no_pple_adult_females"].value != "" && elm["no_pple_children"].value != "")
+            {elm["no_pple_at_premises"].value = parseInt(elm["no_pple_adult_males"].value) + parseInt(elm["no_pple_adult_females"].value)+parseInt(elm["no_pple_children"].value);}
+        }
     </script>
 </head>
 <style>
@@ -194,18 +201,18 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                 </div>
                             </div>
                             <div class="card-border"> 
-                                <form class="row row-cols-lg-auto g-3 align-items-center" validate action="register_new_beneficiary_hh_tq.php" method ="POST">
+                                <form name="appform"  class="row row-cols-lg-auto g-3 align-items-center" validate action="register_new_beneficiary_hh_tq.php" method ="POST">
                                     <div class="card-body">
                                     
                                         <div id="vertical-example" class="horizontal-wizard">
                                             
                                             <h3><?php echo $language["Applicant_Details"];?></h3>
                                             <section>
-                                                
+                                            <p><span class="error">* <?php echo $language["Required"];?></span></p>
                                                     <div class="row">
                                                         <div class="col-lg-6">
                                                             <div class="mb-1">
-                                                                <label for="applicant_name" style="color:blue"><?php echo $language["Applicant_Name"];?></label>
+                                                                <label for="applicant_name" style="color:blue"><?php echo $language["Applicant_Name"];?></label><span class="error">*</span>
                                                                 <input type="text" class="form-control" id="applicant_name" name ="applicant_name" style="max-width:50%; background-color: #f2f2f2;" >
                                                             </div>
                                                         </div>
@@ -223,38 +230,38 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                     <div class="row">
                                                         <div class="col-lg-6">
                                                             <div class="mb-1">
-                                                                <label for="blno" style="color:blue"><?php echo $language["BL_No"];?></label>
-                                                                <input type="text" class="form-control" id="blno" name="blno" style="max-width:50%;background-color: #f2f2f2;" >
+                                                                <label for="blno" style="color:blue"><?php echo $language["BL_No"];?></label><span class="error">*</span> (13 characters/caracteres)
+                                                                <input type="text" class="form-control"  maxlength="13" id="blno" name="blno" style="max-width:20%;background-color: #f2f2f2;" >
                                                             </div>
                                                             <div class="mb-1">
-                                                                <label for="email" style="color:blue"><?php echo $language["Email"];?></label>
+                                                                <label for="email" style="color:blue"><?php echo $language["Email"];?></label><span class="error">*</span>(Valid email/Correio electrónico válido)
                                                                 <input type="text" class="form-control" id="email" name="email" style="max-width:50%;background-color: #f2f2f2;" >
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="mb-1">
-                                                                <label for="phoneno1" style="color:blue" ><?php echo $language["Contact_Phones"];?>1</label>
-                                                                <input type="text" class="form-control" id="phoneno1" name="phoneno1" style="max-width:50%;background-color: #f2f2f2;">
+                                                                <label for="phoneno1" style="color:blue" ><?php echo $language["Contact_Phones"];?> 1</label><span class="error">*</span>
+                                                                <input type="text" class="form-control" maxlength="10" id="phoneno1" name="phoneno1" style="max-width:20%;background-color: #f2f2f2;">
                                                             </div>
                                                             <div class="mb-1">
-                                                                <label for="phoneno2" style="color:blue"><?php echo $language["Contact_Phones"];?>2</label>
-                                                                <input type="text" class="form-control" id="phoneno2" name="phoneno2" style="max-width:50%;background-color: #f2f2f2;">
+                                                                <label for="phoneno2" style="color:blue"><?php echo $language["Contact_Phones"];?> 2</label>
+                                                                <input type="text" class="form-control" maxlength="10" id="phoneno2" name="phoneno2" style="max-width:20%;background-color: #f2f2f2;">
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-lg-4">
+                                                        <div class="col-lg-3">
                                                             <div class="mb-1">
-                                                                <label for="plotno" style="color:blue"><?php echo $language["Plot_No"];?></label>
+                                                                <label for="plotno" style="color:blue"><?php echo $language["Plot_No"];?></label><span class="error">*</span>
                                                                 <input type="text" class="form-control" id="plotno" name="plotno" style="max-width:50%;background-color: #f2f2f2;">
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-lg-3">
                                                             <div class="mb-1">
                                                                 
-                                                                <label for="adminpost" class="form-label" style="color:blue"><?php echo $language["Bairro"]?></label>
+                                                                <label for="adminpost" class="form-label" style="color:blue"><?php echo $language["Bairro"]?></label><span class="error">*</span>
                                                 
-                                                                <select class="form-select" name="adminpost" id="adminpost" style="max-width:30%;background-color: #f2f2f2;" onChange="getbairro(this.value);" required>
+                                                                <select class="form-select" name="adminpost" id="adminpost" style="max-width:60%;background-color: #f2f2f2;" onChange="getbairro(this.value);" required>
                                                                     <option ></option>
                                                                     <?php                                                           
                                                                             $dis_fetch_query = "SELECT id, pa_ FROM adminposts";                                                  
@@ -276,10 +283,10 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                             </div>
                                                             
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-lg-3">
                                                             <div class="mb-1">
-                                                                <label for="bairro" class="form-label" style="color:blue"><?php echo $language["Unidade"];?> </label>
-                                                                <select class="form-select" name="bairro" id="bairro" placeholder="Select Unidade" style="max-width:50%;background-color: #f2f2f2;" required>
+                                                                <label for="bairro" class="form-label" style="color:blue"><?php echo $language["Unidade"];?> </label><span class="error">*</span>
+                                                                <select class="form-select" name="bairro" id="bairro" placeholder="Select Unidade" style="max-width:60%;background-color: #f2f2f2;" required>
                                                                     <option ></option>
                                                                     
                                                                 </select>
@@ -289,8 +296,8 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <div class="mb-1">
-                                                                <label for="landmark" style="color:blue"><?php echo $language["Nearest_School_Or_Well_Known_Landmark"];?></label>
-                                                                <input type="text" class="form-control" id="landmark" name="landmark" style="max-width:44%;background-color: #f2f2f2;" >
+                                                                <label for="landmark" style="color:blue"><?php echo $language["Nearest_School_Or_Well_Known_Landmark"];?></label><span class="error">*</span>
+                                                                <input type="text" class="form-control" id="landmark" name="landmark" style="max-width:25%;background-color: #f2f2f2;" >
                                                             </div>
                                                         </div>
                                                     </div>
@@ -324,7 +331,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                         <div class="col-lg-3">
                                                             <div class="mb-1">
 
-                                                                <p style="color:blue"><?php echo $language["Current_Toilet"];?>:</p>
+                                                                <p style="color:blue"><?php echo $language["Current_Toilet"];?>:<span class="error">*</span></p>
                                                                 <input type="radio" id="upl" name="current_toilet_type" value="01" >
                                                                 <label for="upl"><?php echo $language["Unlined_Pit_Latrine"];?></label><br>
 
@@ -341,7 +348,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                         <div class="col-lg-3">
                                                             <div class="mb-1">
 
-                                                                <p style="color:blue"><?php echo $language["Requested_Toilet_Type"];?>:</p>
+                                                                <p style="color:blue"><?php echo $language["Requested_Toilet_Type"];?>:<span class="error">*</span></p>
                                                                 <input type="radio" id="vip" name="ordered_toilet_type" value="01">
                                                                 <label for="vip"><?php echo $language["VIP"];?></label><br>
 
@@ -359,7 +366,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                     <div class="row">
                                                         <div class="col-lg-4">
                                                             <div class="mb-1">
-                                                                <input type="number" id="no_pple_at_premises" name="no_pple_at_premises" style="width:10%">
+                                                                <input type="number" id="no_pple_at_premises" name="no_pple_at_premises" style="width:12%;" readonly>
                                                                 <label for="no_pple_at_premises"><?php echo $language["No_People_at_Premises"];?></label>
                                                             </div>
                                                         </div>
@@ -367,14 +374,14 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                     <div class="row">
                                                         <div class="col-lg-5">
                                                             <div class="mb-1">
-                                                                <input type="number" id="no_pple_adult_males" name="no_pple_adult_males" style="width:8%">
-                                                                <label for="no_pple_adult_males"><?php echo $language["Adult_Males"];?></label>
+                                                                <input type="number" id="no_pple_adult_males" name="no_pple_adult_males" style="width:10%;" onkeyup="calc()">
+                                                                <label for="no_pple_adult_males"><?php echo $language["Adult_Males"];?></label><span class="error">*</span>
 
-                                                                <input type="number" id="no_pple_adult_females" name="no_pple_adult_females" style="width:8%">
-                                                                <label for="no_pple_adult_females"><?php echo $language["Adult_Females"];?></label>
+                                                                <input type="number" id="no_pple_adult_females" name="no_pple_adult_females" style="width:10%;" onkeyup="calc()">
+                                                                <label for="no_pple_adult_females"><?php echo $language["Adult_Females"];?></label><span class="error">*</span>
 
-                                                                <input type="number" id="no_pple_children" name="no_pple_children" style="width:8%">
-                                                                <label for="no_pple_children"><?php echo $language["Children_Under_5"];?></label>
+                                                                <input type="number" id="no_pple_children" name="no_pple_children" style="width:10%;" onkeyup="calc()">
+                                                                <label for="no_pple_children"><?php echo $language["Children_Under_5"];?></label><span class="error">*</span>
                                                             </div>
                                                         </div>
                                                         

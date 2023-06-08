@@ -11,7 +11,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="text-sm-end d-none d-sm-block">
-                    Developed by Wilok Concepts
+                    <a href="mailto:admin@cimis.tech"> Developed by Wilok Concepts</a>
                 </div>
             </div>
         </div>

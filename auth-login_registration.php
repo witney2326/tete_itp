@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .card-border 
         {
             border-style: solid;
-            border-color: gray;
+            border-color: #61e3f5;
         }
         .my-body 
         {
@@ -127,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                 </div>
                                 <div class="col-5 align-self-end">
-                                    <img src="assets/images/product/new.jpg" alt="" class="img-fluid">
+                                    <img src="assets/images/toilet.jpg" alt="" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -137,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <a href="" class="auth-logo-light">
                                         <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
-                                                <img src="assets/images/logo_q.jpg" alt="" class="rounded-circle" height="64">
+                                                <img src="assets/images/logo_t.jpg" alt="" class="rounded-circle" height="64">
                                             </span>
                                         </div>
                                     </a>
@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <a href="" class="auth-logo-dark">
                                         <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
-                                                <img src="assets/images/logo_q.jpg" alt="" class="rounded-circle" height="64">
+                                                <img src="assets/images/logo_t.jpg" alt="" class="rounded-circle" height="64">
                                             </span>
                                         </div>
                                     </a>

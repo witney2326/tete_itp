@@ -26,7 +26,10 @@
             border-color: gray;
             border-width: 9px;
             background-color:gray;
-            
+        }
+        img
+        {
+            background-image:url('./assets/images/No_Toilet_Image.jpg');
         }
     </style>
 </head>
@@ -56,31 +59,38 @@
 
             <!-- start page title -->
             <div class="row">
-                <div class="col-5">
-                    <p><B><h5>Image View For Toilet Product:</h5></B></p>
-                    <h6 class="mb-sm-0 font-size-18"><?php echo $pname; echo " "; echo $pdescription;?></h6>
-                    <p align="right">
-                        <INPUT TYPE="button" class="btn btn-btn btn-outline-secondary w-md" VALUE="<?php echo $language["Back"];?>" onClick="history.go(-1);">
-                    </p>
-                </div>
-            </div>
-	
-            
-                <div class ="row">
-                    <div id="display-image">
-                        <?php
-                            $query = "select filename_ from tproducts where pID = $ID";
-                            $result = mysqli_query($link, $query);
+                <div class="col-4">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18"><?php echo $language["View_Toilet_Products"]?></h4>
 
-                            while ($data = mysqli_fetch_assoc($result)) {
-                        ?>
-                            <img src="./uploads_products/<?php echo $data['filename_']; ?>" style="height: 400px; width: 440px; border-style: groove;border-color: gray;border-width: 8px;"/>
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <p align="right">
+                                    <INPUT TYPE="button" class="btn btn-btn btn-outline-secondary w-md" VALUE="<?php echo $language["Back"];?>" onClick="history.go(-1);">
+                                </p>
+                            </ol>
+                        </div>
 
-                        <?php
-                            }
-                        ?>
                     </div>
                 </div>
+                <h6 class="mb-sm-0 font-size-18" style="color:blue"><?php echo $pname; echo " "; echo $pdescription;?></h6>
+            </div>
+
+            <div class ="row">
+                <div id="display-image">
+                    <?php
+                        $query = "select filename_ from tproducts where pID = $ID";
+                        $result = mysqli_query($link, $query);
+
+                        while ($data = mysqli_fetch_assoc($result)) {
+                    ?>
+                        <img src="./uploads_products/<?php echo $data['filename_']; ?>" style="height: 400px; width: 440px; border-style: groove;border-color: gray;border-width: 8px;"/>
+
+                    <?php
+                        }
+                    ?>
+                </div>
+            </div>
            
         </div>
     </div>

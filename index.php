@@ -16,12 +16,33 @@
         {
             border-style: groove;
             border-color: gray;
-            border-width: 7px;
+            border-width: 12px;
         }
         .Mycell
         {
             background-color:red;
         }
+        #mytable {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+            #mytable td, #mytable th {
+            border: 1px solid #ddd;
+            padding: 12px;
+            }
+
+            #mytable tr:nth-child(even){background-color: #f2f2f2;}
+
+            #mytable tr:hover {background-color: #ddd;}
+
+            #mytable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: plum;
+            color: black;}
         
     </style>
 
@@ -55,10 +76,11 @@
     // Optional; add a title and set the width and height of the chart
     var options = {'title':'Verified Applicants Distribution', 'width':490, 'height':250};
     var options = {
-            title: 'Verified & Accepted Applicants Per Bairros',
+            title: '<?php echo $language["Verified_Applicants"];?>', 
             hAxis: {title: ''},
-            vAxis: {title: 'No Of Applicants'},
+            vAxis: {title: '<?php echo $language["No_Applicants"];?>'},
             legend: 'none',
+            backgroundColor: '#dfe8e0',
             series: {
             0: { color: '3f5b14' },
           }};
@@ -95,10 +117,11 @@
         var options = {'title':'', 'width':370, 'height':250};
 
         var options = {
-            title: 'Completed Toilet Works',
+            title: '<?php echo $language["Completed_Toilet_Works"];?>',
             hAxis: {title: ''},
-            vAxis: {title: 'No_Of_Applicants'},
+            vAxis: {title: '<?php echo $language["No_Applicants"];?>'},
             legend: 'none',
+            backgroundColor: '#838784', 
             series: {
             0: { color: '#002364' },
             }
@@ -137,10 +160,11 @@
         var options = {'title':'Current Toilet Works', 'width':490, 'height':250};
 
         var options = {
-            title: 'Current Toilet Works',
+            title: '<?php echo $language["Current_Toilet_Works"];?>',
             hAxis: {title: ''},
-            vAxis: {title: 'No Toilet Works'},
+            vAxis: {title: '<?php echo $language["No_OSS_Works"];?>'}, 
             legend: 'none',
+            backgroundColor: '#b2b8b3',
             series: {
             0: { color: 'd421e0' },
           }
@@ -167,403 +191,369 @@
     <!-- ============================================================== -->
     <div class="main-content">
         <div class="page-content">
-            <div class="container-fluid">                                     
+            <div class="container-fluid"> 
+            <div class="card-border">                                    
                 <div class ="row">
                     <div class="col-xl-6">
                         
-                            <div class="card-border">
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-striped mb-0">
-                                            
-                                            <th><?php echo $language["Indicator"];?></th>
-                                            <th><?php echo $language["Target"];?></th>
-                                            <th><?php echo $language["Achieved"];?></th>
-                                            <th><?php echo $language["Progress"];?>%</th>
-                                            <tbody>
-                                                <tr>
-                                                    
-                                                    <td><?php echo $language["Registered_Applicants"]?></td>
-                                                    <?php
-                                                        $target_result = mysqli_query($link, "SELECT pvalue FROM app_parameters where id = '04'"); 
-                                                        $target_row = mysqli_fetch_assoc($target_result); 
-
-                                                        if (isset($target_row['pvalue'])){$pvalue = $target_row['pvalue'];}else{$pvalue = 1;}
-                                                        
-                                                        $result = mysqli_query($link, "SELECT COUNT(hhcode) AS value_sum FROM households where deleted = '0'"); 
-                                                        $row = mysqli_fetch_assoc($result); 
-                                                        $sum_registered = $row['value_sum'];
-                                                        
-                                                        $target = $pvalue;
-
-                                                        if ($target <= 0)
-                                                        {$rate = 0;}else
-                                                        {$rate = ($sum_registered/$target)*100;}
-                                                    ?>
-                                                    <td><?php  echo number_format($target);?></td>
-                                                    <td><?php echo "" . number_format($sum_registered);?></td> 
-                                                    <?php
-                                                        
-                                                        if ($rate < 50)
-                                                        {
-                                                            echo '<td><span style="color: red">';
-                                                                echo round($rate,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        } else if (($rate >= 50) and ($rate < 70))
-                                                        {
-                                                            echo '<td><span style="color: amber">';
-                                                                echo round($rate,2); 
-                                                                echo '%';
-                                                            echo '</td></span>';  
-                                                        }else if (($rate >= 70))
-                                                        {
-                                                            echo '<td><span style="color: green">';
-                                                                echo round($rate,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        }
-                                                    ?>
-                                                </tr>
-                                                <tr>
-                                                    
-                                                    <td><?php echo $language["Verified_and_Accepted_Applicants"]?></td>
-                                                    <?php
-                                                        $result = mysqli_query($link, "SELECT COUNT(hhcode) AS sum_verified FROM households where enrolled = '1'"); 
-                                                        $row = mysqli_fetch_assoc($result); 
-                                                        $sum_verified = $row['sum_verified']; 
-
-                                                        $target = $sum_registered;
-                                                        if ($target <= 0)
-                                                        {$rate_v = 0;}else
-                                                        {$rate_v = ($sum_verified/$target)*100;}
-                                                    ?>
-                                                    <td><?php echo number_format($target);?></td>
-                                                    <td><?php echo "" . number_format($sum_verified);?></td>
-                                                    
-                                                    <?php
-                                                        if ($rate_v < 50)
-                                                        {
-                                                            echo '<td><span style="color: red">';
-                                                                echo round($rate_v,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        } else if (($rate_v >= 50) and ($rate_v < 70))
-                                                        {
-                                                            echo '<td><span style="color: amber">';
-                                                                echo round($rate_v,2); 
-                                                                echo '%';
-                                                            echo '</td></span>';  
-                                                        }else if (($rate_v >= 70))
-                                                        {
-                                                            echo '<td><span style="color: green">';
-                                                                echo round($rate_v,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        }
-                                                    ?>                                          
-                                                </tr>
+                        
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id ="mytable" class="table table-striped mb-0">
+                                        
+                                        <th><?php echo $language["Indicator"];?></th>
+                                        <th><?php echo $language["Target"];?></th>
+                                        <th><?php echo $language["Achieved"];?></th>
+                                        <th><?php echo $language["Progress"];?>%</th>
+                                        <tbody>
+                                            <tr>
                                                 
-                                                <tr>
+                                                <td><?php echo $language["Registered_Applicants"]?></td>
+                                                <?php
+                                                    $target_result = mysqli_query($link, "SELECT pvalue FROM app_parameters where id = '04'"); 
+                                                    $target_row = mysqli_fetch_assoc($target_result); 
+
+                                                    if (isset($target_row['pvalue'])){$pvalue = $target_row['pvalue'];}else{$pvalue = 1;}
                                                     
-                                                    <td><?php echo $language["Applicants_with_Full_Payments"]?></td>
-                                                    <?php
-                                                        $hhCount = 0;
-                                                        $query="select DISTINCT(tpayments.hhCode) from tpayments inner join households on tpayments.hhCode = households.hhcode  where ((tpayments.pApproved ='1') and (households.selected_product <> '00') and (households.enrolled = '1') and (households.product_approved = '1') and (households.agree_tcs = '1'))";
-                                                        
-                                                        if ($result_set = $link->query($query)) 
-                                                        {
-                                                            while($row = $result_set->fetch_array(MYSQLI_ASSOC))
-                                                            { 
-                                                                $hhcode = $row["hhCode"];
-                                                                                                                                                                                                        
-                                                                $result2 = mysqli_query($link, "SELECT SUM(amount_paid) AS total_paid FROM tpayments where ((hhCode ='$hhcode') and (pApproved ='1'))"); 
-                                                                $row2 = mysqli_fetch_assoc($result2); 
-                                                                $total_paid = $row2['total_paid'];
+                                                    $result = mysqli_query($link, "SELECT COUNT(hhcode) AS value_sum FROM households where deleted = '0'"); 
+                                                    $row = mysqli_fetch_assoc($result); 
+                                                    $sum_registered = $row['value_sum'];
+                                                    
+                                                    $target = $pvalue;
 
-                                                                $pcost = product_cost($link,hh_selected_product($link,$hhcode));
+                                                    if ($target <= 0)
+                                                    {$rate = 0;}else
+                                                    {$rate = ($sum_registered/$target)*100;}
+                                                ?>
+                                                <td><?php  echo number_format($target);?></td>
+                                                <td><?php echo "" . number_format($sum_registered);?></td> 
+                                                <?php
+                                                    
+                                                    if ($rate < 50)
+                                                    {
+                                                        echo '<td><span style="color: red">';
+                                                            echo round($rate,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    } else if (($rate >= 50) and ($rate < 70))
+                                                    {
+                                                        echo '<td><span style="color: amber">';
+                                                            echo round($rate,2); 
+                                                            echo '%';
+                                                        echo '</td></span>';  
+                                                    }else if (($rate >= 70))
+                                                    {
+                                                        echo '<td><span style="color: green">';
+                                                            echo round($rate,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    }
+                                                ?>
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td><?php echo $language["Verified_and_Accepted_Applicants"]?></td>
+                                                <?php
+                                                    $result = mysqli_query($link, "SELECT COUNT(hhcode) AS sum_verified FROM households where enrolled = '1'"); 
+                                                    $row = mysqli_fetch_assoc($result); 
+                                                    $sum_verified = $row['sum_verified']; 
 
-                                                                if ($total_paid >= $pcost)
-                                                                {
-                                                                    $hhCount = $hhCount+1;
-                                                                }
+                                                    $target = $sum_registered;
+                                                    if ($target <= 0)
+                                                    {$rate_v = 0;}else
+                                                    {$rate_v = ($sum_verified/$target)*100;}
+                                                ?>
+                                                <td><?php echo number_format($target);?></td>
+                                                <td><?php echo "" . number_format($sum_verified);?></td>
+                                                
+                                                <?php
+                                                    if ($rate_v < 50)
+                                                    {
+                                                        echo '<td><span style="color: red">';
+                                                            echo round($rate_v,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    } else if (($rate_v >= 50) and ($rate_v < 70))
+                                                    {
+                                                        echo '<td><span style="color: amber">';
+                                                            echo round($rate_v,2); 
+                                                            echo '%';
+                                                        echo '</td></span>';  
+                                                    }else if (($rate_v >= 70))
+                                                    {
+                                                        echo '<td><span style="color: green">';
+                                                            echo round($rate_v,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    }
+                                                ?>                                          
+                                            </tr>
+                                            
+                                            <tr>
+                                                
+                                                <td><?php echo $language["Applicants_with_Full_Payments"]?></td>
+                                                <?php
+                                                    $hhCount = 0;
+                                                    $query="select DISTINCT(tpayments.hhCode) from tpayments inner join households on tpayments.hhCode = households.hhcode  where ((tpayments.pApproved ='1') and (households.selected_product <> '00') and (households.enrolled = '1') and (households.product_approved = '1') and (households.agree_tcs = '1'))";
+                                                    
+                                                    if ($result_set = $link->query($query)) 
+                                                    {
+                                                        while($row = $result_set->fetch_array(MYSQLI_ASSOC))
+                                                        { 
+                                                            $hhcode = $row["hhCode"];
+                                                                                                                                                                                                    
+                                                            $result2 = mysqli_query($link, "SELECT SUM(amount_paid) AS total_paid FROM tpayments where ((hhCode ='$hhcode') and (pApproved ='1'))"); 
+                                                            $row2 = mysqli_fetch_assoc($result2); 
+                                                            $total_paid = $row2['total_paid'];
 
+                                                            $pcost = product_cost($link,hh_selected_product($link,$hhcode));
+
+                                                            if ($total_paid >= $pcost)
+                                                            {
+                                                                $hhCount = $hhCount+1;
                                                             }
+
                                                         }
-                                                        $target = $sum_verified;
-                                                        if ($target <= 0)
-                                                        {$rate_fp = 0;}else
-                                                        {$rate_fp = ($hhCount/$target)*100;}
-                                                        
-                                                    ?>
-                                                    <td><?php echo number_format($target);?></td>
-                                                    <td><?php echo "" . number_format($hhCount);?></td>
+                                                    }
+                                                    $target = $sum_verified;
+                                                    if ($target <= 0)
+                                                    {$rate_fp = 0;}else
+                                                    {$rate_fp = ($hhCount/$target)*100;}
                                                     
-                                                    <?php
-                                                        if ($rate_fp < 50)
-                                                        {
-                                                            echo '<td><span style="color: red">';
-                                                                echo round($rate_fp,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        } else if (($rate_fp >= 50) and ($rate_fp < 70))
-                                                        {
-                                                            echo '<td><span style="color: amber">';
-                                                                echo round($rate_fp,2); 
-                                                                echo '%';
-                                                            echo '</td></span>';  
-                                                        }else if (($rate_fp >= 70))
-                                                        {
-                                                            echo '<td><span style="color: green">';
-                                                                echo round($rate_fp,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        }
-                                                    ?>                         
-                                                </tr>
+                                                ?>
+                                                <td><?php echo number_format($target);?></td>
+                                                <td><?php echo "" . number_format($hhCount);?></td>
+                                                
+                                                <?php
+                                                    if ($rate_fp < 50)
+                                                    {
+                                                        echo '<td><span style="color: red">';
+                                                            echo round($rate_fp,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    } else if (($rate_fp >= 50) and ($rate_fp < 70))
+                                                    {
+                                                        echo '<td><span style="color: amber">';
+                                                            echo round($rate_fp,2); 
+                                                            echo '%';
+                                                        echo '</td></span>';  
+                                                    }else if (($rate_fp >= 70))
+                                                    {
+                                                        echo '<td><span style="color: green">';
+                                                            echo round($rate_fp,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    }
+                                                ?>                         
+                                            </tr>
 
-                                                <tr>
-                                                   
-                                                    <td><?php echo $language["Applicants_Requesting_Technical_Guidance_on_Selection"]?></td>
-                                                    <?php
-                                                        $result = mysqli_query($link, "SELECT COUNT(hhcode) AS value_sum FROM households where (((need_tg = '1') or (need_tg = '1')) and (deleted = '0'))"); 
-                                                        $row = mysqli_fetch_assoc($result); 
-                                                        $sum = $row['value_sum']; 
+                                            <tr>
+                                                
+                                                <td><?php echo $language["Applicants_Requesting_Technical_Guidance_on_Selection"]?></td>
+                                                <?php
+                                                    $result = mysqli_query($link, "SELECT COUNT(hhcode) AS value_sum FROM households where (((need_tg = '1') or (need_tg = '1')) and (deleted = '0'))"); 
+                                                    $row = mysqli_fetch_assoc($result); 
+                                                    $sum = $row['value_sum']; 
 
-                                                        $target = $sum_verified;
-                                                        if ($target <= 0)
-                                                        {$rate_tg = 0;}else
-                                                        {$rate_tg = ($sum/$target)*100;}
-                                                    ?>
-                                                    <td><?php echo number_format($target);?></td>
-                                                    <td><?php echo "" . number_format($sum);?></td>
-                                                    
-                                                    <?php
-                                                        if ($rate_tg < 50)
-                                                        {
-                                                            echo '<td><span style="color: red">';
-                                                                echo round($rate_tg,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        } else if (($rate_tg >= 50) and ($rate_tg < 70))
-                                                        {
-                                                            echo '<td><span style="color: amber">';
-                                                                echo round($rate_tg,2); 
-                                                                echo '%';
-                                                            echo '</td></span>';  
-                                                        }else if (($rate_tg >= 70))
-                                                        {
-                                                            echo '<td><span style="color: green">';
-                                                                echo round($rate_tg,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        }
-                                                    ?>
-                                                </tr>
-                                                <tr>
-                                                    
-                                                    <td><?php echo $language["Total_Sites_Handed_Over_to_Contractors"]?></td>
-                                                    <?php
-                                                        $result = mysqli_query($link, "SELECT COUNT(pID) AS value_total FROM tprojects"); 
-                                                        $row = mysqli_fetch_assoc($result); 
-                                                        $value_total_ho = $row['value_total']; 
+                                                    $target = $sum_verified;
+                                                    if ($target <= 0)
+                                                    {$rate_tg = 0;}else
+                                                    {$rate_tg = ($sum/$target)*100;}
+                                                ?>
+                                                <td><?php echo number_format($target);?></td>
+                                                <td><?php echo "" . number_format($sum);?></td>
+                                                
+                                                <?php
+                                                    if ($rate_tg < 50)
+                                                    {
+                                                        echo '<td><span style="color: red">';
+                                                            echo round($rate_tg,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    } else if (($rate_tg >= 50) and ($rate_tg < 70))
+                                                    {
+                                                        echo '<td><span style="color: amber">';
+                                                            echo round($rate_tg,2); 
+                                                            echo '%';
+                                                        echo '</td></span>';  
+                                                    }else if (($rate_tg >= 70))
+                                                    {
+                                                        echo '<td><span style="color: green">';
+                                                            echo round($rate_tg,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    }
+                                                ?>
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td><?php echo $language["Total_Sites_Handed_Over_to_Contractors"]?></td>
+                                                <?php
+                                                    $result = mysqli_query($link, "SELECT COUNT(pID) AS value_total FROM tprojects"); 
+                                                    $row = mysqli_fetch_assoc($result); 
+                                                    $value_total_ho = $row['value_total']; 
 
-                                                        $target = $sum_verified;
-                                                        if ($target <= 0)
-                                                        {$rate_ho = 0;}else
-                                                        {$rate_ho = ($value_total_ho/$target)*100;}
-                                                    ?>
-                                                    <td><?php echo number_format($target);?></td>
-                                                    <td><?php echo "" . number_format($value_total_ho);?></td>
-                                                    
-                                                    <?php
-                                                        if ($rate_ho < 50)
-                                                        {
-                                                            echo '<td><span style="color: red">';
-                                                                echo round($rate_ho,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        } else if (($rate_ho >= 50) and ($rate_ho < 70))
-                                                        {
-                                                            echo '<td><span style="color: amber">';
-                                                                echo round($rate_ho,2); 
-                                                                echo '%';
-                                                            echo '</td></span>';  
-                                                        }else if (($rate_ho >= 70))
-                                                        {
-                                                            echo '<td><span style="color: green">';
-                                                                echo round($rate_ho,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        }
-                                                    ?>
-                                                </tr>
+                                                    $target = $sum_verified;
+                                                    if ($target <= 0)
+                                                    {$rate_ho = 0;}else
+                                                    {$rate_ho = ($value_total_ho/$target)*100;}
+                                                ?>
+                                                <td><?php echo number_format($target);?></td>
+                                                <td><?php echo "" . number_format($value_total_ho);?></td>
+                                                
+                                                <?php
+                                                    if ($rate_ho < 50)
+                                                    {
+                                                        echo '<td><span style="color: red">';
+                                                            echo round($rate_ho,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    } else if (($rate_ho >= 50) and ($rate_ho < 70))
+                                                    {
+                                                        echo '<td><span style="color: amber">';
+                                                            echo round($rate_ho,2); 
+                                                            echo '%';
+                                                        echo '</td></span>';  
+                                                    }else if (($rate_ho >= 70))
+                                                    {
+                                                        echo '<td><span style="color: green">';
+                                                            echo round($rate_ho,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    }
+                                                ?>
+                                            </tr>
 
-                                                <tr>
-                                                    
-                                                    <td><?php echo $language["Works_on_Schedule"]?></td>
-                                                    <?php
-                                                        $result = mysqli_query($link, "SELECT COUNT(pID) AS t_projs_l FROM tprojects where ((CURDATE() < pfinishdate) and (pstatus <> '05') and (pstatus <> '00'))"); 
-                                                        $row = mysqli_fetch_assoc($result); 
-                                                        $t_projs_l = $row['t_projs_l']; 
+                                            <tr>
+                                                
+                                                <td><?php echo $language["Works_on_Schedule"]?></td>
+                                                <?php
+                                                    $result = mysqli_query($link, "SELECT COUNT(pID) AS t_projs_l FROM tprojects where ((CURDATE() < pfinishdate) and (pstatus <> '05') and (pstatus <> '00'))"); 
+                                                    $row = mysqli_fetch_assoc($result); 
+                                                    $t_projs_l = $row['t_projs_l']; 
 
-                                                        $target = $value_total_ho;
-                                                        if ($target <= 0)
-                                                        {$rate_os = 0;}else
-                                                        {$rate_os = ($t_projs_l/$target)*100;}
-                                                    ?>
-                                                    <td><?php echo number_format($target);?></td>
-                                                    <td><?php echo "" . number_format($t_projs_l);?></td>
-                                                    
-                                                    <?php
-                                                        if ($rate_os < 50)
-                                                        {
-                                                            echo '<td><span style="color: red">';
-                                                                echo round($rate_os,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        } else if (($rate_os >= 50) and ($rate_os < 70))
-                                                        {
-                                                            echo '<td><span style="color: amber">';
-                                                                echo round($rate_os,2); 
-                                                                echo '%';
-                                                            echo '</td></span>';  
-                                                        }else if (($rate_os >= 70))
-                                                        {
-                                                            echo '<td><span style="color: green">';
-                                                                echo round($rate_os,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        }
-                                                    ?>
-                                                </tr>
+                                                    $target = $value_total_ho;
+                                                    if ($target <= 0)
+                                                    {$rate_os = 0;}else
+                                                    {$rate_os = ($t_projs_l/$target)*100;}
+                                                ?>
+                                                <td><?php echo number_format($target);?></td>
+                                                <td><?php echo "" . number_format($t_projs_l);?></td>
+                                                
+                                                <?php
+                                                    if ($rate_os < 50)
+                                                    {
+                                                        echo '<td><span style="color: red">';
+                                                            echo round($rate_os,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    } else if (($rate_os >= 50) and ($rate_os < 70))
+                                                    {
+                                                        echo '<td><span style="color: amber">';
+                                                            echo round($rate_os,2); 
+                                                            echo '%';
+                                                        echo '</td></span>';  
+                                                    }else if (($rate_os >= 70))
+                                                    {
+                                                        echo '<td><span style="color: green">';
+                                                            echo round($rate_os,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    }
+                                                ?>
+                                            </tr>
 
-                                                <tr>
-                                                    
-                                                    <td><?php echo $language["Works_OUT_of_Schedule"]?></td>
-                                                    <?php
-                                                        $result = mysqli_query($link, "SELECT COUNT(pID) AS t_projs FROM tprojects where ((CURDATE() > pfinishdate) and (pstatus <> '05'))"); 
-                                                        $row = mysqli_fetch_assoc($result); 
-                                                        $t_projs = $row['t_projs']; 
+                                            <tr>
+                                                
+                                                <td><?php echo $language["Works_OUT_of_Schedule"]?></td>
+                                                <?php
+                                                    $result = mysqli_query($link, "SELECT COUNT(pID) AS t_projs FROM tprojects where ((CURDATE() > pfinishdate) and (pstatus <> '05'))"); 
+                                                    $row = mysqli_fetch_assoc($result); 
+                                                    $t_projs = $row['t_projs']; 
 
-                                                        $target = $value_total_ho;
-                                                        if ($target <= 0)
-                                                        {$rate_pos = 0;}else
-                                                        {$rate_pos = ($t_projs/$target)*100;}
-                                                    ?>
-                                                    <td><?php echo number_format($target);?></td>
-                                                    <td><?php echo "" . number_format($t_projs);?></td>
-                                                    
-                                                    <?php
-                                                        if ($rate_pos < 50)
-                                                        {
-                                                            echo '<td><span style="color: red">';
-                                                                echo round($rate_pos,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        } else if (($rate_pos >= 50) and ($rate_pos < 70))
-                                                        {
-                                                            echo '<td><span style="color: amber">';
-                                                                echo round($rate_pos,2); 
-                                                                echo '%';
-                                                            echo '</td></span>';  
-                                                        }else if (($rate_pos >= 70))
-                                                        {
-                                                            echo '<td><span style="color: green">';
-                                                                echo round($rate_pos,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        }
-                                                    ?>
-                                                </tr>
+                                                    $target = $value_total_ho;
+                                                    if ($target <= 0)
+                                                    {$rate_pos = 0;}else
+                                                    {$rate_pos = ($t_projs/$target)*100;}
+                                                ?>
+                                                <td><?php echo number_format($target);?></td>
+                                                <td><?php echo "" . number_format($t_projs);?></td>
+                                                
+                                                <?php
+                                                    if ($rate_pos < 50)
+                                                    {
+                                                        echo '<td><span style="color: red">';
+                                                            echo round($rate_pos,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    } else if (($rate_pos >= 50) and ($rate_pos < 70))
+                                                    {
+                                                        echo '<td><span style="color: amber">';
+                                                            echo round($rate_pos,2); 
+                                                            echo '%';
+                                                        echo '</td></span>';  
+                                                    }else if (($rate_pos >= 70))
+                                                    {
+                                                        echo '<td><span style="color: green">';
+                                                            echo round($rate_pos,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    }
+                                                ?>
+                                            </tr>
 
-                                                <tr>
-                                                    
-                                                    <td><?php echo $language["Toilets_Handed_Over_to_Applicants"]?></td>
-                                                    <?php
-                                                        $result = mysqli_query($link, "SELECT COUNT(pID) AS total_projs FROM tprojects where ((pstatus = '06') and (pdeleted = '0'))"); 
-                                                        $row = mysqli_fetch_assoc($result); 
-                                                        $total_projs = $row['total_projs']; 
+                                            <tr>
+                                                
+                                                <td><?php echo $language["Toilets_Handed_Over_to_Applicants"]?></td>
+                                                <?php
+                                                    $result = mysqli_query($link, "SELECT COUNT(pID) AS total_projs FROM tprojects where ((pstatus = '06') and (pdeleted = '0'))"); 
+                                                    $row = mysqli_fetch_assoc($result); 
+                                                    $total_projs = $row['total_projs']; 
 
-                                                        $target = $value_total_ho;
-                                                        if ($target <= 0)
-                                                        {$rate_completed = 0;}else
-                                                        {$rate_completed = ($total_projs/$target)*100;}
-                                                    ?>
-                                                    <td><?php echo number_format($target);?></td>
-                                                    <td><?php echo "" . number_format($total_projs);?></td>
-                                                    <?php
-                                                        if ($rate_completed < 50)
-                                                        {
-                                                            echo '<td><span style="color: red">';
-                                                                echo round($rate_completed,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        } else if (($rate_completed >= 50) and ($rate_completed < 70))
-                                                        {
-                                                            echo '<td><span style="color: amber">';
-                                                                echo round($rate_completed,2); 
-                                                                echo '%';
-                                                            echo '</td></span>';  
-                                                        }else if (($rate_completed >= 70))
-                                                        {
-                                                            echo '<td><span style="color: green">';
-                                                                echo round($rate_completed,2); 
-                                                                echo '%';
-                                                            echo '</td></span>'; 
-                                                        }
-                                                    ?>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-
+                                                    $target = $value_total_ho;
+                                                    if ($target <= 0)
+                                                    {$rate_completed = 0;}else
+                                                    {$rate_completed = ($total_projs/$target)*100;}
+                                                ?>
+                                                <td><?php echo number_format($target);?></td>
+                                                <td><?php echo "" . number_format($total_projs);?></td>
+                                                <?php
+                                                    if ($rate_completed < 50)
+                                                    {
+                                                        echo '<td><span style="color: red">';
+                                                            echo round($rate_completed,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    } else if (($rate_completed >= 50) and ($rate_completed < 70))
+                                                    {
+                                                        echo '<td><span style="color: amber">';
+                                                            echo round($rate_completed,2); 
+                                                            echo '%';
+                                                        echo '</td></span>';  
+                                                    }else if (($rate_completed >= 70))
+                                                    {
+                                                        echo '<td><span style="color: green">';
+                                                            echo round($rate_completed,2); 
+                                                            echo '%';
+                                                        echo '</td></span>'; 
+                                                    }
+                                                ?>
+                                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-
-                                
-
                             </div>
-                        
-
-                    </div>
-
-                    <div class = "col-lg-6">
-                        <div class ="row">
-                            <div class="card-border">                               
+                        </div>
+                        <div class = "col-lg-6">
                                 <div id="Registered_HHs"></div> 
-                            </div>
-                        </div>
-                        <div class ="row">
-                            <div class="card-border">  
+                                <hr size="4" width="90%" color="green"> 
                                 <div id="current_works"></div>
-                            </div>
-                        </div>
-                        <div class ="row">
-                            <div class="card-border">  
+                                <hr size="4" width="90%" color="green"> 
                                 <div id="completed_works"></div> 
-                            </div>
+                                <hr size="4" width="90%" color="green"> 
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

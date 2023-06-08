@@ -170,8 +170,8 @@ $language['System_Admin']="System Admin";
 $language['Register_and_Target']="Register and Target";
 $language['Request_for_Service']="Request for Service";
 $language['Contribute_for_Service']="Contribute for Service";
-$language['OSS_Works']="OSS Works";
-$language['Project_Reports']="Project Reports";
+$language['OSS_Works']="Toilet Works";
+$language['Project_Reports']="Reports";
 
 
 $language['Select_Language']="Choose Language";
@@ -187,7 +187,7 @@ $language['OSS_Products_Handed_over_to_Households']="OSS Products Handed over to
 
 
 $language['Register_Household']="Register Household";
-$language['Add_New_Beneficiary_Household']="Add New Beneficiary Household";
+$language['Add_New_Beneficiary_Household']="Add New Applicant";
 
 $language['Registered_Households']="Registered Households"; 
 $language['Target_Households']="Target Households";
@@ -260,7 +260,7 @@ $language["Request_Tech_Guide"] = "Request Technical Guide";
 $language["Select_Product"]= "Select OSS Product";
 $language["Record_Payment"]= "Record Payment";
 $language["Message_Supervisor"]="Message Supervisor";
-$language["Household_Current_Status"] = "Household Current OSS Works Status";
+$language["Household_Current_Status"] = "Toilet Works Status";
 
 $language["Contractor_Dashboard"] = "Contractor Dashboard";
 $language["Allocated_Works"] = "Allocated Works";
@@ -574,4 +574,14 @@ $language["All_materials_used"]="All materials used in the constructions have be
 $language["Applicant_Signature"] ="Applicant's Signature";
 $language["Contractor_Signature"] ="Contractor's Signature";
 $language["Toilet_Works_Completion_Certificate"] ="Toilet Works Completion Certificate";
+$language["No_Applicants"] ="No. Applicants";
+$language["Current_Toilet_Works"] = "Current Toilet Works"; 
+$language["New_Bairros"] = "Add New Bairros"; 
+$language["New_Unidade"] ="Add New Unidade";
+$language["Unidade_ID"] = "Unidade ID";
+$language["Required"] = "Required"; 
+
+$language["Application_Email_Settings"]="Application Email Settings";
+$language["Host"]="Host";
+$language["Password"]="Password";
 ?>

@@ -129,11 +129,11 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18"><?php echo $language["View_Applicant"]?>: <?php if (isset($hhname)) {echo $hhname;}else{echo "Applicant's Name Missing";}?></h4>
+                            <h4 class="mb-sm-0 font-size-18"><?php echo $language["View_Applicant"];?>: <?php if (isset($hhname)) {echo $hhname;}else{echo "Applicant's Name Missing";}?></h4>
                             <div class="page-title-right">
                                     <div>
                                         <p align="right">
-                                            <INPUT TYPE="button" class="btn btn-btn btn-outline-secondary w-md" VALUE="Back" onClick="history.go(-1);">
+                                            <INPUT TYPE="button" class="btn btn-btn btn-outline-secondary w-md" VALUE="<?php echo $language["Back"];?>" onClick="history.go(-1);">
                                         </p>
                                     </div>
                             </div>

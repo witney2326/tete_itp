@@ -171,8 +171,8 @@ $language['System_Admin']="Administração do Sistema";
 $language['Register_and_Target']="Registre-se e Alvo";
 $language['Request_for_Service']="Solicitação de serviço";
 $language['Contribute_for_Service']="Contribuir para o serviço";
-$language['OSS_Works']="OSS funciona";
-$language['Project_Reports']="Relatórios de Projeto";
+$language['OSS_Works']="Trabalhos de casa de banho";
+$language['Project_Reports']="Relatórios";
 
 $language['Select_Language']="Escolha o seu idioma";
 $language['The_Sanitation_Project']="O Projeto de Saneamento";
@@ -186,7 +186,7 @@ $language['OSS_Works_OUT_of_Schedule']="OSS funciona fora do cronograma";
 $language['OSS_Products_Handed_over_to_Households']="Produtos OSS entregues aos agregados familiares";
 
 $language['Register_Household']="Registrar Família";
-$language['Add_New_Beneficiary_Household']="Adicionar nova família beneficiária";
+$language['Add_New_Beneficiary_Household']="Adicionar novo candidato";
 
 $language['Registered_Households']="Famílias cadastradas";
 $language['Verified_Households']="Residências verificadas";
@@ -259,7 +259,7 @@ $language["Request_Tech_Guide"] = "Solicitar guia técnico";
 $language["Select_Product"]= "Selecione o produto OSS";
 $language["Record_Payment"]= "Registro de pagamento";
 $language["Message_Supervisor"]="Supervisor de mensagens";
-$language["Household_Current_Status"] = "Status Atual dos Trabalhos OSS Domésticos";
+$language["Household_Current_Status"] = "Estado das obras nas casas de banho";
 
 $language["Contractor_Dashboard"] = "Painel do contratante";
 $language["Allocated_Works"] = "Trabalhos Alocados";
@@ -570,4 +570,14 @@ $language["All_materials_used"]="Todos os materiais utilizados nas construções
 $language["Applicant_Signature"] ="Assinatura do requerente";
 $language["Contractor_Signature"] ="Assinatura da Contratada";
 $language["Toilet_Works_Completion_Certificate"] ="Certificado de Conclusão de Obras Sanitárias";
+$language["No_Applicants"] ="Número de candidatos";
+$language["Current_Toilet_Works"] = "Obras nas casas de banho actuais"; 
+$language["New_Bairros"] = "Adicionar novos Bairros"; 
+$language["New_Unidade"] ="Adicionar nova unidade";
+$language["Unidade_ID"] = "Unidade ID";
+$language["Required"] = "Necessário"; 
+
+$language["Application_Email_Settings"]="Definições de correio electrónico da aplicação";
+$language["Host"]="Anfitrião de correio electrónico";
+$language["Password"]="Palavra-passe";
 ?>

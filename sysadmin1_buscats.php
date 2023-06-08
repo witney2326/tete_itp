@@ -55,6 +55,28 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                 background-repeat: no-repeat;
                 }
         .ico-view { background-position: 0 0; }
+        
+        #mytable {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+            #mytable td, #mytable th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            }
+
+            #mytable tr:nth-child(even){background-color: #f2f2f2;}
+
+            #mytable tr:hover {background-color: #ddd;}
+
+            #mytable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: plum;
+            color: white;}
     </style>
 </head>
 
@@ -143,67 +165,66 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                
                             
                             <div class="card-border">
-                            
-                                <form action="OSS_add_product.php">
-                                    <p align="right">
-                                        <input type="submit" value="<?php echo $language["New_Toilet"];?>" class="btn btn-outline-primary w-md" style="width:170px"/>
-                                    </p>
-                                </form>
-
                                 <div class="card-body">
-                                <h7 class="card-title mt-0"></h7>
+                                    <form action="OSS_add_product.php">
+                                        <p align="right">
+                                            <input type="submit" value="<?php echo $language["New_Toilet"];?>" class="btn btn-outline-primary w-md" style="width:170px;background-color:plum;color:black"/>
+                                        </p>
+                                    </form>
+
                                     
-                                        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                    <h7 class="card-title mt-0"></h7>
                                         
-                                            <thead>
-                                                <tr>
-                                                    <th><?php echo $language["ID"];?></th>
-                                                    <th><?php echo $language["Toilet_Type"];?></th>
-                                                    <th><?php echo $language["Product_Cost"];?></th>
-                                                    <th><?php echo $language["Description"];?></th>
-                                                    <th><?php echo $language["Image_Uploaded"];?></th>
-                                                    <th><?php echo $language["Action"];?></th>                                                              
-                                                </tr>
-                                            </thead>
+                                    <table id="mytable" class="table table-bordered dt-responsive  nowrap w-100">
+                                    
+                                        <thead>
+                                            <tr>
+                                                <th><?php echo $language["ID"];?></th>
+                                                <th><?php echo $language["Toilet_Type"];?></th>
+                                                <th><?php echo $language["Product_Cost"];?></th>
+                                                <th><?php echo $language["Description"];?></th>
+                                                <th><?php echo $language["Image_Uploaded"];?></th>
+                                                <th><?php echo $language["Action"];?></th>                                                              
+                                            </tr>
+                                        </thead>
 
 
-                                            <tbody>
-                                                <?Php
-                                                    $query = "SELECT * FROM tproducts ORDER by pID";
+                                        <tbody>
+                                            <?Php
+                                                $query = "SELECT * FROM tproducts ORDER by pID";
 
-                                                    if ($result_set = $link->query($query)) {
-                                                    while($row = $result_set->fetch_array(MYSQLI_ASSOC))
-                                                    { 
-                                                        if (isset($row["filename_"]))
-                                                        {
-                                                            $stat_view = $language["Yes"];
-                                                        }else
-                                                        {
-                                                            $stat_view =$language["No"];
-                                                        }
-
-                                                        echo "<tr>";
-                                                            echo "<td>".$row['pID']."</td>";
-                                                            echo "<td>".$row['pname']."</td>";
-                                                            echo "<td>".number_format($row['pCost'],2)."</td>";
-                                                            echo "<td>".$row['pdescription']."</td>";
-                                                            echo "<td>\t\t$stat_view</td>\n";
-                                                            echo "<td>
-                                                                    <a href=\"view_product_image.php?id=".$row['pID']."\"><i class='fas fa-eye' title='$language[View_Toilet]' style='font-size:18px;color:purple'></i></a> 
-                                                                    <a href=\"OSS_edit_product.php?id=".$row['pID']."\"><i class='fas fa-edit' title='$language[Edit_Toilet_Product]' style='font-size:18px;color:green'></i></a>
-                                                                    <a href=\"upload_products.php?id=".$row['pID']."\"><i class='upload ico-upload' title='$language[Upload_Toilet_Image]' style='font-size:18px'></i></a>
-                                                                    <a onClick=\"javascript: return confirm('$language[Delete_Toilet_Product] ');\" href=\"OSS_product_delete.php?id=".$row['pID']."\"><i class='fas fa-trash-alt' title='$language[Delete_Toilet]' style='font-size:18px;color:Red'></i></a>
-                                                                </td>\n";
-                                                        echo "</tr>";
+                                                if ($result_set = $link->query($query)) {
+                                                while($row = $result_set->fetch_array(MYSQLI_ASSOC))
+                                                { 
+                                                    if (isset($row["filename_"]))
+                                                    {
+                                                        $stat_view = $language["Yes"];
+                                                    }else
+                                                    {
+                                                        $stat_view =$language["No"];
                                                     }
-                                                    $result_set->close();
-                                                    }  
-                                                                        
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>     
+
+                                                    echo "<tr>";
+                                                        echo "<td>".$row['pID']."</td>";
+                                                        echo "<td>".$row['pname']."</td>";
+                                                        echo "<td>".number_format($row['pCost'],2)."</td>";  
+                                                        echo "<td>".$row['pdescription']."</td>";
+                                                        echo "<td>\t\t$stat_view</td>\n";
+                                                        echo "<td>
+                                                                <a href=\"view_product_image.php?id=".$row['pID']."\"><button class='btn btn-sm btn-outline-info' title='$language[View_Toilet]' style='font-size:18px;color:purple'><i class='fas fa-eye'></i></button></a> 
+                                                                <a href=\"OSS_edit_product.php?id=".$row['pID']."\"><button class='btn btn-sm btn-outline-success' title='$language[Edit_Toilet_Product]' style='font-size:18px;color:green'><i class='fas fa-edit'></i></button></a>
+                                                                <a href=\"upload_products.php?id=".$row['pID']."\"><button class='btn btn-sm btn-outline-primary' title='$language[Upload_Toilet_Image]' style='font-size:18px'><i class='upload ico-upload'></i></button></a>
+                                                                <a onClick=\"javascript: return confirm('$language[Delete_Toilet_Product] ');\" href=\"OSS_product_delete.php?id=".$row['pID']."\"><button class='btn btn-sm btn-outline-secondary' title='$language[Delete_Toilet]' style='font-size:18px;color:Red'><i class='fas fa-trash-alt'></i></button></a>
+                                                            </td>\n";
+                                                    echo "</tr>";
+                                                }
+                                                $result_set->close();
+                                                }  
+                                                                    
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>    
                             </div>            
                         </div>
                     </div>

@@ -18,7 +18,7 @@
      
     if (($product_approved =='0'))
     {
-        $sql = mysqli_query($link,"update households  SET product_approved = '1', amount_owing= '$toilet_cost', current_status = '04' where hhcode = '$hhID'");
+        $sql = mysqli_query($link,"update households  SET product_approved = '1', amount_owing = '$toilet_cost', current_status = '04' where hhcode = '$hhID'");
                 
         if ($sql) {
             echo '<script type="text/javascript">'; 

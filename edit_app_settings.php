@@ -2,7 +2,7 @@
 <?php include 'layouts/head-main.php'; ?>
 
 <head>
-    <title><?php echo $language["New_Unidade"];?></title> 
+    <title><?php echo $language["Edit_Parameter"];?></title>
     <?php include 'layouts/head.php'; ?>
     <?php include 'layouts/head-style.php'; ?>
     <?php include 'lib.php'; ?>
@@ -25,12 +25,12 @@
   <script type="text/javascript" 
 src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
   </script>
-    <style> 
+  <style> 
         .card-border 
-        {
+            {
             border-style: solid;
             border-color: gray;
-        }
+            }
         .card-border1 
             {
                 border-style: groove;
@@ -47,8 +47,17 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
 <?php include 'layouts/body.php'; ?>
 <?php
        include "layouts/config.php";
-               
-         
+        
+       $id = $_GET['id'];
+       
+
+        $result = mysqli_query($link, "SELECT * FROM tconfig where id = '$id'"); 
+        $row = mysqli_fetch_assoc($result); 
+        $cmail= $row["cmail"];
+        $chost= $row["chost"];
+        $cpass= $row["cpass"];
+       
+       
     ?>
 
 <!-- Begin page -->
@@ -66,9 +75,9 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
 
                 <!-- start page title -->
                 <div class="row">
-                    <div class="col-9">
+                    <div class="col-6">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18"><?php echo $language["New_Unidade"];?></h4>
+                            <h4 class="mb-sm-0 font-size-18"><?php echo $language["Edit_Parameter"];?></h4>
                             <div class="page-title-right">
                                     <div>
                                         <p align="right">
@@ -85,40 +94,46 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                     <div class="col-12">
 
                         <?php include 'layouts/body.php'; ?>
-                        <div class="col-lg-9">
-                            <div class="card-border">
-                                <div class="card-header bg-transparent border-success">
-                                    
-                                </div>
-                                <div class="card-body">
-                                    
-                                    <form method="POST" action="OSS_cityWard_add.php">
-                                        <div class="row mb-1">
-                                            <label for="bcode" class="col-sm-2 col-form-label"><?php echo $language["Unidade_ID"];?></label> 
-                                            <input type="text" class="form-control" id="bcode" name = "bcode" placeholder="###" style="max-width:30%;">
-                                            
-                                            <label for="bname" class="col-sm-2 col-form-label"><?php echo $language["Unidade"];?></label> 
-                                            <input type="text" class="form-control" id="bname" name = "bname"  style="max-width:30%;"  >
-                                        </div>
+                        <div class="col-lg-6">
+                            <div class="card1">
+                                <div class="card-border1">
+                                    <div class="card-header bg-transparent border-success">
                                         
-                                        <div class="row mb-1">
-                                            <label for="apcode" class="col-sm-2 col-form-label"><?php echo $language["Bairros_ID"];?> </label>
-                                            <input type="text" class="form-control" id="apcode" name="apcode"  style="max-width:30%;" >
+                                    </div>
+                                    <div class="card-body">
                                         
-                                            <label for="apname" class="col-sm-2 col-form-label"><?php echo $language["Bairros"];?></label>
-                                            <input type="text" class="form-control" id="apname" name="apname"  style="max-width:30%;" readonly>
-                                        </div>
-                                                                         
-                                                                                
-                                        <div class="row justify-content-end">
-                                            <div>
-                                                <button type="submit" class="btn btn-btn btn-outline-primary w-md" name="Add" value="Add"><?php echo $language["New_Unidade"];?></button>
+                                        <form method="POST" action="app_settings_save.php">
+                                            <div class="row mb-1">
+                                                <label for="paramID" class="col-sm-3 col-form-label"><?php echo $language["Parameter_ID"];?></label>
+                                                <input type="text" class="form-control" id="paramID" name = "paramID" value="<?php echo $id;?>" style="max-width:10%;" readonly >
+                                            </div> 
+                                            <div class="row mb-1">
+                                                <label for="mail" class="col-sm-3 col-form-label"><?php echo $language["Email"];?></label>
+                                                <input type="text" class="form-control" id="mail" name = "mail" value="<?php echo $cmail;?>"  style="max-width:30%;">
                                             </div>
-                                        </div>
-                                    </form>
-                                    
+                                            
+                                            <div class="row mb-3">
+                                                <label for="host" class="col-sm-3 col-form-label"><?php echo $language["Host"];?></label>
+                                                <input type="text" class="form-control" id="host" name="host" value="<?php echo $chost;?>" style="max-width:30%;">
+                                            </div>
+
+                                            <div class="row mb-3">
+                                                <label for="pass" class="col-sm-3 col-form-label"><?php echo $language["Password"];?></label>
+                                                <input type="password" class="form-control" id="pass" name="pass" value="<?php echo $cpass;?>" style="max-width:30%;">
+                                            </div>
+                                                        
+                                                                                    
+                                            <div class="row justify-content-end">
+                                                <div>
+                                                    
+                                                    <button type="submit" class="btn btn-btn btn-outline-primary w-md" name="Edit" value="Add"><?php echo $language["Edit_Parameter"];?></button>
+                                                    
+                                                </div>
+                                            </div>
+                                        </form>
+                                        
+                                    </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>

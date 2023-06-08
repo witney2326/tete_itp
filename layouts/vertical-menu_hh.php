@@ -1,31 +1,35 @@
 <style>
     .navbar-header {
-        background-color: yellowgreen !important;
+        background-color: #61e3f5 !important;
         border: none !important;
         border-width:0!important;
     }
 </style>
 <header id="page-topbar">
+
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->
         
             <div class="navbar-brand-box">
-                <a href="index_hh.php" class="logo logo-dark">
+                <a href="index.php" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="assets/images/toilet.jpg" alt="" height="22">
+                        <img src="assets/images/logo_t.jpg" alt="" height="20">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/toilet.jpg" alt="" height="17">
+                        <img src="assets/images/logo_t.jpg" alt="" height="20">
                     </span>
                 </a>
 
-                <a href="index_hh.php" class="logo logo-light">
+                <div class="row mb-5">
+                </div>
+
+                <a href="javascript:void(0);" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/toilet.jpg" alt="" height="22">
+                        <img src="assets/images/logo_t.jpg" alt="" height="2">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/toilet.jpg" alt="" height="66">
+                        <img src="assets/images/logo_t.jpg" alt="" height="100">
                     </span>
                 </a>
             </div>
@@ -33,11 +37,17 @@
             <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
                 <i class="fa fa-fw fa-bars"></i>
             </button>
-
-            <!-- App Search-->
-
-            <div>
-                <span><h2><b><?php echo $language["The_Sanitation_Project"]?></h2></b></span>
+            
+            <div class = "row">
+                <?php include_once 'layouts/config.php';
+                    $result = mysqli_query($link, "SELECT pvalue FROM app_parameters where id = '01'"); 
+                    $row = mysqli_fetch_assoc($result); 
+                    $pvalue = $row['pvalue'];
+                ?>
+                <br></br><br></br>
+                <div class="row mb-5">
+                </div>
+                <span><h2><b><?php echo" "; echo $pvalue;?></h2></span>
             </div>
 
 
@@ -142,39 +152,6 @@
                     <a href="view-products_hh.php" class="waves-effect">
                         <i class="fa-solid fa-eye" style="color:purple"></i><span class="badge rounded-pill bg-info float-end"></span>
                         <span key="v-products"><?php echo $language["View_Products"]?></span>
-                    </a>
-                    
-                </li>
-
-                <li>
-                    <a href="tcs_tech_guide_hh.php" class="waves-effect">
-                        <i class="fa fa-arrows-alt" style="color:black"></i><span class="badge rounded-pill bg-info float-end"></span>
-                        <span key="t-dashboards"><?php echo $language["Request_Tech_Guide"];?></span>
-                    </a>
-                    
-                </li>
-
-                <li>
-                    
-                    <a href="request_for_service_hh.php" class="waves-effect">
-                    <i class="fa fa-check" style="color:green"></i><span class="badge rounded-pill bg-info float-end"></span>
-                        <span key="t-dashboards"><?php echo $language["Select_Product"];?></span>
-                    </a>
-                    
-                </li>
-
-                <li>
-                    <a href="tcs_opt_payment_hh.php" class="waves-effect">
-                    <i class="bx bx-dollar" style="color:gold"></i><span class="badge rounded-pill bg-info float-end"></span>
-                        <span key="t-dashboards"><?php echo $language["Payment_Option"];?></span>
-                    </a>
-                    
-                </li>
-           
-                <li>
-                    <a href="hh_payments_hh.php" class="waves-effect">
-                        <i class="fa-solid fa-credit-card"></i><span class="badge rounded-pill bg-info float-end"></span>
-                        <span key="t-dashboards"><?php echo $language["Record_Payment"];?></span>
                     </a>
                     
                 </li>

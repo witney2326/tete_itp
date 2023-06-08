@@ -75,7 +75,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: left;
-            background-color: gray;
+            background-color: plum;
             color: white;}
     </style>
 </head>
@@ -86,6 +86,18 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
             disableMobile: "true"
         }
     </script>
+
+<script type="text/javascript">
+    function Validate() {
+        var pa1 = document.getElementById("progress");
+        if (pa1.value == "") {
+            alert("Please Select Progress Status! (Seleccionar o estado de avanço!) ");
+            return false;
+        }
+        return true;
+    }
+</script>
+
 
 <?php include 'layouts/body.php'; ?>
 <?php include 'lib.php'; ?>
@@ -199,7 +211,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                         <div class="row mb-3">
                                             <label for="progress" class="col-sm-2 col-form-label"><?php echo $language["Works_Progress"];?></label>
                                             <select class="form-select" name="progress" id="progress" style="max-width:30%;" required >
-                                                
+                                                <option></option>
                                                 <?php                                                           
                                                         $ta_fetch_query = "SELECT id,status FROM tproject_status";                                                  
                                                         $result_ta_fetch = mysqli_query($link, $ta_fetch_query);                                                                       
@@ -214,12 +226,18 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                             </select>
 
                                             <label for="achieved_date" class="col-sm-2 col-form-label"><?php echo $language["Date"];?></label>
-                                            <input type="date" class="form-control" id="achieved_date" name="achieved_date"  style="max-width:30%;">
+                                            <input type="date" class="form-control" id="achieved_date" name="achieved_date" value ="<?php echo date('Y-m-d');?>" style="max-width:30%;">
                                         </div>
 
                                         <div class="row justify-content-end">
                                             <div>
-                                                <button type="submit" class="btn btn-outline-primary w-md" name="Update" value="Update" ><?php echo $language["Update_Works_Progress"];?></button>
+                                                <?php
+                                                    if ($pstatus == "06")
+                                                    {
+                                                        echo '<button type="submit" class="btn btn-outline-primary w-md" name="Update" value="Update" onclick="return Validate()" disabled>Works Already Completed/Obras já concluídas</button>';
+                                                    } else
+                                                        echo '<button type="submit" class="btn btn-outline-primary w-md" name="Update" value="Update" onclick="return Validate()">Update Works Progress/Actualização do progresso das obras</button>';
+                                                ?>
                                             </div>
                                         </div>
                                     </form>

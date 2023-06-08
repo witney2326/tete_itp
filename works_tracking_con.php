@@ -2,7 +2,7 @@
 <?php include 'layouts/head-main.php'; ?>
 
 <head>
-    <title>OSS Works Tracking</title>
+    <title><?php echo $language["Works_Tracking"]?></title>
     <?php include 'layouts/head.php'; ?>
     <?php include 'layouts/head-style.php'; ?>
     <?php include 'layouts/config.php'; ?>
@@ -47,12 +47,11 @@ $contractorID = $_SESSION["hhid"];
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Works Tracking and Progress Updates</h4>
+                            <h4 class="mb-sm-0 font-size-18"><?php echo $language["Works_Tracking"]?></h4>
 
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="index_con.php">Dashboard</a></li>
-                                    <li class="breadcrumb-item active">Works Tracking</li>
+                                    <INPUT TYPE="button" class="btn btn-btn btn-outline-secondary w-md" style="width:170px" VALUE="<?php echo $language["Back"]?>" onClick="history.go(-1);">  
                                 </ol>
                             </div>
 
@@ -78,13 +77,13 @@ $contractorID = $_SESSION["hhid"];
                                                 
                                                     <thead>
                                                         <tr>
-                                                            <th>Project Code</th>                                           
-                                                            <th>HH Code</th>
-                                                            <th>Start Date</th>
-                                                            <th>Expected End Date</th>
-                                                            <th>Contractor</th>
-                                                            <th>Status</th>
-                                                            <th>Action</th>  
+                                                            <th><?php echo $language["Works_Code"];?></th>                                           
+                                                            <th><?php echo $language["Applicant_Code"];?></th>
+                                                            <th><?php echo $language["Start_Date"];?></th>
+                                                            <th><?php echo $language["End_Date"];?></th>
+                                                            <th><?php echo $language["Contractor"];?></th>
+                                                            <th><?php echo $language["Status"];?></th>
+                                                            <th><?php echo $language["Action"];?></th>  
                                                         </tr>
                                                     </thead>
 

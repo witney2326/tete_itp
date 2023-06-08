@@ -36,7 +36,7 @@ $cpass = $rw['cpass'];
             
             $mail->isHTML(true);                                  
             $mail->Subject = 'Toilet Delivery IT Platform Status (Status da plataforma de TI de entrega de banheiros)';
-            $mail->Body    = 'Your IT Platform User Status has been Activated, You can now login to IT Platform at http://tqoss.net, (This Message is auto generated please DO NOT Respond)  (Seu status de usuário da plataforma de TI foi ativado, agora você pode fazer login na plataforma de TI em http://tqoss.net) (Esta mensagem é gerada automaticamente, NÃO responda)';  
+            $mail->Body    = 'Your IT Platform User Status has been Activated, You can now login to IT Platform at http://tds-tete.net, (This Message is auto generated please DO NOT Respond)  (Seu status de usuário da plataforma de TI foi ativado, agora você pode fazer login na plataforma de TI em http://tqoss.net) (Esta mensagem é gerada automaticamente, NÃO responda)';  
             
             $mail->send();
             echo "Mail has been sent successfully!";

@@ -2,7 +2,7 @@
 <?php include 'layouts/head-main.php'; ?>
 
 <head>
-    <title>OSS Completed Works Reports</title>
+    <title><?php echo $langauge["Completed_Toilet_Works"];?></title>
     <?php include 'layouts/head.php'; ?>
     <?php include 'layouts/head-style.php'; ?>
 
@@ -40,7 +40,7 @@
     function Validate() {
         var pa1 = document.getElementById("admin_post");
         if (pa1.value == "") {
-            alert("Please Select Admin Post option! (Por favor, selecione a opção Admin Post!) ");
+            alert("Please Select Bairros option! (Por favor, selecione a opção Bairros!) ");
             return false;
         }
         return true;
@@ -69,7 +69,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">OSS Completed Works Reports</h4>
+                            <h4 class="mb-sm-0 font-size-18"><?php echo $language["Completed_Toilet_Works"];?></h4>
 
                             <div class="page-title-right">
                                 
@@ -89,14 +89,14 @@
                                 <li class="nav-item waves-effect waves-light">
                                     <a class="nav-link" data-bs-toggle="link" href="OSS_reports_completed_oss_works.php" role="link">
                                         <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
-                                        <span class="d-none d-sm-block">Completed OSS Works</span>
+                                        <span class="d-none d-sm-block"><?php echo $language["Completed_Toilet_Works"];?></span>
                                     </a>
                                 </li>
                                 
                                 <li class="nav-item waves-effect waves-light">
                                     <a class="nav-link active" data-bs-toggle="link" href="javascript:void(0);" role="link">
                                         <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
-                                        <span class="d-none d-sm-block">Filtered Completed OSS Works</span>
+                                        <span class="d-none d-sm-block"><?php echo $language["Filtered_Completed_Toilet_Works"];?></span>
                                     </a>
                                 </li>
                                 
@@ -109,7 +109,7 @@
                         <div class="card-body">
                             <form class="row row-cols-lg-auto g-3 align-items-center" novalidate action="OSS_reports_completed_oss_works_pa.php" method ="GET" >
                                 <div class="col-12">
-                                    <label for="admin_post" class="form-label"><?php echo $language["Admin_Post"]?></label>                         
+                                    <label for="admin_post" class="form-label"><?php echo $language["Bairros"];?></label>                         
                                     <select class="form-select" name="admin_post" id="admin_post" required>
                                         <option ></option>
                                         <?php                                                           
@@ -129,15 +129,13 @@
                                                         }
                                             ?>
                                     </select>
-                                    <div class="invalid-feedback">
-                                        Please select a valid Admin Post
-                                    </div>
+                                    
                                     
                                 </div>
                                 <div class="col-12">
-                                    <label for="bairro" class="form-label">Bairros</label>
+                                    <label for="bairro" class="form-label"><?php echo $language["Unidade"];?></label>
                                     <select class="form-select" name="bairro" id="bairro" disabled required>
-                                        <option>Select Bairro</option>
+                                        <option></option>
                                             <?php                                                           
                                                 $dis_fetch_query = "SELECT id,bairro FROM bairros";                                                  
                                                 $result_dis_fetch = mysqli_query($link, $dis_fetch_query);                                                                       
@@ -150,9 +148,7 @@
                                                         }
                                             ?>
                                     </select>
-                                    <div class="invalid-feedback">
-                                        Please select a valid bairro.
-                                    </div>
+                                    
                                 </div>
 
                                 

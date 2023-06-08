@@ -2,20 +2,60 @@
 include_once 'layouts/config.php';
 session_start();
 
+$nameErr = $emailErr = $blnoErr = $plotErr = $landmarkErr = $phoneno1Err = $plotnoErr = $no_pple_at_premisesErr = FALSE;
+    
+function test_input($data) 
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+if (empty($_POST["applicant_name"])) {
+    $nameErr = TRUE;
+  } else {$applicant_name = test_input($_POST["applicant_name"]);}
+
+if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+    $emailErr = TRUE;
+    } else {$email = test_input($_POST["email"]);}
  
+if ((strlen($_POST["blno"])) <> 13) {
+    $blnoErr = TRUE;
+    } else 
+    { $blno = test_input($_POST["blno"]);}
+    
 
-     $applicant_name = $_POST['applicant_name'];
+if ((strlen($_POST["phoneno1"])) <> 10) {
+    $phoneno1Err = TRUE;
+    } else 
+    { $phoneno1 = test_input($_POST["phoneno1"]);}
 
+if (empty($_POST["plotno"])) {
+    $plotnoErr = TRUE;
+    } else {$plotno = test_input($_POST["plotno"]);}
+
+if (empty($_POST["landmark"])) {
+    $landmarkErr = TRUE;
+    } else {$landmark = test_input($_POST["landmark"]);}
+
+if ((empty($_POST["no_pple_at_premises"])) OR ($_POST["no_pple_at_premises"]== 0)) {
+    $no_pple_at_premisesErr = TRUE;
+    } else {$no_pple_at_premises = test_input($_POST["no_pple_at_premises"]);}
+
+
+
+     //$applicant_name = $_POST['applicant_name'];
      $gender = $_POST["gender"];
-     $blno = $_POST["blno"];
-     $phoneno1 = $_POST["phoneno1"];
+     //$blno = $_POST["blno"];
+     //$phoneno1 = $_POST["phoneno1"];
      $phoneno2 = $_POST["phoneno2"];
-     $plotno = $_POST["plotno"];
+     //$plotno = $_POST["plotno"];
      $adminpost = $_POST["adminpost"];
      $bairro = $_POST["bairro"];
-     $landmark = $_POST["landmark"];
+     //$landmark = $_POST["landmark"];
      $hh_status = $_POST["hh_status"];
-     $email = $_POST["email"];
+     //$email = $_POST["email"];
 
      $no_rooms_rented = $_POST["no_rooms_rented"];
 
@@ -25,7 +65,7 @@ session_start();
      
      if ($ordered_toilet_type == "04"){$ready_select = '0';$need_tg ='1'; $ordered_toilet_type = "00";}else{$ready_select ='1';$need_tg ='0';}
 
-     $no_pple_at_premises = $_POST["no_pple_at_premises"];
+     //$no_pple_at_premises = $_POST["no_pple_at_premises"];
      $no_pple_adult_males = $_POST["no_pple_adult_males"];
      $no_pple_adult_females = $_POST["no_pple_adult_females"];
      $no_pple_children = $_POST["no_pple_children"];
@@ -94,6 +134,14 @@ session_start();
     $_SESSION['hhid'] = $hhcode;
     $_SESSION['aemail'] = $email;
 
+    if ($emailErr OR $nameErr OR $blnoErr OR $phoneno1Err OR $plotnoErr OR $landmarkErr OR $no_pple_at_premisesErr) 
+    {
+        echo '<script type="text/javascript">'; 
+            echo 'alert("EITHER Invalid email format OR Missing Applicant Name OR BL_Number OR Phone_number OR Plot_Number OR number of people at Premises");'; 
+            echo 'history.go(-1)';
+        echo '</script>';
+    }else
+    {
     
         $sql = "INSERT INTO households (hhcode, hhname, hh_gender,blno, plot,pa, locality, landmark, hh_status,phone1,phone2,total_ordered, supestructure, wall_tiles_t1,mirror_t1,solar_light_t1,wall_tiles_t2,mirror_t2,solar_light_t2,wall_tiles_t3,mirror_t3,solar_light_t3,wall_tiles_t4,mirror_t4,solar_light_t4,wall_tiles_t5,mirror_t5,solar_light_t5,prompted_by,rooms_rented,no_pple_premises,no_pple_premises_a_males,no_pple_premises_a_females,no_pple_premises_children,current_toilet,selected_product,ready_selection,need_tg,email)
         VALUES ('$hhcode','$applicant_name','$gender','$blno','$plotno','$adminpost','$bairro','$landmark','$hh_status','$phoneno1','$phoneno2','$no_toilets_order','$super_structure_order','$toilet1_wall_tiles','$toilet1_mirror','$toilet1_solar_light','$toilet2_wall_tiles','$toilet2_mirror','$toilet2_solar_light','$toilet3_wall_tiles','$toilet3_mirror','$toilet3_solar_light','$toilet4_wall_tiles','$toilet4_mirror','$toilet4_solar_light','$toilet5_wall_tiles','$toilet5_mirror','$toilet5_solar_light','01','$no_rooms_rented','$no_pple_at_premises',
@@ -101,7 +149,7 @@ session_start();
 
         if (mysqli_query($link, $sql)) {
             echo '<script type="text/javascript">'; 
-            echo 'alert("Beneficiary Record has been added successfully !");'; 
+            echo 'alert("Application Received Successfully !");'; 
             echo 'window.location.href = "auth-register-hh5-1.php";';
             //echo 'history.go(-1)';
             echo '</script>';
@@ -109,7 +157,7 @@ session_start();
             echo "Error: " . $sql . ":-" . mysqli_error($link);
         }
         mysqli_close($link);
-    
+    }
 
 
 

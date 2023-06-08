@@ -84,7 +84,7 @@ session_start();
       
     $dbcount= sprintf("%06d", get_hh_count($link)+1);
     $x=date("Y");		
-    $x.="/QMC/";				
+    $x.="/TMC/";				
     $x.=$dbcount;
     $hhcode = $x;
     $pstatus = 0;
@@ -101,7 +101,7 @@ session_start();
 
         if (mysqli_query($link, $sql)) {
             echo '<script type="text/javascript">'; 
-            echo 'alert("Beneficiary Record has been added successfully !");'; 
+            echo 'alert("Application Received successfully !");'; 
             echo 'window.location.href = "auth-register-hh5-1_self.php";';
             echo '</script>';
         } else {

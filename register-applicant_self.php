@@ -52,7 +52,28 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
             {
                 background-color: rgba(0, 0, 0, 0.2);
             }
-</style>
+            #mytable {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+            #mytable td, #mytable th {
+            border: 1px solid #ddd;
+            padding: 12px;
+            }
+
+            #mytable tr:nth-child(even){background-color: #f2f2f2;}
+
+            #mytable tr:hover {background-color: #ddd;}
+
+            #mytable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: plum;
+            color: black;}
+    </style>
 
     <script>
       function getbairro(val) 
@@ -199,7 +220,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                         <div class="col-lg-4">
                                                             <div class="mb-1">
                                                                 
-                                                                <label for="adminpost" class="form-label" style="color:blue"><?php echo $language["Admin_Post"]?></label>
+                                                                <label for="adminpost" class="form-label" style="color:blue"><?php echo $language["Bairro"]?></label>
                                                 
                                                                 <select class="form-select" name="adminpost" id="adminpost" style="max-width:30%;background-color: #f2f2f2;" onChange="getbairro(this.value);" required>
                                                                     <option ></option>
@@ -225,7 +246,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                         </div>
                                                         <div class="col-lg-4">
                                                             <div class="mb-1">
-                                                                <label for="bairro" class="form-label" style="color:blue"><?php echo $language["Bairro"]?> </label>
+                                                                <label for="bairro" class="form-label" style="color:blue"><?php echo $language["Unidade"]?> </label>
                                                                 <select class="form-select" name="bairro" id="bairro" placeholder="Select Bairro" style="max-width:50%;background-color: #f2f2f2;" required>
                                                                     <option >Select Bairro</option>
                                                                     
@@ -362,7 +383,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                             <div class="col-lg-7">
                                                                 <div class="mb-3">
                                                                     <b>Accesories Requested</b>
-                                                                    <table style="width:100%">
+                                                                    <table id ="mytable" style="width:100%">
                                                                         
                                                                         <tr>
                                                                             <th>Accessory</th>
@@ -382,7 +403,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                                             <td><input type="checkbox" id="toilet5_wall_tiles" name="toilet5_wall_tiles"></td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td style="color:orange">Mirror</td>
+                                                                            <td style="color:black">Mirror</td>
                                                                             <td><input type="checkbox" id="toilet1_mirror" name="toilet1_mirror"></td>
                                                                             <td><input type="checkbox" id="toilet2_mirror" name="toilet2_mirror"></td>
                                                                             <td><input type="checkbox" id="toilet3_mirror" name="toilet3_mirror"></td>

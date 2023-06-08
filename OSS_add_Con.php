@@ -2,7 +2,7 @@
 <?php include 'layouts/head-main.php'; ?>
 
 <head>
-    <title><?php echo $language["Add_Admin_Post"];?></title>
+    <title><?php echo $language["New_Bairros"];?></title>
     <?php include 'layouts/head.php'; ?>
     <?php include 'layouts/head-style.php'; ?>
     <?php include 'lib.php'; ?>
@@ -68,7 +68,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                 <div class="row">
                     <div class="col-9">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18"><?php echo $language["Add_Admin_Post"];?></h4>
+                            <h4 class="mb-sm-0 font-size-18"><?php echo $language["New_Bairros"];?></h4>
                             <div class="page-title-right">
                                     <div>
                                         <p align="right">
@@ -94,10 +94,10 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                     
                                     <form method="POST" action="OSS_Con_add.php">
                                         <div class="row mb-1">
-                                            <label for="pcode" class="col-sm-2 col-form-label"><?php echo $language["Admin_Post_ID"];?></label>
+                                            <label for="pcode" class="col-sm-2 col-form-label"><?php echo $language["Bairros_ID"];?></label>
                                             <input type="text" class="form-control" id="pcode" name = "pcode" placeholder="xx" style="max-width:30%;">
                                             
-                                            <label for="apname" class="col-sm-2 col-form-label"><?php echo $language["New_Admin_Post"];?></label>
+                                            <label for="apname" class="col-sm-2 col-form-label"><?php echo $language["Bairros"];?></label>
                                             <input type="text" class="form-control" id="apname" name = "apname"  style="max-width:30%;"  >
                                         </div>
                                         
@@ -105,7 +105,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                                                 
                                         <div class="row justify-content-end">
                                             <div>
-                                                <button type="submit" class="btn btn-btn btn-outline-primary w-md" name="Add" value="Add"><?php echo $language["Add_Admin_Post"];?></button>
+                                                <button type="submit" class="btn btn-btn btn-outline-primary w-md" name="Add" value="Add"><?php echo $language["New_Bairros"];?></button>
                                             </div>
                                         </div>
                                     </form>

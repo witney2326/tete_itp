@@ -11,21 +11,29 @@ $hhmemo = $_POST['hhmemo'];
 //$result = mysqli_query($link, "SELECT useremail FROM users WHERE id = '$Rec_ID'"); 
 //$row = mysqli_fetch_assoc($result); 
 //$usermail = $row['useremail'];
-$usermail = "lilongwe.water.sanitation@gmail.com";
+$result = mysqli_query($link, "SELECT pvalue FROM app_parameters WHERE id = '05'"); 
+$row = mysqli_fetch_assoc($result); 
+$usermail = $row['pvalue'];
+
+$sql2 = mysqli_query($link, "SELECT cmail,chost,cpass FROM tconfig"); 
+$rw = mysqli_fetch_assoc($sql2); 
+$chost = $rw['chost'];
+$cmail = $rw['cmail'];
+$cpass = $rw['cpass'];
 
         $mail = new PHPMailer(true);
         
         try {
             $mail->SMTPDebug = 1;                                       
             $mail->isSMTP();                                            
-            $mail->Host       = 'comsip.org.mw';                    
+            $mail->Host       = $chost;                    
             $mail->SMTPAuth   = true;                             
-            $mail->Username   = 'sysadmin@comsip.org.mw';                 
-            $mail->Password   = 'x@F4?)R[N@mx';                        
+            $mail->Username   = $cmail;                 
+            $mail->Password   = $cpass;                        
             $mail->SMTPSecure = 'tls';                              
             $mail->Port       = 587;  
         
-            $mail->setFrom('lilongwe.water.sanitation@gmail.com', 'admin@LWSP');           
+            $mail->setFrom($cmail, 'Admin');           
             $mail->addAddress($usermail);
             
             
@@ -34,11 +42,14 @@ $usermail = "lilongwe.water.sanitation@gmail.com";
             $mail->Body    = $hhmemo;
             
             $mail->send();
-            echo "Mail has been sent successfully!";
-            echo 'history.go(-1)';
+            echo '<script type="text/javascript">'; 
+                echo 'alert("Mail has been sent successfully!");'; 
+                echo 'history.go(-1)';
+            echo '</script>';
+
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
-// end here         
+// end here                 
     ?>
     

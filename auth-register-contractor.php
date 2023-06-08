@@ -202,7 +202,7 @@ if (isset($_POST["Submit"])) {
                                 <div class="card-border1">
                                     <p align="right"> <INPUT TYPE="button" class="btn btn-btn btn-outline-secondary w-md" style="width:170px" VALUE="<?php echo $language["Back"]?>" onClick="history.go(-1);"></p>
                                     <div class="card-body">
-                                    <center><img src="assets/images/logo_q.jpg" alt="" height="264" class="auth-logo-dark"></center>
+                                    <center><img src="assets/images/logo_t.jpg" alt="" height="264" class="auth-logo-dark"></center>
                                     <?php 
                                         $result = mysqli_query($link, "SELECT pvalue FROM app_parameters where id = '02'"); 
                                         $row = mysqli_fetch_assoc($result); 
@@ -211,12 +211,12 @@ if (isset($_POST["Submit"])) {
                                         <center><h2><?php echo $pvalue;?></h2></center>
                                         
                                     </div>
-                                    <center><img src="assets/images/logo_q.jpg" alt="" height="264" class="auth-logo-dark" hidden ></center>
+                                    <center><img src="assets/images/logo_t.jpg" alt="" height="264" class="auth-logo-dark" hidden ></center>
                                     <center><h2 style="color:white"><?php echo $pvalue;?></h2></center>
                                     <center><h2 style="color:white"><?php echo $pvalue;?></h2></center>
                                     <center><h2 style="color:white"><?php echo $pvalue;?></h2></center>
                                     <center><h2 style="color:white"><?php echo $pvalue;?></h2></center>
-                                    <center><img src="assets/images/logo_q.jpg" alt="" height="264" class="auth-logo-dark" hidden ></center>
+                                    <center><img src="assets/images/logo_t.jpg" alt="" height="264" class="auth-logo-dark" hidden ></center>
                                     <center><h2 style="color:white"><?php echo $pvalue;?></h2></center>
                                     <center><h2 style="color:white"><?php echo $pvalue;?></h2></center>
                                     <center><h2 style="color:white"><?php echo $pvalue;?></h2></center>
@@ -240,7 +240,7 @@ if (isset($_POST["Submit"])) {
                                     <div class="d-flex flex-column h-100">
                                         <div class="mb-4 mb-md-5">
                                             <a href="javascript:void(0)" class="d-block auth-logo">
-                                                <center><img src="assets/images/logo_q.jpg" alt="" height="64" class="auth-logo-dark"></center>
+                                                <center><img src="assets/images/logo_t.jpg" alt="" height="64" class="auth-logo-dark"></center>
                                             </a>
                                         </div>
                                         <div class="my-auto">

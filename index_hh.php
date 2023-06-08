@@ -52,7 +52,7 @@ $hhCode = $_SESSION["hhid"];
                     </div>
                 <!-- end page title -->
                     <div class="row">
-                        <div class="col-6">                   
+                        <div class="col-4">                   
                             <div class="card">
                                 <div class="card-border">
                                     <div class="card-group">

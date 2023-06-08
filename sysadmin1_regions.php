@@ -126,53 +126,49 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                 </div>
                             </div>
                             <div class="card-border">
-                                <form action="OSS_add_Con.php">
-                                    <p align="right">
-                                        <input type="submit" value="<?php echo $language["New_Admin_Post"];?>" class="btn btn-outline-primary w-md" style="width:170px"/>
-                                    </p>
-                                </form>
                                 <div class="card-body">
-                                    
-                                <h7 class="card-title mt-0"></h7>
-                                    
-                                        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                                        
-                                            <thead>
-                                                <tr>
-                                                    <th><?php echo $language["ID"];?></th>
-                                                    <th><?php echo $language["Bairros"];?></th>
-                                                    <th><?php echo $language["Action"];?></th>                                                              
-                                                </tr>
-                                            </thead>
-
-
-                                            <tbody>
-                                                <?Php
-                                                    $query = "SELECT * FROM adminposts";
-
-                                                    if ($result_set = $link->query($query)) {
-                                                    while($row = $result_set->fetch_array(MYSQLI_ASSOC))
-                                                    { 
-                                                        echo "<tr>";
-                                                        echo "<td>".$row['id']."</td>";
-                                                        echo "<td>".$row['pa_']."</td>";
-                                                        
-                                                        echo "<td>
-                                                            <a href=\"OSS_edit_CityCon.php?id=".$row['id']."\"><i class='fas fa-edit' title='$language[Edit_Admin_Post]' style='font-size:18px;color:green'></i></a>
-                                                            
-                                                            <a onClick=\"javascript: return confirm('$language[Sure_Delete_Admin_Post]')\" href=\"apost_delete.php\?id=".$row['id']."\"><i class='fas fa-trash-alt' title='$language[Delete_Admin_Post]' style='font-size:18px;color:Red'></i></a>
-                                                            </td>\n";
-                                                        echo "</tr>";
-                                                    }
-                                                    $result_set->close();
-                                                    }  
-                                                                        
-                                                ?>
-                                            </tbody>
-                                        </table>
+                                    <form action="OSS_add_Con.php">
+                                        <p align="right">
+                                            <input type="submit" value="<?php echo $language["New_Bairros"];?>" class="btn btn-outline-primary w-md" style="width:170px;background-color:plum;color:black"/>
                                         </p>
-                                    </div>
-                                </div>     
+                                    </form>
+
+                                    <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                    
+                                        <thead>
+                                            <tr>
+                                                <th><?php echo $language["ID"];?></th>
+                                                <th><?php echo $language["Bairros"];?></th>
+                                                <th><?php echo $language["Action"];?></th>                                                              
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                            <?Php
+                                                $query = "SELECT * FROM adminposts";
+
+                                                if ($result_set = $link->query($query)) {
+                                                while($row = $result_set->fetch_array(MYSQLI_ASSOC))
+                                                { 
+                                                    echo "<tr>";
+                                                    echo "<td>".$row['id']."</td>";
+                                                    echo "<td>".$row['pa_']."</td>"; 
+                                                    
+                                                    echo "<td>
+                                                        <a href=\"OSS_edit_CityCon.php?id=".$row['id']."\"><button class='btn btn-sm btn-outline-info' title='$language[Edit_Admin_Post]' style='font-size:18px;color:green'><i class='fas fa-edit'></i></button></a>
+                                                        
+                                                        <a onClick=\"javascript: return confirm('$language[Sure_Delete_Admin_Post]')\" href=\"apost_delete.php\?id=".$row['id']."\"><button class='btn btn-sm btn-outline-secondary' title='$language[Delete_Admin_Post]' style='font-size:18px;color:Red'><i class='fas fa-trash-alt'></i></button></a>
+                                                        </td>\n";
+                                                    echo "</tr>";
+                                                }
+                                                $result_set->close();
+                                                }  
+                                                                    
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>            
                         </div>
                     </div>

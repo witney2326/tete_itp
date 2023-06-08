@@ -204,18 +204,19 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                             while($row = $result_set->fetch_array(MYSQLI_ASSOC))
                                                             {                                                
                                                                 $amount = number_format($row["amount_paid"],"2");
-                
+
+                                                            if ($row["pApproved"] ==1){$approved ="Approved";}else{$approved ="Not Approved";}
                                                             echo "<tr>\n";                                           
                                                                 echo "<td>".$row["pID"]."</td>\n";
                                                                 echo "<td>".$row["pDate"]."</td>\n";
                                                                 echo "<td>".$row["pReference"]."</td>\n";
                                                                 echo "\t\t<td>$amount</td>\n";
-                                                                echo "<td>".$row["pApproved"]."</td>\n";
+                                                                echo "<td>\t\t$approved</td>\n";
                                                                 
                                                                 
                                                                 echo "<td>
                                                                     
-                                                                    <a onClick=\"javascript: return confirm('Are You Sure You want To DELETE This Record');\" href=\"javascript:void(0)?id=".$row['pID']."\"><i class='far fa-trash-alt' style='font-size:18px'></i></a>        
+                                                                    <a onClick=\"javascript: return confirm('Are You Sure You want To DELETE This Record');\" href=\"javascript:void(0)?id=".$row['pID']."\"><i class='far fa-trash-alt' style='font-size:18px;color:red;'></i></a>        
                                                                 </td>\n";
                                                             echo "</tr>\n";
                                                         echo "</tr>\n";

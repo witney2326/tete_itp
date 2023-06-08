@@ -26,7 +26,10 @@
             border-color: gray;
             border-width: 9px;
             background-color:gray;
-            
+        }
+        img
+        {
+            background-image:url('./assets/images/no image.jpg');
         }
     </style>
 </head>
@@ -48,34 +51,35 @@
 
             <!-- start page title -->
             <div class="row">
-                <div class="col-7">
-                    <h4 class="mb-sm-0 font-size-18"><?php echo $language["Visual_Progress"];?></h4>
-                    <p align="right">
-                        <INPUT TYPE="button" class="btn btn-btn btn-outline-secondary w-md" VALUE="<?php echo $language["Back"];?>" onClick="history.go(-1);">
-                    </p>
+                <div class="col-4">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18"><?php echo $language["Visual_Progress"]?></h4>
+
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <p align="right">
+                                    <INPUT TYPE="button" class="btn btn-btn btn-outline-secondary w-md" VALUE="<?php echo $language["Back"];?>" onClick="history.go(-1);">
+                                </p>
+                            </ol>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-	
-            <div class = "col-lg-7">
-                <div class ="row">
-                    <div class="card">
-                        <div class="card-border">  
-                            <div id="display-image">
-                                <?php
-                                    $ID = $_GET["id"];
-                                    $query = " select filename_ from tproject_progress where recID = $ID";
-                                    $result = mysqli_query($link, $query);
+            <div class ="row">
+                <div id="display-image">
+                    <?php
+                        $ID = $_GET["id"];
+                        $query = " select filename_ from tproject_progress where recID = $ID";
+                        $result = mysqli_query($link, $query);
 
-                                    while ($data = mysqli_fetch_assoc($result)) {
-                                ?>
-                                    <img src="./uploads/<?php echo $data['filename_']; ?>" height=450 width=600>
+                        while ($data = mysqli_fetch_assoc($result)) {
+                    ?>
+                        <img src="./uploads/<?php echo $data['filename_']; ?>" style="height: 400px; width: 520px; border-style: groove;border-color: gray;border-width: 8px;">
 
-                                <?php
-                                    }
-                                ?>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>

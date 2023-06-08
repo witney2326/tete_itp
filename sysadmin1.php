@@ -159,24 +159,24 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                             echo "<td>".$row['id']."</td>";
                                                             echo "<td>".$row['username']."</td>";
                                                             echo "<td>".$row['useremail']."</td>";                                                       
-                                                            echo "<td>".role_name($link,$row['userrole'])."</td>";
+                                                            echo "<td>".role_name($link,$row['userrole'])."</td>";  
                                                             echo "<td>\t\t$ustatus</td>";
                                                             echo "<td>".$row['usercon']."</td>";
                                                             if ($row['ustatus'] == '1')
                                                             {
                                                                 echo "<td>
-                                                                    <a href=\"user_View.php?id=".$row['id']."\"><i class='fas fa-eye' title='$language[View_User]' style='font-size:18px;color:purple'></i></a>
-                                                                    <i class='fas  fa-check' title='$language[User_Already_Activated]' style='font-size:18px;color:green'></i></a>
-                                                                    <a href=\"sysadmin1_mail.php?id=".$row['id']."\"><i class='fas fa-ban' title='$language[Deactivate_User]' style='font-size:18px'></i></a>
-                                                                    <a onClick=\"javascript: return confirm('$language[Sure_Delete_User]');\" href=\"app_user_delete.php?id=".$row['id']."\"><i class='fas fa-trash-alt' title='$language[Delete_User]' style='font-size:18px;color:Red'></i></a>
+                                                                    <a href=\"user_View.php?id=".$row['id']."\"><button class='btn btn-sm btn-outline-info' title='$language[View_User]' style='font-size:18px;color:purple'><i class='fas fa-eye'></i></button></a>
+                                                                    <button class='btn btn-sm btn-outline-secondary' title='$language[User_Already_Activated]' style='font-size:18px;color:green'><i class='fas  fa-check'></i></button></a>
+                                                                    <a href=\"sysadmin1_mail.php?id=".$row['id']."\"><button class='btn btn-sm btn-outline-secondary' title='$language[Deactivate_User]' style='font-size:18px'><i class='fas fa-ban'></i></button></a>
+                                                                    <a onClick=\"javascript: return confirm('$language[Sure_Delete_User]');\" href=\"app_user_delete.php?id=".$row['id']."\"><button class='btn btn-sm btn-outline-secondary' title='$language[Delete_User]' style='font-size:18px;color:Red'><i class='fas fa-trash-alt'></i></button></a>
                                                                 </td>\n";
                                                             }else
                                                             {
                                                                 echo "<td>
-                                                                    <a href=\"user_View.php?id=".$row['id']."\"><i class='fas fa-eye' title='$language[View_User]' style='font-size:18px;color:purple'></i></a>
-                                                                    <a onClick=\"javascript: return confirm('$language[Sure_Activate_User]');\" href=\"sysadmin_useractivate.php?id=".$row['id']."\"><i class='fas  fa-check' title='$language[Activate_User]' style='font-size:18px;color:green'></i></a>
-                                                                    <i class='fas fa-ban' title='$language[User_Not_Activated]' style='font-size:18px'></i></a>
-                                                                    <a onClick=\"javascript: return confirm('$language[Sure_Delete_User]');\" href=\"del_user.php?id=".$row['id']."\"><i class='fas fa-trash-alt' title='$language[Delete_User]' style='font-size:18px;color:Red'></i></a>
+                                                                    <a href=\"user_View.php?id=".$row['id']."\"><button class='btn btn-sm btn-outline-info' title='$language[View_User]' style='font-size:18px;color:purple'><i class='fas fa-eye'></i></button></a>
+                                                                    <a onClick=\"javascript: return confirm('$language[Sure_Activate_User]');\" href=\"sysadmin_useractivate.php?id=".$row['id']."\"><button class='btn btn-sm btn-outline-secondary' title='$language[Activate_User]' style='font-size:18px;color:green'><i class='fas  fa-check'></i></button></a>
+                                                                    <button class='btn btn-sm btn-outline-secondary' title='$language[User_Not_Activated]' style='font-size:18px'><i class='fas fa-ban'></i></button></a>
+                                                                    <a onClick=\"javascript: return confirm('$language[Sure_Delete_User]');\" href=\"del_user.php?id=".$row['id']."\"><button class='btn btn-sm btn-outline-secondary' title='$language[Delete_User]' style='font-size:18px;color:Red'><i class='fas fa-trash-alt'></i></button></a>
                                                                 </td>\n";
                                                             }
                                                             echo "</tr>";
