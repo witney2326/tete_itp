@@ -41,7 +41,7 @@ $language['My_Wallet']="Mi billetera";
 $language['Settings']="Configuraciones";
 $language['Lock_screen']="Bloquear pantalla";
 $language['Logout']="Cerrar sesión";
-$language['Menu']="Menú";
+$language['Menu']="Menu";
 $language['Dashboard']="Tablero";
 $language['Default']="Defecto";
 $language['Saas']="Saas";
@@ -166,7 +166,7 @@ $language['Confirm_Mail']="Confirmar correo";
 $language['Email_verification']="Verificacion de email";
 $language['Two_step_verification']="Verificación de dos pasos";
 
-$language['Dashboard']="Painel";
+$language['Dashboard']="Menu";
 $language['System_Admin']="Administração do Sistema";
 $language['Register_and_Target']="Registre-se e Alvo";
 $language['Request_for_Service']="Solicitação de serviço";
@@ -292,7 +292,7 @@ $language["Household_NOT_YET_Enrolled"] = " Família AINDA NÃO inscrita";
 $language["Household_NOT_Ready_For_OSS_Product_Selection"] ="Família NÃO está pronta para seleção de produto OSS, ";
 $language["Household_OSS_Product_Already_Selected"] ="Produto de OSS doméstico já selecionado! ";
 $language["Select_Technology"] ="Selecione Tecnologia";
-$language["Application_For_Household_Toilet"] ="Pedido de Banheiro Doméstico";
+$language["Application_For_Household_Toilet"] ="Pedido de um sanitário familiar";
 
 $language["Register_Applicant"] ="Registrar Requerente";
 $language["Registered_Applicants"]="Candidatos registrados";
@@ -454,10 +454,10 @@ $language["Number_Applicants"]="Número de Candidatos";
 
 $language["Applicants_With_Approved_Payments"]="Requerentes com pagamentos aprovados";
 $language["Filtered_Applicants_With_Approved_Payments"]="Candidatos filtrados com pagamentos aprovados";
-$language["Welcome_To_Toilet_Delivery"]="Bem-vindo à plataforma de TI de entrega de banheiro - Auto-registro";
-$language["use_menu"]="Por favor, use o menu no painel esquerdo para sua opção";
+$language["Welcome_To_Toilet_Delivery"]="Bem-vindo à plataforma de registo para se beneficiar de sanitário – auto registo";
+$language["use_menu"]="Por favor, use as opções no menu do painel esquerdo";
 $language["Client_Registration"]="Funcionários Municipais";
-$language["Supervisor_Registration"]="Supervisora";
+$language["Supervisor_Registration"]="Supervisor";
 $language["Contractor_Registration"]="Contratante";
 
 $language["Applicant_Details"]= "Detalhes do Requerente";
@@ -467,9 +467,9 @@ $language["Nearest_School_Or_Well_Known_Landmark"]="Escola mais próxima ou pont
 $language["Household_Details"]="Detalhes da família";
 $language["Select_ONE_of_THREE"]="Selecione UM dos TRÊS";
 
-$language["Home_Owner"]="Proprietário da casa (sem inquilino)";
-$language["Resident_Landlord"]="Proprietário Residente";
-$language["Absent_Landlord"]="Proprietário ausente";
+$language["Home_Owner"]="Dono de casa (não alugada)";
+$language["Resident_Landlord"]="Inquilino (Casa alugada)";
+$language["Absent_Landlord"]="Outro";
 
 $language["Unlined_Pit_Latrine"]="Latrina de fossa sem forro";
 $language["Semi_lined_Pit_Latrine"]="Latrina semi-revestida";
@@ -477,7 +477,7 @@ $language["Fully_Lined_Pit_Latrine"]="Latrina de Fossa Totalmente Forrada";
 $language["Requested_Toilet_Type"]="Tipo de toalete solicitado";
 $language["VIP"]="VIP (revestido com tubo de ventilação)";
 $language["Pour_Flash_Septic_Tank"]="Pour Flash mais fossa séptica";
-$language["Flush_Flush_Septic_Tank"]="Descarga Descarga mais fossa séptica";
+$language["Flush_Flush_Septic_Tank"]="Pre-fabricated model";
 $language["Dont_Know"]="não sei tipo";
 
 $language["Adult_Males"]="Homens adultos";

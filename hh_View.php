@@ -75,26 +75,6 @@
                  $total_ordered= $row["total_ordered"]; 
                  $supestructure= $row["supestructure"];
 
-                 $wall_tiles_t1= $row["wall_tiles_t1"];
-                 $mirror_t1= $row["mirror_t1"];
-                 $solar_light_t1= $row["solar_light_t1"];
-
-                 $wall_tiles_t2= $row["wall_tiles_t2"];
-                 $mirror_t2= $row["mirror_t2"];
-                 $solar_light_t2= $row["solar_light_t2"];
-
-                 $wall_tiles_t3= $row["wall_tiles_t3"];
-                 $mirror_t3= $row["mirror_t3"];
-                 $solar_light_t3= $row["solar_light_t3"];
-
-                 $wall_tiles_t4= $row["wall_tiles_t4"];
-                 $mirror_t4= $row["mirror_t4"];
-                 $solar_light_t4= $row["solar_light_t4"];
-
-                 $wall_tiles_t5= $row["wall_tiles_t5"];
-                 $mirror_t5= $row["mirror_t5"];
-                 $solar_light_t5= $row["solar_light_t5"];
-
              }
              $result_set->close();
          }
@@ -348,48 +328,7 @@
                                                                     <label for="current_status" class="col-sm-2 col-form-label" style="color:blue">Type Of Super structure</label>
                                                                     <input type="text" class="form-control" id="current_status" name="current_status" value ="<?php echo superstructure($link,$supestructure);?>" style="max-width:30%;" disabled ="True">
                                                                 </div>
-                                                                <div class="row mb-1">
-                                                                    <label for="current_status" class="col-sm-3 col-form-label" style="color:blue">Accessories Requested</label>   
-                                                                </div> 
 
-                                                                <table id="mytable" style="width:100%">
-                                                                        
-                                                                        <tr>
-                                                                            <th><?php echo $language["Accesory"];?></th>
-                                                                            <th><?php echo $language["First_Toilet"];?></th>
-                                                                            <th><?php echo $language["Second_Toilet"];?></th>
-                                                                            <th><?php echo $language["Third_Toilet"];?></th>
-                                                                            <th><?php echo $language["Fourth_Toilet"];?></th>
-                                                                            <th><?php echo $language["Fifth_Toilet"];?></th>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="color:blue"><?php echo $language["Wall_Tiles"];?></td>
-                                                                            <td><?php if($wall_tiles_t1 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                            <td><?php if($wall_tiles_t2 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                            <td><?php if($wall_tiles_t3 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                            <td><?php if($wall_tiles_t4 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                            <td><?php if($wall_tiles_t5 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="color:black"><?php echo $language["Mirror"];?></td>
-                                                                            <td><?php if ($mirror_t1 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                            <td><?php if ($mirror_t2 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                            <td><?php if ($mirror_t3 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                            <td><?php if ($mirror_t4 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                            <td><?php if ($mirror_t5 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="color:purple"><?php echo $language["Solar_Light"];?></td>
-                                                                            <td><?php if ($solar_light_t1 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                            <td><?php if ($solar_light_t2 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                            <td><?php if ($solar_light_t3 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                            <td><?php if ($solar_light_t4 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                            <td><?php if ($solar_light_t5 == "1"){echo "Yes";}else{echo "No";}?></td>
-                                                                        </tr>
-                                                                    </table> 
-
-                                                                
                                                             </div>
                                                         </div>
                                                     </div>

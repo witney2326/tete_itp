@@ -471,16 +471,16 @@ $language["Household_Details"]="Household Details";
 $language["Select_ONE_of_THREE"]="Select ONE of the THREE"; 
 
 $language["Home_Owner"]="Home Owner (No Tenant)";
-$language["Resident_Landlord"]="Resident Landlord";
-$language["Absent_Landlord"]="Absent Landlord";
+$language["Resident_Landlord"]="Tenant (rented the house) ";
+$language["Absent_Landlord"]="Other";
 
 $language["Unlined_Pit_Latrine"]="Unlined Pit Latrine";
 $language["Semi_lined_Pit_Latrine"]="Semi-lined Pit Latrine";
 $language["Fully_Lined_Pit_Latrine"]="Fully Lined Pit Latrine";
 $language["Requested_Toilet_Type"]="Requested Toilet Type";
-$language["VIP"]="VIP (Lined with vent pipe)";
+$language["VIP"]="VIP (Lined with vent pipe - Do Not Need Water)";
 $language["Pour_Flash_Septic_Tank"]="Pour Flash plus Septic Tank";
-$language["Flush_Flush_Septic_Tank"]="Flush Flush plus Septic Tank";
+$language["Flush_Flush_Septic_Tank"]="Pre-fabricated model";
 $language["Dont_Know"]="Dont Know Type";
 
 $language["Adult_Males"]="Adult Males";

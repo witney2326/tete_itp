@@ -26,7 +26,7 @@ if ((strlen($_POST["blno"])) <> 13) {
     { $blno = test_input($_POST["blno"]);}
     
 
-if ((strlen($_POST["phoneno1"])) <> 10) {
+if ((strlen($_POST["phoneno1"])) <> 14) {
     $phoneno1Err = TRUE;
     } else 
     { $phoneno1 = test_input($_POST["phoneno1"]);}
@@ -74,24 +74,6 @@ if ((empty($_POST["no_pple_at_premises"])) OR ($_POST["no_pple_at_premises"]== 0
 
      $super_structure_order = $_POST["super_structure_order"];
 
-     if (isset($_POST["toilet1_wall_tiles"])){$toilet1_wall_tiles = $_POST["toilet1_wall_tiles"];}else{$toilet1_wall_tiles=0;}
-     if (isset($_POST["toilet2_wall_tiles"])){$toilet2_wall_tiles = $_POST["toilet2_wall_tiles"];}else{$toilet2_wall_tiles=0;}
-     if (isset($_POST["toilet3_wall_tiles"])){$toilet3_wall_tiles = $_POST["toilet3_wall_tiles"];}else{$toilet3_wall_tiles=0;}
-     if (isset($_POST["toilet4_wall_tiles"])){$toilet4_wall_tiles = $_POST["toilet4_wall_tiles"];}else{$toilet4_wall_tiles=0;}
-     if (isset($_POST["toilet5_wall_tiles"])){$toilet5_wall_tiles = $_POST["toilet5_wall_tiles"];}else{$toilet5_wall_tiles=0;}
-     
-     if (isset($_POST["toilet1_mirror"])){$toilet1_mirror = $_POST["toilet1_mirror"];}else{$toilet1_mirror=0;}
-     if (isset($_POST["toilet2_mirror"])){$toilet2_mirror = $_POST["toilet2_mirror"];}else{$toilet2_mirror=0;}
-     if (isset($_POST["toilet3_mirror"])){$toilet3_mirror = $_POST["toilet3_mirror"];}else{$toilet3_mirror=0;}
-     if (isset($_POST["toilet4_mirror"])){$toilet4_mirror = $_POST["toilet4_mirror"];}else{$toilet4_mirror=0;}
-     if (isset($_POST["toilet5_mirror"])){$toilet5_mirror = $_POST["toilet5_mirror"];}else{$toilet5_mirror=0;}
-
-    if (isset($_POST["toilet1_solar_light"])){$toilet1_solar_light = $_POST["toilet1_solar_light"];}else{ $toilet1_solar_light=0;}
-    if (isset($_POST["toilet2_solar_light"])){$toilet2_solar_light = $_POST["toilet2_solar_light"];}else{ $toilet2_solar_light=0;}
-    if (isset($_POST["toilet3_solar_light"])){$toilet3_solar_light = $_POST["toilet3_solar_light"];}else{ $toilet3_solar_light=0;}
-    if (isset($_POST["toilet4_solar_light"])){$toilet4_solar_light = $_POST["toilet4_solar_light"];}else{ $toilet4_solar_light=0;}
-    if (isset($_POST["toilet5_solar_light"])){$toilet5_solar_light = $_POST["toilet5_solar_light"];}else{ $toilet5_solar_light=0;}
-     
 
     if (isset($_POST["prompted_by_New_Toilet"])){$prompted_by_New_Toilet = $_POST["prompted_by_New_Toilet"];}else{ $prompted_by_New_Toilet=0;} 
     if (isset($_POST["prompted_by_Toilet_Promotor"])){$prompted_by_Toilet_Promotor = $_POST["prompted_by_Toilet_Promotor"];}else{ $prompted_by_Toilet_Promotor=0;} 
@@ -143,8 +125,8 @@ if ((empty($_POST["no_pple_at_premises"])) OR ($_POST["no_pple_at_premises"]== 0
     }else
     {
     
-        $sql = "INSERT INTO households (hhcode, hhname, hh_gender,blno, plot,pa, locality, landmark, hh_status,phone1,phone2,total_ordered, supestructure, wall_tiles_t1,mirror_t1,solar_light_t1,wall_tiles_t2,mirror_t2,solar_light_t2,wall_tiles_t3,mirror_t3,solar_light_t3,wall_tiles_t4,mirror_t4,solar_light_t4,wall_tiles_t5,mirror_t5,solar_light_t5,prompted_by,rooms_rented,no_pple_premises,no_pple_premises_a_males,no_pple_premises_a_females,no_pple_premises_children,current_toilet,selected_product,ready_selection,need_tg,email)
-        VALUES ('$hhcode','$applicant_name','$gender','$blno','$plotno','$adminpost','$bairro','$landmark','$hh_status','$phoneno1','$phoneno2','$no_toilets_order','$super_structure_order','$toilet1_wall_tiles','$toilet1_mirror','$toilet1_solar_light','$toilet2_wall_tiles','$toilet2_mirror','$toilet2_solar_light','$toilet3_wall_tiles','$toilet3_mirror','$toilet3_solar_light','$toilet4_wall_tiles','$toilet4_mirror','$toilet4_solar_light','$toilet5_wall_tiles','$toilet5_mirror','$toilet5_solar_light','01','$no_rooms_rented','$no_pple_at_premises',
+        $sql = "INSERT INTO households (hhcode, hhname, hh_gender,blno, plot,pa, locality, landmark, hh_status,phone1,phone2,total_ordered, supestructure,prompted_by,rooms_rented,no_pple_premises,no_pple_premises_a_males,no_pple_premises_a_females,no_pple_premises_children,current_toilet,selected_product,ready_selection,need_tg,email)
+        VALUES ('$hhcode','$applicant_name','$gender','$blno','$plotno','$adminpost','$bairro','$landmark','$hh_status','$phoneno1','$phoneno2','$no_toilets_order','$super_structure_order','01','$no_rooms_rented','$no_pple_at_premises',
         '$no_pple_adult_males','$no_pple_adult_females','$no_pple_children','$current_toilet_type','$ordered_toilet_type','$ready_select','$need_tg','$email')";
 
         if (mysqli_query($link, $sql)) {

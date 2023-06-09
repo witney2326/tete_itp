@@ -108,6 +108,45 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
             if (elm["no_pple_adult_males"].value != "" && elm["no_pple_adult_females"].value != "" && elm["no_pple_children"].value != "")
             {elm["no_pple_at_premises"].value = parseInt(elm["no_pple_adult_males"].value) + parseInt(elm["no_pple_adult_females"].value)+parseInt(elm["no_pple_children"].value);}
         }
+
+        function tt()
+        {
+            let telEl = document.querySelector('#phoneno1')
+
+            telEl.addEventListener('keyup', (e) => {
+            let val = e.target.value;
+            e.target.value = val
+                .replace(/\D/g, '')
+                .replace(/(\d{1,4})(\d{1,3})?(\d{1,3})?/g, function(txt, f, s, t) {
+                if (t) {
+                    return `(${f}) ${s}-${t}`
+                } else if (s) {
+                    return `(${f}) ${s}`
+                } else if (f) {
+                    return `(${f})`
+                }
+                });
+            })}
+
+            function tt2()
+        {
+            let telEl = document.querySelector('#phoneno2')
+
+            telEl.addEventListener('keyup', (e) => {
+            let val = e.target.value;
+            e.target.value = val
+                .replace(/\D/g, '')
+                .replace(/(\d{1,4})(\d{1,3})?(\d{1,3})?/g, function(txt, f, s, t) {
+                if (t) {
+                    return `(${f}) ${s}-${t}`
+                } else if (s) {
+                    return `(${f}) ${s}`
+                } else if (f) {
+                    return `(${f})`
+                }
+                });
+            })}
+        
     </script>
 </head>
 <style>
@@ -241,11 +280,11 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                         <div class="col-lg-6">
                                                             <div class="mb-1">
                                                                 <label for="phoneno1" style="color:blue" ><?php echo $language["Contact_Phones"];?> 1</label><span class="error">*</span>
-                                                                <input type="text" class="form-control" maxlength="10" id="phoneno1" name="phoneno1" style="max-width:20%;background-color: #f2f2f2;">
+                                                                <input type="text" class="form-control" maxlength="14" id="phoneno1" name="phoneno1" style="max-width:20%;background-color: #f2f2f2;" onkeyup = "tt()">
                                                             </div>
                                                             <div class="mb-1">
                                                                 <label for="phoneno2" style="color:blue"><?php echo $language["Contact_Phones"];?> 2</label>
-                                                                <input type="text" class="form-control" maxlength="10" id="phoneno2" name="phoneno2" style="max-width:20%;background-color: #f2f2f2;">
+                                                                <input type="text" class="form-control" maxlength="14" id="phoneno2" name="phoneno2" style="max-width:20%;background-color: #f2f2f2;" onkeyup = "tt2()">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -345,23 +384,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                                 <label for="none"><?php echo $language["None"];?></label>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-3">
-                                                            <div class="mb-1">
-
-                                                                <p style="color:blue"><?php echo $language["Requested_Toilet_Type"];?>:<span class="error">*</span></p>
-                                                                <input type="radio" id="vip" name="ordered_toilet_type" value="01">
-                                                                <label for="vip"><?php echo $language["VIP"];?></label><br>
-
-                                                                <input type="radio" id="pour_flush" name="ordered_toilet_type" value="02">
-                                                                <label for="pour_flush"><?php echo $language["Pour_Flash_Septic_Tank"];?></label><br>
-
-                                                                <input type="radio" id="flush_flush" name="ordered_toilet_type" value="03">
-                                                                <label for="flush_flush"><?php echo $language["Flush_Flush_Septic_Tank"];?></label><br>
-
-                                                                <input type="radio" id="tg" name="ordered_toilet_type" value="04" checked = "true">
-                                                                <label for="tg"><?php echo $language["Dont_Know"];?></label>
-                                                            </div>
-                                                        </div>
+                                                        
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-lg-4">
@@ -396,6 +419,24 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                 
                                                     
                                                         <div class="row">
+                                                            <div class="col-lg-3">
+                                                                <div class="mb-1">
+
+                                                                    <p style="color:blue"><?php echo $language["Requested_Toilet_Type"];?>:<span class="error">*</span></p>
+                                                                    <input type="radio" id="vip" name="ordered_toilet_type" value="01">
+                                                                    <label for="vip"><?php echo $language["VIP"];?></label><br>
+
+                                                                    <input type="radio" id="pour_flush" name="ordered_toilet_type" value="02">
+                                                                    <label for="pour_flush"><?php echo $language["Pour_Flash_Septic_Tank"];?></label><br>
+
+                                                                    <input type="radio" id="flush_flush" name="ordered_toilet_type" value="03">
+                                                                    <label for="flush_flush"><?php echo $language["Flush_Flush_Septic_Tank"];?></label><br>
+
+                                                                    <input type="radio" id="tg" name="ordered_toilet_type" value="04" checked = "true">
+                                                                    <label for="tg"><?php echo $language["Dont_Know"];?></label>
+                                                                </div>
+                                                            </div>
+
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
                                                                     <label for="no_toilets_order"><?php echo $language["Toilet_No"];?></label>
@@ -407,63 +448,14 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                                 <div class="mb-3">
                                                                     <input type="radio" id="blocks" name="super_structure_order" checked value="01">
                                                                     <label for="blocks"><?php echo $language["Blocks"];?></label>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <input type="radio" id="bricks" name="super_structure_order" value="02">
-                                                                    <label for="bricks"><?php echo $language["Bricks"];?></label>
-                                                                </div>
-                                                                <div class="mb-3">
+
+                                                                    <div class="mb-3">
                                                                     <input type="radio" id="prefab" name="super_structure_order" value="03">
                                                                     <label for="prefab"><?php echo $language["Prefab"];?></label>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-7">
-                                                                <div class="mb-3">
-                                                                    <b><?php echo $language["Accesories_Requested"];?></b>
-                                                                    <table id ="mytable" style="width:100%">
-                                                                        
-                                                                        <tr>
-                                                                            <th><?php echo $language["Accesory"];?></th>
-                                                                            <th><?php echo $language["First_Toilet"];?></th>
-                                                                            <th><?php echo $language["Second_Toilet"];?></th>
-                                                                            <th><?php echo $language["Third_Toilet"];?></th>
-                                                                            <th><?php echo $language["Fourth_Toilet"];?></th>
-                                                                            <th><?php echo $language["Fifth_Toilet"];?></th>
 
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="color:blue"><?php echo $language["Wall_Tiles"];?></td>
-                                                                            <td><input type="checkbox" id="toilet1_wall_tiles" name="toilet1_wall_tiles" value = "1"></td>
-                                                                            <td><input type="checkbox" id="toilet2_wall_tiles" name="toilet2_wall_tiles"value = "1"></td>
-                                                                            <td><input type="checkbox" id="toilet3_wall_tiles" name="toilet3_wall_tiles"value = "1"></td>
-                                                                            <td><input type="checkbox" id="toilet4_wall_tiles" name="toilet4_wall_tiles"value = "1"></td>
-                                                                            <td><input type="checkbox" id="toilet5_wall_tiles" name="toilet5_wall_tiles"value = "1"></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="color:black"><?php echo $language["Mirror"];?></td>
-                                                                            <td><input type="checkbox" id="toilet1_mirror" name="toilet1_mirror"value = "1"></td>
-                                                                            <td><input type="checkbox" id="toilet2_mirror" name="toilet2_mirror"value = "1"></td>
-                                                                            <td><input type="checkbox" id="toilet3_mirror" name="toilet3_mirror"value = "1"></td>
-                                                                            <td><input type="checkbox" id="toilet4_mirror" name="toilet4_mirror"value = "1"></td>
-                                                                            <td><input type="checkbox" id="toilet5_mirror" name="toilet5_mirror"value = "1"></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="color:purple"><?php echo $language["Solar_Light"];?></td>
-                                                                            <td><input type="checkbox" id="toilet1_solar_light" name="toilet1_solar_light"value = "1"></td>
-                                                                            <td><input type="checkbox" id="toilet2_solar_light" name="toilet2_solar_light"value = "1"></td>
-                                                                            <td><input type="checkbox" id="toilet3_solar_light" name="toilet3_solar_light"value = "1"></td>
-                                                                            <td><input type="checkbox" id="toilet4_solar_light" name="toilet4_solar_light"value = "1"></td>
-                                                                            <td><input type="checkbox" id="toilet5_solar_light" name="toilet5_solar_light"value = "1"></td>
-                                                                        </tr>
-                                                                    </table> 
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    
-                                                
                                             </section>
                                             <h3><?php echo $language["Toilet_Prompt"];?></h3>
                                             <section>

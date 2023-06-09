@@ -219,8 +219,8 @@ if (isset($_POST["Submit"])) {
                                         <div class="my-auto">
 
                                             <div>
-                                                <p><center><h5 class="text-default">Register Council Staff Account</h5></center></p>
-                                                <p><center><h6 class="text-primary">(Registrar Conta de Funcionário do Conselho)</h6></center></p>
+                                                <p><center><h5 class="text-default">Register Municipal Staff Account</h5></center></p>
+                                                <p><center><h6 class="text-primary">(Registo de conta do funcionário do conselho municipal)</h6></center></p>
                                             </div>
                                         
                                                 <div class="mt-4">
@@ -252,7 +252,7 @@ if (isset($_POST["Submit"])) {
                                                         </div>
 
                                                         <div class="mb-1 <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                                                            <label for="username" class="form-label">Enter Username (insira nome de usuário)</label>
+                                                            <label for="username" class="form-label">Enter Username (Insira o nome do usuário )</label>
                                                             <input type="text" class="form-control" id="username" name="username"  value="<?php echo $username; ?>">
                                                             <span class="text-danger"><?php echo $username_err; ?></span>
                                                         </div>
@@ -271,7 +271,7 @@ if (isset($_POST["Submit"])) {
                                                         
                                                         
                                                         <div class="mt-4 d-grid">
-                                                            <button class="btn btn-primary waves-effect waves-light" type="submit"name="Submit" value="Submit">Submit Registration (Enviar registro)</button>
+                                                            <button class="btn btn-primary waves-effect waves-light" type="submit"name="Submit" value="Submit">Submit Registration (Enviar o registo)</button>
                                                         </div>
 
                                                     </form>
