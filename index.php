@@ -200,11 +200,12 @@
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table id ="mytable" class="table table-striped mb-0">
-                                        
-                                        <th><?php echo $language["Indicator"];?></th>
-                                        <th><?php echo $language["Target"];?></th>
-                                        <th><?php echo $language["Achieved"];?></th>
-                                        <th><?php echo $language["Progress"];?>%</th>
+                                        <thead style ="background-color:plum;">
+                                            <th><?php echo $language["Indicator"];?></th>
+                                            <th><?php echo $language["Target"];?></th>
+                                            <th><?php echo $language["Achieved"];?></th>
+                                            <th><?php echo $language["Progress"];?>%</th>
+                                        </thead>
                                         <tbody>
                                             <tr>
                                                 

@@ -580,4 +580,12 @@ $language["Required"] = "Necessário";
 $language["Application_Email_Settings"]="Definições de correio electrónico da aplicação";
 $language["Host"]="Anfitrião de correio electrónico";
 $language["Password"]="Palavra-passe";
+
+$language["Water_Connect"]="Tem uma ligação de água?";
+$language["Water_Connected"]="Água ligada?";
+$language["Total"]="Total";
+
+$language["Municipality_team"]="Equipa municipal";
+$language["local_leaders"]="Líderes locais";
+$language["Map"]="Casa de banho Google Map";
 ?>

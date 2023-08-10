@@ -167,62 +167,63 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                     
                                         <div id="vertical-example" class="horizontal-wizard">
                                             <!-- Seller Details -->
-                                            <h3>Applicant Details</h3>
+                                            <h3><?php echo $language["Applicant_Details"];?></h3>
                                             <section>
-                                                
+                                            <p><span class="error">* <?php echo $language["Required"];?></span></p>
                                                     <div class="row">
                                                         <div class="col-lg-6">
                                                             <div class="mb-1">
-                                                                <label for="applicant_name" style="color:blue">Name Of Applicant</label>
+                                                                <label for="applicant_name" style="color:blue"><?php echo $language["Applicant_Name"];?></label><span class="error">*</span>
                                                                 <input type="text" class="form-control" id="applicant_name" name ="applicant_name" style="max-width:50%; background-color: #f2f2f2;" >
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
-                                                            <div class="mb-1">
-                                                                <p style="color:blue">Applicant's Gender</p>
+                                                            <div class="mb-3">
+                                                                <p style="color:blue"><?php echo $language["Applicant_Gender"];?></p>
                                                                 <input type="radio" id="male" name="gender" value="01" checked = "true">
-                                                                <label for="male">Male</label>
+                                                                <label for="male"><?php echo $language["Male"];?></label>
                                                                 <input type="radio" id="female" name="gender" value="02">
-                                                                <label for="female">Female</label>
+                                                                <label for="female"><?php echo $language["Female"];?></label>
                                                             </div>
                                                         </div>
+                                                        
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-lg-6">
                                                             <div class="mb-1">
-                                                                <label for="blno" style="color:blue">BL No.</label>
-                                                                <input type="text" class="form-control" id="blno" name="blno" style="max-width:50%;background-color: #f2f2f2;" >
+                                                                <label for="blno" style="color:blue"><?php echo $language["BL_No"];?></label><span class="error">*</span> (13 characters/caracteres)
+                                                                <input type="text" class="form-control"  maxlength="13" id="blno" name="blno" style="max-width:20%;background-color: #f2f2f2;" >
                                                             </div>
                                                             <div class="mb-1">
-                                                                <label for="email" style="color:blue"><?php echo $language["Email"];?></label>
+                                                                <label for="email" style="color:blue"><?php echo $language["Email"];?></label><span class="error">*</span>(Valid email/Correio electrónico válido)
                                                                 <input type="text" class="form-control" id="email" name="email" style="max-width:50%;background-color: #f2f2f2;" >
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="mb-1">
-                                                                <label for="phoneno1" style="color:blue" >Cell No. 1</label>
-                                                                <input type="text" class="form-control" id="phoneno1" name="phoneno1" style="max-width:50%;background-color: #f2f2f2;">
+                                                                <label for="phoneno1" style="color:blue" ><?php echo $language["Contact_Phones"];?> 1</label><span class="error">*</span>
+                                                                <input type="text" class="form-control" maxlength="14" id="phoneno1" name="phoneno1" style="max-width:20%;background-color: #f2f2f2;" onkeyup = "tt()">
                                                             </div>
                                                             <div class="mb-1">
-                                                                <label for="phoneno2" style="color:blue">Cell No. 2</label>
-                                                                <input type="text" class="form-control" id="phoneno2" name="phoneno2" style="max-width:50%;background-color: #f2f2f2;">
+                                                                <label for="phoneno2" style="color:blue"><?php echo $language["Contact_Phones"];?> 2</label>
+                                                                <input type="text" class="form-control" maxlength="14" id="phoneno2" name="phoneno2" style="max-width:20%;background-color: #f2f2f2;" onkeyup = "tt2()">
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-lg-4">
+                                                        <div class="col-lg-3">
                                                             <div class="mb-1">
-                                                                <label for="plotno" style="color:blue">Plot No.</label>
+                                                                <label for="plotno" style="color:blue"><?php echo $language["Plot_No"];?></label><span class="error">*</span>
                                                                 <input type="text" class="form-control" id="plotno" name="plotno" style="max-width:50%;background-color: #f2f2f2;">
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-lg-3">
                                                             <div class="mb-1">
                                                                 
-                                                                <label for="adminpost" class="form-label" style="color:blue"><?php echo $language["Bairro"]?></label>
+                                                                <label for="adminpost" class="form-label" style="color:blue"><?php echo $language["Bairro"]?></label><span class="error">*</span>
                                                 
-                                                                <select class="form-select" name="adminpost" id="adminpost" style="max-width:30%;background-color: #f2f2f2;" onChange="getbairro(this.value);" required>
+                                                                <select class="form-select" name="adminpost" id="adminpost" style="max-width:60%;background-color: #f2f2f2;" onChange="getbairro(this.value);" required>
                                                                     <option ></option>
                                                                     <?php                                                           
                                                                             $dis_fetch_query = "SELECT id, pa_ FROM adminposts";                                                  
@@ -244,11 +245,11 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                             </div>
                                                             
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-lg-3">
                                                             <div class="mb-1">
-                                                                <label for="bairro" class="form-label" style="color:blue"><?php echo $language["Unidade"]?> </label>
-                                                                <select class="form-select" name="bairro" id="bairro" placeholder="Select Bairro" style="max-width:50%;background-color: #f2f2f2;" required>
-                                                                    <option >Select Bairro</option>
+                                                                <label for="bairro" class="form-label" style="color:blue"><?php echo $language["Unidade"];?> </label><span class="error">*</span>
+                                                                <select class="form-select" name="bairro" id="bairro" placeholder="Select Unidade" style="max-width:60%;background-color: #f2f2f2;" required>
+                                                                    <option ></option>
                                                                     
                                                                 </select>
                                                             </div>
@@ -257,8 +258,8 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <div class="mb-1">
-                                                                <label for="landmark" style="color:blue">Nearest School Or Well Known Landmark</label>
-                                                                <input type="text" class="form-control" id="landmark" name="landmark" style="max-width:44%;background-color: #f2f2f2;" >
+                                                                <label for="landmark" style="color:blue"><?php echo $language["Nearest_School_Or_Well_Known_Landmark"];?></label><span class="error">*</span>
+                                                                <input type="text" class="form-control" id="landmark" name="landmark" style="max-width:25%;background-color: #f2f2f2;" >
                                                             </div>
                                                         </div>
                                                     </div>
@@ -266,25 +267,25 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                             </section>
 
                                             <!-- Company Document -->
-                                            <h3>Household Details</h3>
+                                            <h3><?php echo $language["Household_Details"];?></h3>
                                             <section>
                                             
                                                     <div class="row">
                                                         <div class="col-lg-3">
                                                             <div class="mb-1">
-                                                                <p style="color:blue">Select ONE of the THREE:</p>
+                                                                <p style="color:blue"><?php echo $language["Select_ONE_of_THREE"];?>:</p>
                                                                 <input type="radio" id="homeowner_no_tenant" name="hh_status" value="01" checked = "true">
-                                                                <label for="homeowner_no_tenant">Home Owner (No Tenant)</label><br>
+                                                                <label for="homeowner_no_tenant"><?php echo $language["Home_Owner"];?></label><br>
                                                                 <input type="radio" id="resident_landlord" name="hh_status" value="02">
-                                                                <label for="resident_landlord">Resident Landlord</label><br>
+                                                                <label for="resident_landlord"><?php echo $language["Resident_Landlord"];?></label><br>
                                                                 <input type="radio" id="absent_landlord" name="hh_status" value="03">
-                                                                <label for="absent_landlord">Absent Landlord</label>
+                                                                <label for="absent_landlord"><?php echo $language["Absent_Landlord"];?></label>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <div class="mb-1">
 
-                                                                <p style="color:blue">No Of Rooms Rented:</p>
+                                                                <p style="color:blue"><?php echo $language["Rooms_Rented"];?>:</p>
                                                                 <input type="number" min="0" max="20" value="0" id="no_rooms_rented" name="no_rooms_rented" style="width:15%">
                                                                 <label for="no_rooms_rented"></label><br>
                                                             </div>
@@ -292,198 +293,178 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                         <div class="col-lg-3">
                                                             <div class="mb-1">
 
-                                                                <p style="color:blue">Current Toilet Type:</p>
+                                                                <p style="color:blue"><?php echo $language["Current_Toilet"];?>:<span class="error">*</span></p>
                                                                 <input type="radio" id="upl" name="current_toilet_type" value="01" >
-                                                                <label for="upl">Unlined Pit Latrine</label><br>
+                                                                <label for="upl"><?php echo $language["Unlined_Pit_Latrine"];?></label><br>
 
                                                                 <input type="radio" id="slpl" name="current_toilet_type" value="02">
-                                                                <label for="slpl">Semi-lined Pit Latrine</label><br>
+                                                                <label for="slpl"><?php echo $language["Semi_lined_Pit_Latrine"];?></label><br>
 
                                                                 <input type="radio" id="flpl" name="current_toilet_type" value="03">
-                                                                <label for="flpl">Fully Lined Pit Latrine</label><br>
+                                                                <label for="flpl"><?php echo $language["Fully_Lined_Pit_Latrine"];?></label><br>
 
                                                                 <input type="radio" id="none" name="current_toilet_type" value="04" checked = "true">
-                                                                <label for="none">None</label>
+                                                                <label for="none"><?php echo $language["None"];?></label>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <div class="mb-1">
+                                                                <p style="color:blue"><?php echo $language["Water_Connect"];?>:</p>
+                                                                <input type="radio" id="water_connection_yes" name="water_connection" value="1" checked = "true">
+                                                                <label for="water_connection_yes"><?php echo $language["Yes"];?></label><br>
 
-                                                                <p style="color:blue">Requested Toilet Type:</p>
-                                                                <input type="radio" id="vip" name="ordered_toilet_type" value="01">
-                                                                <label for="vip">VIP (Lined with vent pipe)</label><br>
-
-                                                                <input type="radio" id="pour_flush" name="ordered_toilet_type" value="02">
-                                                                <label for="pour_flush">Pour Flash + Septic Tank</label><br>
-
-                                                                <input type="radio" id="flush_flush" name="ordered_toilet_type" value="03">
-                                                                <label for="flush_flush">Flush Flush + Septic Tank</label><br>
-
-                                                                <input type="radio" id="tg" name="ordered_toilet_type" value="04" checked = "true">
-                                                                <label for="tg">Dont Know Type</label>
+                                                                <input type="radio" id="water_connection_no" name="water_connection" value="0">
+                                                                <label for="water_connection_no"><?php echo $language["No"];?></label><br>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <div class="mb-1">
-                                                                <input type="number" id="no_pple_at_premises" name="no_pple_at_premises" style="width:10%">
-                                                                <label for="no_pple_at_premises">Total No Of people living at the premises</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    
                                                     <div class="row">
                                                         <div class="col-lg-5">
+                                                            <p style="color:blue"><?php echo $language["No_People_at_Premises"];?></p>
                                                             <div class="mb-1">
-                                                                <input type="number" id="no_pple_adult_males" name="no_pple_adult_males" style="width:8%">
-                                                                <label for="no_pple_adult_males">Adult Males</label>
-
-                                                                <input type="number" id="no_pple_adult_females" name="no_pple_adult_females" style="width:8%">
-                                                                <label for="no_pple_adult_females">Adult Females</label>
-
-                                                                <input type="number" id="no_pple_children" name="no_pple_children" style="width:8%">
-                                                                <label for="no_pple_children">Children Under 5 Years</label>
+                                                                <input type="number" id="no_pple_adult_males" name="no_pple_adult_males" min="0" max="20" style="width:10%;" onkeyup="calc()">
+                                                                <label for="no_pple_adult_males"><?php echo $language["Adult_Males"];?></label><span class="error">*</span>
+                                                            </div>
+                                                            <div class="mb-1">
+                                                                <input type="number" id="no_pple_adult_females" name="no_pple_adult_females" min="0" max="20" style="width:10%;" onkeyup="calc()">
+                                                                <label for="no_pple_adult_females"><?php echo $language["Adult_Females"];?></label><span class="error">*</span>
+                                                            </div>
+                                                            <div class="mb-1">
+                                                                <input type="number" id="no_pple_children" name="no_pple_children" min="0" max="20" style="width:10%;" onkeyup="calc()">
+                                                                <label for="no_pple_children"><?php echo $language["Children_Under_5"];?></label><span class="error">*</span>
                                                             </div>
                                                         </div>
-                                                        
                                                     </div>
-                                                
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="mb-1">
+                                                                <input type="number" id="no_pple_at_premises" name="no_pple_at_premises" style="width:12%;background-color:plum;" readonly>
+                                                                <label for="no_pple_at_premises"><?php echo $language["Total"];?></label>(Auto generated -- Gerado automaticamente)
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 
                                             </section>
 
                                             <!-- Bank Details -->
-                                            <h3>Toilet Order</h3>
+                                            <h3><?php echo $language["Toilet_Order"];?></h3>
                                             <section>
                                                 
                                                     
                                                         <div class="row">
+                                                            <div class="col-lg-3">
+                                                                <div class="mb-1">
+
+                                                                    <p style="color:blue"><?php echo $language["Requested_Toilet_Type"];?>:<span class="error">*</span></p>
+                                                                    <input type="radio" id="vip" name="ordered_toilet_type" value="01">
+                                                                    <label for="vip"><?php echo $language["VIP"];?></label><br>
+
+                                                                    <input type="radio" id="pour_flush" name="ordered_toilet_type" value="02">
+                                                                    <label for="pour_flush"><?php echo $language["Pour_Flash_Septic_Tank"];?></label><br>
+
+                                                                    <input type="radio" id="flush_flush" name="ordered_toilet_type" value="03">
+                                                                    <label for="flush_flush"><?php echo $language["Flush_Flush_Septic_Tank"];?></label><br>
+
+                                                                    <input type="radio" id="tg" name="ordered_toilet_type" value="04" checked = "true">
+                                                                    <label for="tg"><?php echo $language["Dont_Know"];?></label>
+                                                                </div>
+                                                            </div>
+
                                                             <div class="col-lg-6">
                                                                 <div class="mb-3">
-                                                                    <label for="no_toilets_order">No. of toilets to buy</label>
+                                                                    <label for="no_toilets_order"><?php echo $language["Toilet_No"];?></label>
                                                                     <input type="number" min="1" max="5" value="1" id="no_toilets_order" name="no_toilets_order" style="width:8%">
                                                                 </div>
                                                                 <div class="mb-3">
-                                                                    <label style="color:blue">Type Of Super structure</label>
+                                                                    <label style="color:blue"><?php echo $language["Type_Super_structure"];?></label>
                                                                 </div>
                                                                 <div class="mb-3">
-                                                                    <input type="radio" id="blocks" name="super_structure_order" checked ="true">
-                                                                    <label for="blocks">Blocks</label>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <input type="radio" id="bricks" name="super_structure_order">
-                                                                    <label for="bricks">Bricks</label>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <input type="radio" id="prefab" name="super_structure_order">
-                                                                    <label for="prefab">prefab</label>
+                                                                    <input type="radio" id="blocks" name="super_structure_order" checked value="01">
+                                                                    <label for="blocks"><?php echo $language["Blocks"];?></label>
+
+                                                                    <div class="mb-3">
+                                                                    <input type="radio" id="prefab" name="super_structure_order" value="03">
+                                                                    <label for="prefab"><?php echo $language["Prefab"];?></label>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-7">
-                                                                <div class="mb-3">
-                                                                    <b>Accesories Requested</b>
-                                                                    <table id ="mytable" style="width:100%">
-                                                                        
-                                                                        <tr>
-                                                                            <th>Accessory</th>
-                                                                            <th>1st Toilet</th>
-                                                                            <th>2nd Toilet</th>
-                                                                            <th>3rd Toilet</th>
-                                                                            <th>4th Toilet</th>
-                                                                            <th>5th Toilet</th>
 
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="color:blue">Wall Tiles</td>
-                                                                            <td><input type="checkbox" id="toilet1_wall_tiles" name="toilet1_wall_tiles"></td>
-                                                                            <td><input type="checkbox" id="toilet2_wall_tiles" name="toilet2_wall_tiles"></td>
-                                                                            <td><input type="checkbox" id="toilet3_wall_tiles" name="toilet3_wall_tiles"></td>
-                                                                            <td><input type="checkbox" id="toilet4_wall_tiles" name="toilet4_wall_tiles"></td>
-                                                                            <td><input type="checkbox" id="toilet5_wall_tiles" name="toilet5_wall_tiles"></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="color:black">Mirror</td>
-                                                                            <td><input type="checkbox" id="toilet1_mirror" name="toilet1_mirror"></td>
-                                                                            <td><input type="checkbox" id="toilet2_mirror" name="toilet2_mirror"></td>
-                                                                            <td><input type="checkbox" id="toilet3_mirror" name="toilet3_mirror"></td>
-                                                                            <td><input type="checkbox" id="toilet4_mirror" name="toilet4_mirror"></td>
-                                                                            <td><input type="checkbox" id="toilet5_mirror" name="toilet5_mirror"></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td style="color:purple">Solar Light</td>
-                                                                            <td><input type="checkbox" id="toilet1_solar_light" name="toilet1_solar_light"></td>
-                                                                            <td><input type="checkbox" id="toilet2_solar_light" name="toilet2_solar_light"></td>
-                                                                            <td><input type="checkbox" id="toilet3_solar_light" name="toilet3_solar_light"></td>
-                                                                            <td><input type="checkbox" id="toilet4_solar_light" name="toilet4_solar_light"></td>
-                                                                            <td><input type="checkbox" id="toilet5_solar_light" name="toilet5_solar_light"></td>
-                                                                        </tr>
-                                                                    </table> 
-                                                                </div>
+                                            </section>
+                                            <h3><?php echo $language["Toilet_Prompt"];?></h3>
+                                            <section>
+                                            <h5 style="color:blue;"><?php echo $language["Toilet_Prompt"];?></h5>
+                                                    <div class="row">
+                                                        
+                                                        <div class="col-lg-12">
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_New_Toilet" name="prompted_by" style="width:5%" checked value="01">
+                                                                <label for="prompted_by_New_Toilet"><?php echo $language["Saw_New_Toilet"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Toilet_Promotor" name="prompted_by"style="width:5%" value="02">
+                                                                <label for="prompted_by_Toilet_Promotor"><?php echo $language["Toilet_Promotor"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Toilet_Builder" name="prompted_by"style="width:5%" value="03">
+                                                                <label for="prompted_by_Toilet_Builder"><?php echo $language["Toilet_Builder"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Demo_Site" name="prompted_by"style="width:5%" value="04">
+                                                                <label for="prompted_by_Demo_Site"><?php echo $language["Demo_Site"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_TV_Radio" name="prompted_by"style="width:5%" value="05">
+                                                                <label for="prompted_by_TV_Radio"><?php echo $language["TV_Radio"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Printed_Media" name="prompted_by"style="width:5%" value="06">
+                                                                <label for="prompted_by_Printed_Media"><?php echo $language["Printed_Media"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Bill_board" name="prompted_by"style="width:5%" value="07">
+                                                                <label for="prompted_by_Bill_board"><?php echo $language["Bill_board"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_flier" name="prompted_by"style="width:5%" value="08">
+                                                                <label for="prompted_by_flier"><?php echo $language["Paper_Flier"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Neighbor_Relative" name="prompted_by" style="width:5%" value="09">
+                                                                <label for="prompted_by_Neighbor_Relative"><?php echo $language["Neighbor_Relative"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="local_leaders " name="prompted_by"style="width:5%" value="10">
+                                                                <label for="local_leaders"><?php echo $language["local_leaders"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Church_School" name="prompted_by"style="width:5%" value="11">
+                                                                <label for="prompted_by_Church_School"><?php echo $language["Church_School"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="Municipality_team" name="prompted_by"style="width:5%" value="12">
+                                                                <label for="Municipality_team"><?php echo $language["Municipality_team"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_SMS" name="prompted_by"style="width:5%" value="13">
+                                                                <label for="prompted_by_SMS"><?php echo $language["SMS"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Legal_Enforce" name="prompted_by"style="width:5%" value="14">
+                                                                <label for="prompted_by_Legal_Enforce"><?php echo $language["Legal_Enforce"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Other" name="prompted_by"style="width:5%" value="15">
+                                                                <label for="prompted_by_Other"><?php echo $language["Other"];?></label>
                                                             </div>
                                                         </div>
                                                         
-                                                    
-                                                
-                                            </section>
-                                            <h3>WHAT PROMPTED APPLICANT TO BUY A TOILET</h3>
-                                            <section>
-                                                
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <div class="mb-3">
-                                                                <input type="checkbox" id="prompted_by_New_Toilet" name="prompted_by_New_Toilet" style="width:3%">
-                                                                <label for="prompted_by_New_Toilet">Saw New Toilet</label>
-
-                                                                <input type="checkbox" id="prompted_by_Toilet_Promotor" name="prompted_by_Toilet_Promotor"style="width:3%">
-                                                                <label for="prompted_by_Toilet_Promotor">Toilet Promotor</label>
-
-                                                                <input type="checkbox" id="prompted_by_Toilet_Builder" name="prompted_by_Toilet_Builder"style="width:3%">
-                                                                <label for="prompted_by_Toilet_Builder">Toilet Builder</label>
-
-                                                                <input type="checkbox" id="prompted_by_Demo_Site" name="prompted_by_Demo_Site"style="width:3%">
-                                                                <label for="prompted_by_Demo_Site">Demo Site</label>
-
-                                                                <input type="checkbox" id="prompted_by_TV_Radio" name="prompted_by_TV_Radio"style="width:3%">
-                                                                <label for="prompted_by_TV_Radio">TV or Radio</label>
-
-                                                                <input type="checkbox" id="prompted_by_Printed_Media" name="prompted_by_Printed_Media"style="width:3%">
-                                                                <label for="prompted_by_Printed_Media">Printed Media</label>
-
-                                                                <input type="checkbox" id="prompted_by_Bill_board" name="prompted_by_Bill_board"style="width:3%">
-                                                                <label for="prompted_by_Bill_board">Bill board</label>
-
-                                                                <input type="checkbox" id="prompted_by_flier" name="prompted_by_flier"style="width:3%">
-                                                                <label for="prompted_by_flier">Paper or Flier</label>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <div class="mb-3">
-                                                                <input type="checkbox" id="prompted_by_Neighbor_Relative" name="prompted_by_Neighbor_Relative" style="width:3%">
-                                                                <label for="prompted_by_Neighbor_Relative">Neighbor/Relative</label>
-
-                                                                <input type="checkbox" id="prompted_by_Kiosk_attendant" name="prompted_by_Kiosk_attendant"style="width:3%">
-                                                                <label for="prompted_by_Kiosk_attendant">Water Kiosk attendant</label>
-
-                                                                <input type="checkbox" id="prompted_by_Church_School" name="prompted_by_Church_School"style="width:3%">
-                                                                <label for="prompted_by_Church_School">Church or School</label>
-
-                                                                <input type="checkbox" id="prompted_by_Water_Office" name="prompted_by_Water_Office"style="width:3%">
-                                                                <label for="prompted_by_Water_Office">Water Office</label>
-
-                                                                <input type="checkbox" id="prompted_by_SMS" name="prompted_by_SMS"style="width:3%">
-                                                                <label for="prompted_by_SMS">SMS</label>
-
-                                                                <input type="checkbox" id="prompted_by_Legal_Enforce" name="prompted_by_Legal_Enforce"style="width:3%">
-                                                                <label for="prompted_by_Legal_Enforce">Legal Enforce</label>
-
-                                                                <input type="checkbox" id="prompted_by_Other" name="prompted_by_Other"style="width:3%">
-                                                                <label for="prompted_by_Other">Other</label>
-
-                                                                <label for="Other_specify">(Specify)</label>
-                                                                <input type="text" id="prompted_by_Other_specify" name="prompted_by_Other_specify"style="width:10%">
+                                                                <label for="Other_specify"><?php echo $language["Specify"];?></label>
+                                                                <input type="text" id="prompted_by_Other_specify" name="prompted_by_Other_specify"style="width:30%">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -491,7 +472,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                             </section>
                                             
                                             <!-- Confirm Details -->
-                                            <h3>Confirm Detail</h3>
+                                            <h3><?php echo $language["Confirm_Details"];?></h3>
                                             <section>
                                                 <div class="row justify-content-center">
                                                     <div class="col-lg-6">
@@ -500,9 +481,9 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                                 <i class="mdi mdi-check-circle-outline text-success display-4"></i>
                                                             </div>
                                                             <div>
-                                                                <h5>Confirm Detail</h5>
+                                                                <h5><?php echo $language["Confirm_Details"];?></h5>
                                                                 
-                                                                <button type="submit" id="Submit" class="btn btn-btn btn-outline-primary w-md" value ="Submit">Submit</button>
+                                                                <button type="submit" id="Submit" class="btn btn-btn btn-outline-primary w-md" value ="Submit"><?php echo $language["Submit"];?></button>
                                                                 
                                                             </div>
                                                         </div>

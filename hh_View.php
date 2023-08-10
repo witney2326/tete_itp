@@ -37,9 +37,10 @@
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: left;
-        background-color: gray;
-        color: white;}
+        background-color: plum;
+        color: black;}
     </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
 </head>
 
 <?php include 'layouts/body.php'; ?>
@@ -74,12 +75,43 @@
                  $longi= $row["longi"]; 
                  $total_ordered= $row["total_ordered"]; 
                  $supestructure= $row["supestructure"];
-
+                 $water_connect= $row["water_connect"];
              }
              $result_set->close();
-         }
-                
+         }   
      ?>
+
+<script type="text/javascript">
+    function initialize() 
+    {
+        // put latitude and longitude data here
+        const lat = "<?php echo $lat; ?>";
+        const longi = "<?php echo $longi; ?>";
+
+    var latinfo = new google.maps.LatLng(lat,longi);
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: latinfo,
+        zoom: 13
+        });
+        var marker = new google.maps.Marker({
+        map: map,
+        position: latinfo,
+        draggable: false,
+        animation: google.maps.Animation.BOUNCE,
+        anchorPoint: new google.maps.Point(0, -29)
+    });
+        var infowindow = new google.maps.InfoWindow();   
+        google.maps.event.addListener(marker, 'click', function() 
+        {
+        var iwContent = '<div id="pop_window">' + '<div><b>Location</b> : Connaught Place, New Delhi</div></div>';
+        // put content to the infowindow
+        infowindow.setContent(iwContent);
+        // show infowindow in the google map and at the current marker location
+        infowindow.open(map, marker);
+        });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 
 <!-- Begin page -->
 <div id="layout-wrapper">
@@ -133,6 +165,7 @@
                                     <div class="col-md-2">
                                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                             <a class="nav-link mb-2 active" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><?php echo $language["Applicant_Details"]?></a>
+                                            <a class="nav-link mb-2" id="v-pills-map-tab" data-bs-toggle="pill" href="#v-pills-map" role="tab" aria-controls="v-pills-map" aria-selected="false"><?php echo $language["Map"];?></a>
                                             <a class="nav-link mb-2" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><?php echo $language["Applicant_Payments"]?></a>
                                             <a class="nav-link mb-2" id="v-pills-messages-tab" data-bs-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><?php echo $language["Selected_Toilet"]?></a>
                                             <a class="nav-link mb-2" id="v-pills-messages2-tab" data-bs-toggle="pill" href="#v-pills-messages2" role="tab" aria-controls="v-pills-messages2" aria-selected="false"><?php echo $language["Toilet_Order"]?></a>
@@ -222,12 +255,29 @@
                                                                     <label for="email" class="col-sm-2 col-form-label" style="color:blue"><?php echo $language["email"]?></label>              
                                                                     <input type="text" class="form-control" id="email" name="email" value ="<?php if ($email == ""){echo "Not Set";}else{echo $email;}?>" style="max-width:30%;" disabled ="True">
                                                                     
-                                                                    
+                                                                    <label for="water_connect" class="col-sm-2 col-form-label" style="color:blue"><?php echo $language["Water_Connected"]?></label>              
+                                                                    <input type="text" class="form-control" id="water_connect" name="water_connect" value ="<?php if ($water_connect == "1"){echo "Yes";}else{echo "No";}?>" style="max-width:30%;" disabled ="True">
                                                                     
                                                                 </div>
                                                                 
                                                                 
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                </p>
+                                                
+                                            </div>
+                                            <div class="tab-pane fade" id="v-pills-map" role="tabpanel" aria-labelledby="v-pills-map-tab">
+                                                <p>
+                                                <div class="card-border">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title mt-0"> Toilet Google Map</h5>
+
+                                                            <div align="center">
+                                                                <div id="map" style="width: 100%; height: 400px;">
+                                                                </div> 
+                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 </p>
@@ -257,11 +307,11 @@
                                                                         
                                                                             <thead>
                                                                                 <tr>   
-                                                                                    <th>Payment_ID</th>                                              
-                                                                                    <th>Date</th>                                                                                               
-                                                                                    <th>Reference</th>
-                                                                                    <th>Amount Paid</th>
-                                                                                    <th>Payment Status</th>
+                                                                                    <th>ID</th>                                              
+                                                                                    <th>Date/ Data</th>                                                                                               
+                                                                                    <th>Reference/ Referência</th>
+                                                                                    <th>Amount Paid/ Montante pago</th>
+                                                                                    <th>Payment Status/ Estado de pagamento</th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
@@ -341,15 +391,15 @@
                                                         <div class="card-body">
                                                             <h5 class="card-title mt-0"> <?php echo $language["Works_Progress"]?></h5>
 
-                                                            <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                                            <table id="mytable">
                                                                 
                                                             <thead>
                                                                 <tr>
-                                                                    <th><?php $language["Works_Code"]?></th>                                           
-                                                                    <th><?php $language["Start_Date"]?></th>
-                                                                    <th><?php $language["End_Date"]?></th>
-                                                                    <th><?php $language["Contractor"]?></th>
-                                                                    <th><?php $language["Status"]?></th>
+                                                                    <th>Code/ Código</th>                                           
+                                                                    <th>Start Date/  de início</th>
+                                                                    <th>End Date/ Data final</th>
+                                                                    <th>Contractor/ Empreiteiro</th>
+                                                                    <th>Status/ Estado</th>
  
                                                                 </tr>
                                                             </thead>

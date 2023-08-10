@@ -162,7 +162,7 @@ if (isset($_POST["Submit"])) {
     }
 
     // Close connection
-    mysqli_close($link);
+    //mysqli_close($link);
 }
 ?>
 
@@ -225,54 +225,58 @@ if (isset($_POST["Submit"])) {
                                         
                                                 <div class="mt-4">
                                                     <form class="needs-validation" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-
-                                                        <div class="mb-1">
-                                                            <label for="position" class="form-label">User Role (Papel do usuário)</label>
-                                                            <select class="form-select" name="position" id="position" required >
-                                                                <option ></option>
-                                                                <?php                                                           
-                                                                        $ta_fetch_query = "SELECT roleid,rolename FROM userroles where ((roleid = '01') or (roleid = '02'))";                                                  
-                                                                        $result_ta_fetch = mysqli_query($link, $ta_fetch_query);                                                                       
-                                                                        $i=0;
-                                                                            while($DB_ROW_ta = mysqli_fetch_array($result_ta_fetch)) {
+                                                        <center>
+                                                            <div class="mb-1">
+                                                                <label for="position" class="form-label">User Role (Papel do usuário)</label>
+                                                                <select class="form-select" name="position" id="position" required style="width:50%;">
+                                                                    <option ></option>
+                                                                    <?php                                                           
+                                                                            $ta_fetch_query = "SELECT roleid,rolename FROM userroles where ((roleid = '01') or (roleid = '02'))";                                                  
+                                                                            $result_ta_fetch = mysqli_query($link, $ta_fetch_query);                                                                       
+                                                                            $i=0;
+                                                                                while($DB_ROW_ta = mysqli_fetch_array($result_ta_fetch)) {
+                                                                            ?>
+                                                                            <option value="<?php echo $DB_ROW_ta["roleid"]; ?>">
+                                                                                <?php echo $DB_ROW_ta["rolename"]; ?></option><?php
+                                                                                $i++;
+                                                                                    }
                                                                         ?>
-                                                                        <option value="<?php echo $DB_ROW_ta["roleid"]; ?>">
-                                                                            <?php echo $DB_ROW_ta["rolename"]; ?></option><?php
-                                                                            $i++;
-                                                                                }
-                                                                    ?>
-                                                            </select>
-                                                            
-                                                        </div>
-
-                                                        <div class="mb-1 <?php echo (!empty($useremail_err)) ? 'has-error' : ''; ?>">
-                                                            <label for="useremail" class="form-label">email address (endereço de email)</label>
-                                                            <input type="email" class="form-control" id="useremail" name="useremail"  value="<?php echo $useremail; ?>">
-                                                            <span class="text-danger"><?php echo $useremail_err; ?></span>
-                                                        </div>
-
-                                                        <div class="mb-1 <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                                                            <label for="username" class="form-label">Enter Username (Insira o nome do usuário )</label>
-                                                            <input type="text" class="form-control" id="username" name="username"  value="<?php echo $username; ?>">
-                                                            <span class="text-danger"><?php echo $username_err; ?></span>
-                                                        </div>
-
-                                                        <div class="mb-1 <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                                                            <label for="userpassword" class="form-label">Enter Password (digite a senha)</label>
-                                                            <input type="password" class="form-control" id="userpassword" name="password"  value="<?php echo $password; ?>">
-                                                            <span class="text-danger"><?php echo $password_err; ?></span>
-                                                        </div>
-
-                                                        <div class="mb-1 <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                                                            <label for="confirm_password" class="form-label">Confirm Your Password (Confirme sua senha)</label>
-                                                            <input type="password" class="form-control" id="confirm_password" name="confirm_password"  value="<?php echo $confirm_password; ?>">
-                                                            <span class="text-danger"><?php echo $confirm_password_err; ?></span>
-                                                        </div>
-                                                        
-                                                        
-                                                        <div class="mt-4 d-grid">
-                                                            <button class="btn btn-primary waves-effect waves-light" type="submit"name="Submit" value="Submit">Submit Registration (Enviar o registo)</button>
-                                                        </div>
+                                                                </select>
+                                                            </div>
+                                                        </center>
+                                                        <center>
+                                                            <div class="mb-1 <?php echo (!empty($useremail_err)) ? 'has-error' : ''; ?>">
+                                                                <label for="useremail" class="form-label">email address (endereço de email)</label>
+                                                                <input type="email" class="form-control" id="useremail" name="useremail"  value="<?php echo $useremail; ?>"style="width:50%;">
+                                                                <span class="text-danger"><?php echo $useremail_err; ?></span>
+                                                            </div>
+                                                        </center>
+                                                        <center>
+                                                            <div class="mb-1 <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                                                                <label for="username" class="form-label">Enter Username (Insira o nome do usuário )</label>
+                                                                <input type="text" class="form-control" id="username" name="username"  value="<?php echo $username; ?>"style="width:50%;">
+                                                                <span class="text-danger"><?php echo $username_err; ?></span>
+                                                            </div>
+                                                        </center>
+                                                        <center>
+                                                            <div class="mb-1 <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                                                                <label for="userpassword" class="form-label">Enter Password (digite a senha)</label>
+                                                                <input type="password" class="form-control" id="userpassword" name="password"  value="<?php echo $password; ?>"style="width:50%;">
+                                                                <span class="text-danger"><?php echo $password_err; ?></span>
+                                                            </div>
+                                                        </center>
+                                                        <center>
+                                                            <div class="mb-1 <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+                                                                <label for="confirm_password" class="form-label">Confirm Your Password (Confirme sua senha)</label>
+                                                                <input type="password" class="form-control" id="confirm_password" name="confirm_password"  value="<?php echo $confirm_password; ?>"style="width:50%;">
+                                                                <span class="text-danger"><?php echo $confirm_password_err; ?></span>
+                                                            </div>
+                                                        </center>
+                                                        <center>
+                                                            <div class="mt-4 d-grid">
+                                                                <button class="btn btn-primary waves-effect waves-light" type="submit"name="Submit" value="Submit">Submit Registration (Enviar o registo)</button>
+                                                            </div>
+                                                        </center>
 
                                                     </form>
                                                 </div>

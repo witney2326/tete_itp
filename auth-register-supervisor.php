@@ -178,7 +178,7 @@ if (isset($_POST["Submit"])) {
                             <div class="card-border1">
                                 <p align="right"> <INPUT TYPE="button" class="btn btn-btn btn-outline-secondary w-md" style="width:170px" VALUE="<?php echo $language["Back"]?>" onClick="history.go(-1);"></p>
                                 <div class="card-body">
-                                    <center><img src="assets/images/logo_q.jpg" alt="" height="264" class="auth-logo-dark"></center>
+                                    <center><img src="assets/images/logo_t.jpg" alt="" height="264" class="auth-logo-dark"></center>
                                     <?php 
                                         $result = mysqli_query($link, "SELECT pvalue FROM app_parameters where id = '02'"); 
                                         $row = mysqli_fetch_assoc($result); 
@@ -187,12 +187,12 @@ if (isset($_POST["Submit"])) {
                                         <center><h2><?php echo $pvalue;?></h2></center>
                                         
                                     </div>
-                                    <center><img src="assets/images/logo_q.jpg" alt="" height="264" class="auth-logo-dark" hidden ></center>
+                                    <center><img src="assets/images/logo_t.jpg" alt="" height="264" class="auth-logo-dark" hidden ></center>
                                     <center><h2 style="color:white"><?php echo $pvalue;?></h2></center>
                                     <center><h2 style="color:white"><?php echo $pvalue;?></h2></center>
                                     <center><h2 style="color:white"><?php echo $pvalue;?></h2></center>
                                     <center><h2 style="color:white"><?php echo $pvalue;?></h2></center>
-                                    <center><img src="assets/images/logo_q.jpg" alt="" height="264" class="auth-logo-dark" hidden ></center>
+                                    <center><img src="assets/images/logo_t.jpg" alt="" height="264" class="auth-logo-dark" hidden ></center>
                                     <center><h2 style="color:white"><?php echo $pvalue;?></h2></center>
                                     <center><h2 style="color:white"><?php echo $pvalue;?></h2></center>
                                     <center><h2 style="color:white"><?php echo $pvalue;?></h2></center>
@@ -216,7 +216,7 @@ if (isset($_POST["Submit"])) {
                                         <div class="d-flex flex-column h-100">
                                             <div class="mb-4 mb-md-5">
                                                 <a href="javascript:void(0);" class="d-block auth-logo">
-                                                    <center><img src="assets/images/logo_q.jpg" alt="" height="64" class="auth-logo-dark"></center>
+                                                    <center><img src="assets/images/logo_t.jpg" alt="" height="64" class="auth-logo-dark"></center>
                                                 </a>
                                             </div>
                                             <div class="my-auto">
@@ -227,49 +227,50 @@ if (isset($_POST["Submit"])) {
                                                     
                                                     
                                                 </div>
+                                                <center>
+                                                    <div class="mt-4">
+                                                        <form class="needs-validation" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
 
-                                                <div class="mt-4">
-                                                    <form class="needs-validation" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+                                                            <div class="mb-1">
+                                                                <label for="position" class="form-label">User Role (Papel do usuário)</label>
+                                                                <select class="form-select" name="position" id="position" required style="width:50%">
+                                                                    <option selected value="03" >Supervisor</option>
+                                                                </select>
+                                                                
+                                                            </div>
 
-                                                        <div class="mb-1">
-                                                            <label for="position" class="form-label">User Role (Papel do usuário)</label>
-                                                            <select class="form-select" name="position" id="position" required >
-                                                                <option selected value="03" >Supervisor</option>
-                                                            </select>
+                                                            <div class="mb-1 <?php echo (!empty($useremail_err)) ? 'has-error' : ''; ?>">
+                                                                <label for="useremail" class="form-label">email address (endereço de email)</label>
+                                                                <input type="email" class="form-control" id="useremail" name="useremail"  value="<?php echo $useremail; ?>"style="width:50%">
+                                                                <span class="text-danger"><?php echo $useremail_err; ?></span>
+                                                            </div>
+
+                                                            <div class="mb-1 <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                                                                <label for="username" class="form-label">Enter Username (insira nome de usuário)</label>
+                                                                <input type="text" class="form-control" id="username" name="username"  value="<?php echo $username; ?>"style="width:50%">
+                                                                <span class="text-danger"><?php echo $username_err; ?></span>
+                                                            </div>
+
+                                                            <div class="mb-1 <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                                                                <label for="userpassword" class="form-label">Enter Password (digite a senha)</label>
+                                                                <input type="password" class="form-control" id="userpassword" name="password"  value="<?php echo $password; ?>"style="width:50%">
+                                                                <span class="text-danger"><?php echo $password_err; ?></span>
+                                                            </div>
+
+                                                            <div class="mb-1 <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+                                                                <label for="confirm_password" class="form-label">Confirm Your Password (Confirme sua senha)</label>
+                                                                <input type="password" class="form-control" id="confirm_password" name="confirm_password"  value="<?php echo $confirm_password; ?>"style="width:50%">
+                                                                <span class="text-danger"><?php echo $confirm_password_err; ?></span>
+                                                            </div>
                                                             
-                                                        </div>
+                                                            
+                                                            <div class="mt-4 d-grid">
+                                                                <button class="btn btn-primary waves-effect waves-light" type="submit"name="Submit" value="Submit">Submit Registration (Enviar registro)</button>
+                                                            </div>
 
-                                                        <div class="mb-1 <?php echo (!empty($useremail_err)) ? 'has-error' : ''; ?>">
-                                                            <label for="useremail" class="form-label">email address (endereço de email)</label>
-                                                            <input type="email" class="form-control" id="useremail" name="useremail"  value="<?php echo $useremail; ?>">
-                                                            <span class="text-danger"><?php echo $useremail_err; ?></span>
-                                                        </div>
-
-                                                        <div class="mb-1 <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                                                            <label for="username" class="form-label">Enter Username (insira nome de usuário)</label>
-                                                            <input type="text" class="form-control" id="username" name="username"  value="<?php echo $username; ?>">
-                                                            <span class="text-danger"><?php echo $username_err; ?></span>
-                                                        </div>
-
-                                                        <div class="mb-1 <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                                                            <label for="userpassword" class="form-label">Enter Password (digite a senha)</label>
-                                                            <input type="password" class="form-control" id="userpassword" name="password"  value="<?php echo $password; ?>">
-                                                            <span class="text-danger"><?php echo $password_err; ?></span>
-                                                        </div>
-
-                                                        <div class="mb-1 <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                                                            <label for="confirm_password" class="form-label">Confirm Your Password (Confirme sua senha)</label>
-                                                            <input type="password" class="form-control" id="confirm_password" name="confirm_password"  value="<?php echo $confirm_password; ?>">
-                                                            <span class="text-danger"><?php echo $confirm_password_err; ?></span>
-                                                        </div>
-                                                        
-                                                        
-                                                        <div class="mt-4 d-grid">
-                                                            <button class="btn btn-primary waves-effect waves-light" type="submit"name="Submit" value="Submit">Submit Registration (Enviar registro)</button>
-                                                        </div>
-
-                                                    </form>
-                                                </div>
+                                                        </form>
+                                                    </div>
+                                                </center>
                                             </div>
 
                                             <div class="mt-4 mt-md-5 text-center">

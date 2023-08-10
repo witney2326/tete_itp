@@ -57,6 +57,8 @@ if ((empty($_POST["no_pple_at_premises"])) OR ($_POST["no_pple_at_premises"]== 0
      $hh_status = $_POST["hh_status"];
      //$email = $_POST["email"];
 
+     $water_connection = $_POST["water_connection"];
+
      $no_rooms_rented = $_POST["no_rooms_rented"];
 
      $current_toilet_type = $_POST["current_toilet_type"];
@@ -74,27 +76,7 @@ if ((empty($_POST["no_pple_at_premises"])) OR ($_POST["no_pple_at_premises"]== 0
 
      $super_structure_order = $_POST["super_structure_order"];
 
-
-    if (isset($_POST["prompted_by_New_Toilet"])){$prompted_by_New_Toilet = $_POST["prompted_by_New_Toilet"];}else{ $prompted_by_New_Toilet=0;} 
-    if (isset($_POST["prompted_by_Toilet_Promotor"])){$prompted_by_Toilet_Promotor = $_POST["prompted_by_Toilet_Promotor"];}else{ $prompted_by_Toilet_Promotor=0;} 
-    if (isset($_POST["prompted_by_Toilet_Builder"])){$prompted_by_Toilet_Builder = $_POST["prompted_by_Toilet_Builder"];}else{ $prompted_by_Toilet_Builder=0;} 
-    if (isset($_POST["prompted_by_Demo_Site"])){$prompted_by_Demo_Site = $_POST["prompted_by_Demo_Site"];}else{ $prompted_by_Demo_Site=0;} 
-    if (isset($_POST["prompted_by_TV_Radio"])){$prompted_by_TV_Radio = $_POST["prompted_by_TV_Radio"];}else{ $prompted_by_TV_Radio=0;} 
-     
-   
-    if (isset($_POST["prompted_by_Printed_Media"])){$prompted_by_Printed_Media = $_POST["prompted_by_Printed_Media"];}else{ $prompted_by_Printed_Media=0;} 
-    if (isset($_POST["prompted_by_Bill_board"])){$prompted_by_Bill_board = $_POST["prompted_by_Bill_board"];}else{ $prompted_by_Bill_board=0;} 
-    if (isset($_POST["prompted_by_flier"])){$prompted_by_flier = $_POST["prompted_by_flier"];}else{ $prompted_by_flier=0;} 
-    if (isset($_POST["prompted_by_Neighbor_Relative"])){$prompted_by_Neighbor_Relative = $_POST["prompted_by_Neighbor_Relative"];}else{ $prompted_by_Neighbor_Relative=0;} 
-    if (isset($_POST["prompted_by_Kiosk_attendant"])){$prompted_by_Kiosk_attendant = $_POST["prompted_by_Kiosk_attendant"];}else{ $prompted_by_Kiosk_attendant=0;}
-     
-  
-    if (isset($_POST["prompted_by_Church_School"])){$prompted_by_Church_School = $_POST["prompted_by_Church_School"];}else{ $prompted_by_Church_School=0;}
-    if (isset($_POST["prompted_by_Water_Office"])){$prompted_by_Water_Office = $_POST["prompted_by_Water_Office"];}else{ $prompted_by_Water_Office=0;}
-    if (isset($_POST["prompted_by_SMS"])){$prompted_by_SMS = $_POST["prompted_by_SMS"];}else{ $prompted_by_SMS=0;}
-    if (isset($_POST["prompted_by_Legal_Enforce"])){$prompted_by_Legal_Enforce = $_POST["prompted_by_Legal_Enforce"];}else{ $prompted_by_Legal_Enforce=0;}
-    if (isset($_POST["prompted_by_Other"])){$prompted_by_Other = $_POST["prompted_by_Other"];$prompted_by_Other_specify = $_POST["prompted_by_Other_specify"];}else{ $prompted_by_Other=0;$prompted_by_Other_specify="";}
-    
+     $prompted_by = $_POST["prompted_by"];
      
      function get_hh_count($link)
      {
@@ -125,9 +107,9 @@ if ((empty($_POST["no_pple_at_premises"])) OR ($_POST["no_pple_at_premises"]== 0
     }else
     {
     
-        $sql = "INSERT INTO households (hhcode, hhname, hh_gender,blno, plot,pa, locality, landmark, hh_status,phone1,phone2,total_ordered, supestructure,prompted_by,rooms_rented,no_pple_premises,no_pple_premises_a_males,no_pple_premises_a_females,no_pple_premises_children,current_toilet,selected_product,ready_selection,need_tg,email)
-        VALUES ('$hhcode','$applicant_name','$gender','$blno','$plotno','$adminpost','$bairro','$landmark','$hh_status','$phoneno1','$phoneno2','$no_toilets_order','$super_structure_order','01','$no_rooms_rented','$no_pple_at_premises',
-        '$no_pple_adult_males','$no_pple_adult_females','$no_pple_children','$current_toilet_type','$ordered_toilet_type','$ready_select','$need_tg','$email')";
+        $sql = "INSERT INTO households (hhcode, hhname, hh_gender,blno, plot,pa, locality, landmark, hh_status,phone1,phone2,total_ordered, supestructure,prompted_by,rooms_rented,no_pple_premises,no_pple_premises_a_males,no_pple_premises_a_females,no_pple_premises_children,current_toilet,selected_product,ready_selection,need_tg,email,water_connect)
+        VALUES ('$hhcode','$applicant_name','$gender','$blno','$plotno','$adminpost','$bairro','$landmark','$hh_status','$phoneno1','$phoneno2','$no_toilets_order','$super_structure_order','$prompted_by','$no_rooms_rented','$no_pple_at_premises',
+        '$no_pple_adult_males','$no_pple_adult_females','$no_pple_children','$current_toilet_type','$ordered_toilet_type','$ready_select','$need_tg','$email','$water_connection')";
 
         if (mysqli_query($link, $sql)) {
             echo '<script type="text/javascript">'; 

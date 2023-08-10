@@ -256,7 +256,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
-                                                            <div class="mb-1">
+                                                            <div class="mb-3">
                                                                 <p style="color:blue"><?php echo $language["Applicant_Gender"];?></p>
                                                                 <input type="radio" id="male" name="gender" value="01" checked = "true">
                                                                 <label for="male"><?php echo $language["Male"];?></label>
@@ -264,6 +264,7 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                                 <label for="female"><?php echo $language["Female"];?></label>
                                                             </div>
                                                         </div>
+                                                        
                                                     </div>
 
                                                     <div class="row">
@@ -384,32 +385,43 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                                                 <label for="none"><?php echo $language["None"];?></label>
                                                             </div>
                                                         </div>
-                                                        
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
+                                                        <div class="col-lg-3">
                                                             <div class="mb-1">
-                                                                <input type="number" id="no_pple_at_premises" name="no_pple_at_premises" style="width:12%;" readonly>
-                                                                <label for="no_pple_at_premises"><?php echo $language["No_People_at_Premises"];?></label>
+                                                                <p style="color:blue"><?php echo $language["Water_Connect"];?>:</p>
+                                                                <input type="radio" id="water_connection_yes" name="water_connection" value="1" checked = "true">
+                                                                <label for="water_connection_yes"><?php echo $language["Yes"];?></label><br>
+
+                                                                <input type="radio" id="water_connection_no" name="water_connection" value="0">
+                                                                <label for="water_connection_no"><?php echo $language["No"];?></label><br>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    
                                                     <div class="row">
                                                         <div class="col-lg-5">
+                                                            <p style="color:blue"><?php echo $language["No_People_at_Premises"];?></p>
                                                             <div class="mb-1">
-                                                                <input type="number" id="no_pple_adult_males" name="no_pple_adult_males" style="width:10%;" onkeyup="calc()">
+                                                                <input type="number" id="no_pple_adult_males" name="no_pple_adult_males" min="0" max="20" style="width:10%;" onkeyup="calc()">
                                                                 <label for="no_pple_adult_males"><?php echo $language["Adult_Males"];?></label><span class="error">*</span>
-
-                                                                <input type="number" id="no_pple_adult_females" name="no_pple_adult_females" style="width:10%;" onkeyup="calc()">
+                                                            </div>
+                                                            <div class="mb-1">
+                                                                <input type="number" id="no_pple_adult_females" name="no_pple_adult_females" min="0" max="20" style="width:10%;" onkeyup="calc()">
                                                                 <label for="no_pple_adult_females"><?php echo $language["Adult_Females"];?></label><span class="error">*</span>
-
-                                                                <input type="number" id="no_pple_children" name="no_pple_children" style="width:10%;" onkeyup="calc()">
+                                                            </div>
+                                                            <div class="mb-1">
+                                                                <input type="number" id="no_pple_children" name="no_pple_children" min="0" max="20" style="width:10%;" onkeyup="calc()">
                                                                 <label for="no_pple_children"><?php echo $language["Children_Under_5"];?></label><span class="error">*</span>
                                                             </div>
                                                         </div>
-                                                        
                                                     </div>
-                                                
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="mb-1">
+                                                                <input type="number" id="no_pple_at_premises" name="no_pple_at_premises" style="width:12%;background-color:plum;" readonly>
+                                                                <label for="no_pple_at_premises"><?php echo $language["Total"];?></label>(Auto generated -- Gerado automaticamente)
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 
                                             </section>
 
@@ -459,62 +471,78 @@ src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
                                             </section>
                                             <h3><?php echo $language["Toilet_Prompt"];?></h3>
                                             <section>
-                                                
+                                            <h5 style="color:blue;"><?php echo $language["Toilet_Prompt"];?></h5>
                                                     <div class="row">
+                                                        
                                                         <div class="col-lg-12">
-                                                            <div class="mb-3">
-                                                                <input type="checkbox" id="prompted_by_New_Toilet" name="prompted_by_New_Toilet" style="width:3%">
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_New_Toilet" name="prompted_by" style="width:5%" checked value="01">
                                                                 <label for="prompted_by_New_Toilet"><?php echo $language["Saw_New_Toilet"];?></label>
-
-                                                                <input type="checkbox" id="prompted_by_Toilet_Promotor" name="prompted_by_Toilet_Promotor"style="width:3%">
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Toilet_Promotor" name="prompted_by"style="width:5%" value="02">
                                                                 <label for="prompted_by_Toilet_Promotor"><?php echo $language["Toilet_Promotor"];?></label>
-
-                                                                <input type="checkbox" id="prompted_by_Toilet_Builder" name="prompted_by_Toilet_Builder"style="width:3%">
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Toilet_Builder" name="prompted_by"style="width:5%" value="03">
                                                                 <label for="prompted_by_Toilet_Builder"><?php echo $language["Toilet_Builder"];?></label>
-
-                                                                <input type="checkbox" id="prompted_by_Demo_Site" name="prompted_by_Demo_Site"style="width:3%">
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Demo_Site" name="prompted_by"style="width:5%" value="04">
                                                                 <label for="prompted_by_Demo_Site"><?php echo $language["Demo_Site"];?></label>
-
-                                                                <input type="checkbox" id="prompted_by_TV_Radio" name="prompted_by_TV_Radio"style="width:3%">
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_TV_Radio" name="prompted_by"style="width:5%" value="05">
                                                                 <label for="prompted_by_TV_Radio"><?php echo $language["TV_Radio"];?></label>
-
-                                                                <input type="checkbox" id="prompted_by_Printed_Media" name="prompted_by_Printed_Media"style="width:3%">
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Printed_Media" name="prompted_by"style="width:5%" value="06">
                                                                 <label for="prompted_by_Printed_Media"><?php echo $language["Printed_Media"];?></label>
-
-                                                                <input type="checkbox" id="prompted_by_Bill_board" name="prompted_by_Bill_board"style="width:3%">
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Bill_board" name="prompted_by"style="width:5%" value="07">
                                                                 <label for="prompted_by_Bill_board"><?php echo $language["Bill_board"];?></label>
-
-                                                                <input type="checkbox" id="prompted_by_flier" name="prompted_by_flier"style="width:3%">
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_flier" name="prompted_by"style="width:5%" value="08">
                                                                 <label for="prompted_by_flier"><?php echo $language["Paper_Flier"];?></label>
                                                             </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Neighbor_Relative" name="prompted_by" style="width:5%" value="09">
+                                                                <label for="prompted_by_Neighbor_Relative"><?php echo $language["Neighbor_Relative"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="local_leaders " name="prompted_by"style="width:5%" value="10">
+                                                                <label for="local_leaders"><?php echo $language["local_leaders"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Church_School" name="prompted_by"style="width:5%" value="11">
+                                                                <label for="prompted_by_Church_School"><?php echo $language["Church_School"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="Municipality_team" name="prompted_by"style="width:5%" value="12">
+                                                                <label for="Municipality_team"><?php echo $language["Municipality_team"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_SMS" name="prompted_by"style="width:5%" value="13">
+                                                                <label for="prompted_by_SMS"><?php echo $language["SMS"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Legal_Enforce" name="prompted_by"style="width:5%" value="14">
+                                                                <label for="prompted_by_Legal_Enforce"><?php echo $language["Legal_Enforce"];?></label>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <input type="radio" id="prompted_by_Other" name="prompted_by"style="width:5%" value="15">
+                                                                <label for="prompted_by_Other"><?php echo $language["Other"];?></label>
+                                                            </div>
                                                         </div>
+                                                        
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <div class="mb-3">
-                                                                <input type="checkbox" id="prompted_by_Neighbor_Relative" name="prompted_by_Neighbor_Relative" style="width:3%">
-                                                                <label for="prompted_by_Neighbor_Relative"><?php echo $language["Neighbor_Relative"];?></label>
-
-                                                                <input type="checkbox" id="prompted_by_Kiosk_attendant" name="prompted_by_Kiosk_attendant"style="width:3%">
-                                                                <label for="prompted_by_Kiosk_attendant"><?php echo $language["Water_Kiosk_attendant"];?></label>
-
-                                                                <input type="checkbox" id="prompted_by_Church_School" name="prompted_by_Church_School"style="width:3%">
-                                                                <label for="prompted_by_Church_School"><?php echo $language["Church_School"];?></label>
-
-                                                                <input type="checkbox" id="prompted_by_Water_Office" name="prompted_by_Water_Office"style="width:3%">
-                                                                <label for="prompted_by_Water_Office"><?php echo $language["Water_Office"];?></label>
-
-                                                                <input type="checkbox" id="prompted_by_SMS" name="prompted_by_SMS"style="width:3%">
-                                                                <label for="prompted_by_SMS"><?php echo $language["SMS"];?></label>
-
-                                                                <input type="checkbox" id="prompted_by_Legal_Enforce" name="prompted_by_Legal_Enforce"style="width:3%">
-                                                                <label for="prompted_by_Legal_Enforce"><?php echo $language["Legal_Enforce"];?></label>
-
-                                                                <input type="checkbox" id="prompted_by_Other" name="prompted_by_Other"style="width:3%">
-                                                                <label for="prompted_by_Other"><?php echo $language["Other"];?></label>
-
                                                                 <label for="Other_specify"><?php echo $language["Specify"];?></label>
-                                                                <input type="text" id="prompted_by_Other_specify" name="prompted_by_Other_specify"style="width:10%">
+                                                                <input type="text" id="prompted_by_Other_specify" name="prompted_by_Other_specify"style="width:30%">
                                                             </div>
                                                         </div>
                                                     </div>

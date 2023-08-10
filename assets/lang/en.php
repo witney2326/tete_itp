@@ -584,4 +584,12 @@ $language["Required"] = "Required";
 $language["Application_Email_Settings"]="Application Email Settings";
 $language["Host"]="Host";
 $language["Password"]="Password";
+
+$language["Water_Connect"]="Do you have a water connection?";
+$language["Water_Connected"]="Water Connected?";
+$language["Total"]="Total";
+
+$language["Municipality_team"]="Municipality team"; 
+$language["local_leaders"]="Local Leaders";
+$language["Map"]="Toilet Google Map";
 ?>
